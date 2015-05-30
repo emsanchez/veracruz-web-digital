@@ -1,0 +1,280 @@
+.separador{
+	margin: 0 auto;
+	text-align: center;
+	border-top: 1px solid #DCDCDC;
+	width: 95%;
+  	margin-top: 20px;
+  	margin-bottom: 20px;
+}
+.full-img{
+	width: 100%;
+}
+section {
+	padding: 1em;
+	text-align: center;
+}
+
+.related {
+	padding: 15em 0 3em;
+	clear: both;
+}
+
+.related p {
+	font-size: 1.5em;
+}
+
+.related > a {
+	border: 1px solid #2E3444;
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+	color: #2E3444;
+}
+
+.related a:hover {
+	border-color: #FF2A48;
+	color: #FF2A48;
+}
+
+.related a img {
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.related a:hover img,
+.related a:active img {
+	opacity: 1;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: left;
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}
+.grid-wrap {
+	clear: both;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1044px;
+}
+
+.grid {
+	width: 100% !important;
+	height: auto !important;
+	margin: 0px auto;
+	padding: 0;
+	list-style: none;
+}
+
+.js .grid {
+	background: url(../images/loading.gif) no-repeat 50% 100px;
+}
+
+.js .grid.loaded {
+	background: none;
+}
+
+.grid li {
+	display: inline-block;
+	overflow: hidden;
+	width: 250px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.js .grid li {
+	display: none;
+	float: left;
+}
+
+.js .grid.loaded li {
+	display: block;
+}
+
+/* Title box */
+.title-box h2 {
+	display: block;
+	margin: 7px;
+	padding: 20px;
+	background: #2E3444;
+	color: #D3EEE2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+.title-box h2 a {
+	display: block;
+	font-weight: 900;
+}
+
+.title-box h2 a:hover {
+	color: #D3EEE2;
+}
+
+/* Anchor and image */
+.grid li > a,
+.grid li img {
+	display: block;
+	outline: none;
+	border: none;
+}
+
+.grid li > a {
+	position: relative;
+	overflow: hidden;
+	margin-left: 6px;
+  	margin-right: 6px;
+}
+
+/* Curtain element */
+.grid .curtain {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background: #96cdc8;
+}
+
+.grid.swipe-right .curtain {
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+}
+
+.grid.swipe-down .curtain {
+	-webkit-transform: translate3d(0,-100%,0);
+	transform: translate3d(0,-100%,0);
+}
+
+.grid.swipe-rotate .curtain {
+	width: 200%;
+	height: 200%;
+	-webkit-transform: rotate3d(0,0,1,90deg);
+	transform: rotate3d(0,0,1,90deg);
+	-webkit-transform-origin: top left;
+	transform-origin: top left;
+}
+
+/* Shadow */
+.grid .curtain::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,1);
+	content: '';
+}
+
+.grid.swipe-right .curtain::after,
+.grid.swipe-rotate .curtain::after {
+	left: -100%;
+}
+
+.grid.swipe-down .curtain::after {
+	top: -100%;
+}
+
+/* Title */
+.container-text{
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 10px 25px 20px 20px;
+	width: 100%;
+	background: white;
+	border: 1px solid #d2d2d2;
+	text-align: left;
+	letter-spacing: 1px;
+	-webkit-transition: -webkit-transform 0.2s, color 0.2s;
+	transition: transform 0.2s, color 0.2s;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	width: 96.2%;
+	border-bottom: none;
+	
+}
+.leer-mas{
+	width: 96.2%;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid #d2d2d2;
+	border-top: none;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	font-family: 'ubunturegular';
+	font-size: 17px;
+	color: white;
+	height: 33px;
+	padding-top: 3px;
+}
+.infografia{
+	background: #4553A2;
+}
+.video{
+	background: #ED4100;
+}
+.enlaces-externos{
+	background: #33BCA1;
+}
+.container-text a{
+	color: #33BCA1;
+	font-size: 14px;
+}
+.container-text a:hover{
+	text-decoration: none;
+	}
+.container-text p{
+	color: #33BCA1;
+	font-size: 14px;
+}
+.grid li h3 {
+	color: #797979;
+	font-family: 'ubuntulight';
+	font-size: 13px;
+	
+}
+/* Hide image and title and show at half time */
+.js .container-text,
+.js .grid li img,
+.js .grid li h3 {
+	visibility: hidden;
+}
+
+.grid li.animate img,
+.grid li.animate h3 {
+	-webkit-animation: showMe 1.5s step-end forwards;
+	animation: showMe 1.5s step-end forwards;
+}
+
+@-webkit-keyframes showMe {
+	from { visibility: hidden; }
+	60%, 100% { visibility: visible; }
+}
+
+@keyframes showMe {
+	from { visibility: hidden; }
+	60%, 100% { visibility: visible; }
+}
+.js .container-text,
+.grid li.shown img,
+.grid li.shown h3 {
+	visibility: visible;
+}
