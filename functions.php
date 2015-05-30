@@ -52,3 +52,22 @@ function change_footer_admin() {
     echo 'theme 2015';  
 }  
 add_filter('admin_footer_text', 'change_footer_admin');
+
+//Encontrar categoria
+function get_cat_slug_by_id($id) {
+	$cat_test = get_the_category( $id );
+	$count=0;
+	foreach($cat_test as $cat_index){
+		if($cat_index->slug == 'infografia'){
+   		return 'infografia';
+   		break;
+  	}else if($cat_index->slug == 'video'){
+   		return 'video';
+   		break;
+  	}else{
+   		return 'nota';
+   		break;
+  	}
+  		$count++; 
+ 	}
+}
