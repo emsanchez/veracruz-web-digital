@@ -38,7 +38,7 @@
 
     <!--lightbox-->
     <link href="<?php bloginfo('template_url'); ?>/css/ekko-lightbox.css" rel="stylesheet">
-    <script src="<?php bloginfo('template_url'); ?>/js/ekko-lightbox.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/ekko-lightbox.js"></script>
     <!--End lightbox-->
 
 	<?php wp_head(); ?>

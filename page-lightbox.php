@@ -2,7 +2,7 @@
 <div id="main-content">
     <h3>Loop de prueba de categoria multimedia - Ejemplo de lightbox con Post de WP</h3>
     <?php   
-    $args = array( 'category_name'=>'multimedia', 'posts_per_page'=>6, 'post_type'=>'post', 'order'=>'ASC' ); ?>
+    $args = array( 'category_name'=>'noticias', 'posts_per_page'=>6, 'post_type'=>'post', 'order'=>'ASC' ); ?>
     <p>Note: uses modal plugin title option via <code>data-title</code>, and the custom footer tag using <code>data-footer</code></p>
     <div class="row">
         <div class="col-sm-offset-4 col-sm-3">
