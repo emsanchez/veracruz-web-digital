@@ -60,3 +60,220 @@
 .ekko-lightbox .modal-footer {
   text-align: left;
 }
+
+/*Estilo infografia y video*/
+.custom .modal-backdrop{
+  background-color: #EBEBEB;
+}
+.lightbox-video-body,
+.lightbox-img-body{
+  padding: 0px;
+}
+.lightbox-video-body{
+  padding-bottom: 8px;
+}
+
+/*Video*/
+.lightbox-custom-video{
+  /* box-shadow: none; */
+  padding-bottom: 8px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 2px 12px #949494;
+}
+/*Footer Video*/
+.lightbox-video-footer{
+  border-top: none;
+  padding: 0px;
+  border-bottom: 5px solid #FFF400;
+}
+.lightbox-video-footer .pasa-la-voz,
+.lightbox-video-footer .redes{
+  float: left;
+  height: 72px;
+  padding: 10px;
+}
+.lightbox-video-footer .pasa-la-voz{
+  background-color: #354184;
+  width: 33.33333333%;
+}
+.lightbox-video-footer .hashtag{
+  width: 154px;
+  height: 52px;
+  background-repeat: no-repeat;
+  background: url(../images/lightbox/img-pasa-la-voz.png);
+}
+.lightbox-video-footer .redes{
+  background-color: #4553A2;
+  width: 66.66666667%;
+}
+.lightbox-video-footer .redes .list-redes{
+  width: auto;
+  margin-left: 20px;
+  margin-top: 13px;
+  float: left;
+}
+.lightbox-video-footer .redes .list-redes .twitter,
+.lightbox-video-footer .redes .list-redes .facebook,
+.lightbox-video-footer .redes .list-redes .pinteres,
+.lightbox-video-footer .redes .list-redes .google{
+  float: left;
+  background-repeat: no-repeat;
+  padding: 0px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.lightbox-video-footer .redes .list-redes .twitter{
+  background: url(../images/lightbox/twitter.png);
+  height: 30px;
+  width: 33px;
+}
+.lightbox-video-footer .redes .list-redes .facebook{
+  background: url(../images/lightbox/facebook.png);
+  height: 34px;
+  width: 19px;
+  margin-top: -3px;
+}
+.lightbox-video-footer .redes .list-redes .pinteres{
+  background: url(../images/lightbox/pinteres.png);
+  height: 36px;
+  width: 31px;
+  margin-top: -4px;
+}
+.lightbox-video-footer .redes .list-redes .google{
+  background: url(../images/lightbox/google.png);
+  height: 36px;
+  width: 35px;
+  margin-top: -3px;
+}
+/*Heade Video*/
+.lightbox-video-header,
+.lightbox-img-header{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: none;
+}
+.lightbox-video-header h4,
+.lightbox-img-header h4{
+  font-family: 'ubuntulight';
+  color: #8B8B8B;
+  line-height: 20px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.lightbox-video-header a{
+  font-size: 14px;
+  color: #3AC6B1;
+  text-decoration: none;
+}
+/*Responsive Video*/
+
+/*Infografia*/
+.lightbox-custom-img{
+  /* box-shadow: none; */
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 2px 12px #949494;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.lightbox-img-body{
+  padding: 0px;
+  float: right;
+  width: 55%;
+}
+/*Header*/
+.lightbox-img-header{
+  float: right;
+  overflow: hidden;
+  width: 45%;
+  padding: 0px;
+}
+.lightbox-img-header h4{
+  margin-top: 20px;
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+}
+.lightbox-img-la-voz-redes{
+  background-color: #354184;
+  width: 100%;
+  float: left;
+  height: 100%;
+  padding: 10px;
+}
+.lightbox-img-la-voz-redes .hashtag{
+  width: 154px;
+  height: 52px;
+  background-repeat: no-repeat;
+  background: url(../images/lightbox/img-pasa-la-voz.png);
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.lightbox-img-header .redes{
+    float: left;
+    width: 100%;
+}
+.lightbox-img-header .redes .list-redes{
+  width: auto;
+  margin-left: 20px;
+  margin-top: 13px;
+  float: left;
+}
+.lightbox-img-header .redes .list-redes .twitter,
+.lightbox-img-header .redes .list-redes .facebook,
+.lightbox-img-header .redes .list-redes .pinteres,
+.lightbox-img-header .redes .list-redes .google{
+  padding: 0px;
+  cursor: pointer;
+  width: 125px;
+  margin-bottom: 7px;
+  font-family: 'ubuntulight';
+  color: #FFFFFF;
+  font-size: 14px;
+  padding-left: 50px;
+  border-bottom: 1px solid  rgba(51, 188, 161, 0.4);
+  height: 40px;
+}
+.lightbox-img-header .redes .list-redes .twitter{
+  background: url(../images/lightbox/twitter.png);
+  background-repeat: no-repeat;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  background-position-x: 5px;
+}
+.lightbox-img-header .redes .list-redes .facebook{
+  background: url(../images/lightbox/facebook.png);
+  background-repeat: no-repeat;
+  padding-top: 10px;
+  padding-bottom: 35px;
+  background-position-x: 10px;
+}
+.lightbox-img-header .redes .list-redes .pinteres{
+  background: url(../images/lightbox/pinteres.png);
+  background-repeat: no-repeat;
+  padding-top: 10px;
+  padding-bottom: 33px;
+  background-position-x: 5px;
+}
+.lightbox-img-header .redes .list-redes .google{
+  background: url(../images/lightbox/google.png);
+  background-repeat: no-repeat;
+  border-bottom: none;
+  padding-top: 7px;
+  padding-bottom: 0px;
+  background-position-x: 5px;
+}
+.lightbox-img-la-voz-pie{
+  padding: 6px;
+  border-bottom: 4px solid #FFF400;
+  background-color: #4553A2;
+  clear: both;
+}
+/*Responsive Img*/

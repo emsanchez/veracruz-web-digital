@@ -22,13 +22,17 @@
                 //imagen
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
                 $img_data = $large_image_url[0];
-                echo '<a href="'.$img_data.'" data-toggle="lightbox" data-gallery="multiimages" class="col-sm-4 '.$category.'">';
+                echo '<a href="'.$img_data.'" data-toggle="lightbox" class="col-sm-4 '.$category.'" data-category="'.$category.'" ';
+                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp."';
+                echo 'data-permalink="'.get_permalink($post->ID).'" >';
                 echo '<img src="'.$img_data.'" class="img-responsive">';
                 echo '</a>';
             }else if( $category == "video"){
                 //video
                 $link = get_post_meta($post->ID, 'youtube-link' , true);
-                echo '<a href="http://youtu.be/'.$link.'" data-toggle="lightbox" data-gallery="multiimages" class="col-sm-4 '.$category.'">';
+                echo '<a href="http://youtu.be/'.$link.'" data-toggle="lightbox"  class="col-sm-4 '.$category.'" ';
+                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." ';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'">';
                 echo '<img src="//i1.ytimg.com/vi/'.$link.'/mqdefault.jpg" class="img-responsive">';
                 echo '</a>';
                 /*<div class="iframe-video hidden-more-600">

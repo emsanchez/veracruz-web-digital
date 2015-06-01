@@ -4,8 +4,6 @@ https://github.com/ashleydw/lightbox
 
 License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
 */
-
-
 (function() {
   "use strict";
   var $, EkkoLightbox;
@@ -18,14 +16,79 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     this.options = $.extend({
       title: null,
       footer: null,
-      remote: null
+      remote: null,
+      category: null,
+      permalink: null
     }, $.fn.ekkoLightbox.defaults, options || {});
     this.$element = $(element);
     content = '';
     this.modal_id = this.options.modal_id ? this.options.modal_id : 'ekkoLightbox-' + Math.floor((Math.random() * 1000) + 1);
-    header = '<div class="modal-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4></div>';
-    footer = '<div class="modal-footer"' + (this.options.footer ? '' : ' style="display:none"') + '>' + this.options.footer + '</div>';
-    $(document.body).append('<div id="' + this.modal_id + '" class="ekko-lightbox modal fade" tabindex="-1"><div class="modal-dialog"><div class="modal-content">' + header + '<div class="modal-body"><div class="ekko-lightbox-container"><div></div></div></div>' + footer + '</div></div></div>');
+    //console.log('category', this.options.category );
+    
+    //Maquetado LightBox
+    var mainContainer = "";
+    mainContainer += '<div id="' + this.modal_id + '" class="ekko-lightbox modal fade custom" tabindex="-1">';
+    mainContainer += '<div class="modal-dialog">';
+
+    //Maquetado Infografia and Maquetado Video
+    var category = this.options.category;
+    //Maquetado Video
+    if( category == 'video'){
+
+      header = '<div class="modal-header lightbox-video-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '>';
+      header += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4><a href="'+this.options.permalink+'">http://bit.ly/1Fq190</a></div>';
+      footer = '<div class="modal-footer lightbox-video-footer">';
+      footer += '<div class="pasa-la-voz"><div class="hashtag"></div></div>';
+      footer += '<div class="redes">';
+      footer += '<div class="list-redes">';
+        footer += '<div class="twitter"></div>';
+        footer += '<div class="facebook"></div>';
+        footer += '<div class="pinteres"></div>';
+        footer += '<div class="google"></div>';
+      footer += '</div>';
+      footer += '</div></div>';
+    
+      mainContainer += '<div class="modal-content lightbox-custom-video">';
+      mainContainer += '<div class="modal-body lightbox-video-body">';
+      mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
+      mainContainer += '</div>';
+      mainContainer += header;
+      mainContainer += footer;
+      mainContainer += '</div>';
+
+    }
+    //Maquetado default
+    else{
+      
+      header = '<div class="modal-header lightbox-img-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '>';
+      header += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4>';
+      header += '<div class="lightbox-img-la-voz-redes">';
+        header += '<div class="hashtag"></div>';
+        header += '<div class="redes">';
+          header += '<div class="list-redes">';
+            header += '<div class="twitter">Tweet</div>';
+            header += '<div class="facebook">Compartir</div>';
+            header += '<div class="pinteres">Pin it</div>';
+            header += '<div class="google">Plus</div>';
+      header += '</div></div></div>';
+      header += '<div class="lightbox-img-la-voz-pie"></div>';
+      header += '</div>';
+      
+      footer = '<div class="modal-footer lightbox-video-footer">';
+      footer += '</div>';
+
+      mainContainer += '<div class="modal-content lightbox-custom-img">';
+      mainContainer += header;
+      mainContainer += '<div class="modal-body lightbox-img-body">';
+      mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
+      mainContainer += '</div>';
+      mainContainer += '</div>';
+
+    }
+    //boton para cerrar <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    mainContainer += '</div></div>';
+
+    $(document.body).append(mainContainer);
     this.modal = $('#' + this.modal_id);
     this.modal_dialog = this.modal.find('.modal-dialog').first();
     this.modal_content = this.modal.find('.modal-content').first();
@@ -76,6 +139,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           this.gallery_index = this.gallery_items.index(this.$element);
           $(document).on('keydown.ekkoLightbox', this.navigate.bind(this));
           if (this.options.directional_arrows && this.gallery_items.length > 1) {
+            //Rows
             this.lightbox_container.append('<div class="ekko-lightbox-nav-overlay"><a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a><a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a></div>');
             this.modal_arrows = this.lightbox_container.find('div.ekko-lightbox-nav-overlay').first();
             this.lightbox_container.find('a' + this.strip_spaces(this.options.left_arrow_class)).on('click', function(event) {
