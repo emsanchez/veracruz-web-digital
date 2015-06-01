@@ -5,6 +5,7 @@
  * License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
  */
 
+/*Navegaciion*/
 .ekko-lightbox-container {
   position: relative;
 }
@@ -22,80 +23,90 @@
   display: block;
   width: 49%;
   height: 100%;
-  font-size: 23px;
-  color: #FFE23C;
   filter: dropshadow(color=#000000, offx=2, offy=2);
   -webkit-transition: opacity 0.5s;
   -moz-transition: opacity 0.5s;
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
   text-decoration: none;
-  background-color: #354184;
-  padding: 4px;
-  border: 4px solid #4553A2;
-  font-style: normal;
-  font-weight: lighter;
-  line-height: 22px;
-  border-radius: 50%;
-  behavior: url(PIE.htc); /* remove if you don't care about IE8 */
 }
-.ekko-lightbox-nav-overlay a:empty {
-  width: auto;
-}
+.ekko-lightbox-nav-overlay a:empty {}
+
 .ekko-lightbox a:hover {
   text-decoration: none;
 }
 .ekko-lightbox .glyphicon-chevron-left {
   left: 0;
   float: left;
-  text-align: left;
   top: 50%;
   height: auto;
-  margin-left: -50px;
+  background: url(../images/lightbox/atras.png);
+  background-repeat: no-repeat;
+  background-size: 52px;
+  background-position: top;
+  display: block;
+  height: 131px;
+  width: 52px;
 }
-
+.ekko-lightbox .glyphicon-chevron-left:hover{
+  background-position: 0px -137px;
+}
 .ekko-lightbox .glyphicon-chevron-right {
   right: 0;
   float: right;
-  text-align: right;
-  height: auto;
   top: 50%;
-  margin-right: -50px;
+  background: url(../images/lightbox/adelante.png);
+  background-repeat: no-repeat;
+  background-size: 52px;
+  background-position: top;
+  display: block;
+  height: 131px;
+  width: 52px;
 }
-
+.ekko-lightbox .glyphicon-chevron-right:hover{
+  background-position: 0px -137px;
+}
+.glyphicon-chevron-right:before,
+.glyphicon-chevron-left:before{
+    content: "" !important;
+}
 .ekko-lightbox .modal-footer {
   text-align: left;
 }
-
 /*Estilo infografia y video*/
-.custom .modal-backdrop{
-  background-color: #EBEBEB;
+.modal-backdrop{
+  background-color: #EBEBEB !important;
+}
+.lightbox-modal-dialog{
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 20px auto !important;
 }
 .lightbox-video-body,
 .lightbox-img-body{
   padding: 0px;
 }
-.lightbox-video-body{
-  padding-bottom: 8px;
+
+.lightbox-custom-img,
+.lightbox-custom-video{
+  width: 50% !important;
+  margin: 0 auto !important;
 }
+
 /*Close buton*/
 .lightbox-img-video-close{
   float: right;
-  font-weight: 700;
-  line-height: 1;
-  color: #FFE23C;
   text-shadow: none;
   opacity: 1.0;
-  font-family: 'Glyphicons Halflings';
-  font-size: 30px;
-  margin-right: -100px;
-  top: 50%;
+  top: 0;
   position: relative;
-  background-color: #354184 !important;
-  padding: 4px;
-  border: 4px solid #4553A2 !important;
-  border-radius: 50%;
-  behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+  background: url(../images/lightbox/cerrar.png) !important;
+  background-repeat: no-repeat;
+  background-size: 36px !important;
+  background-position: top;
+  display: block;
+  height: 36px;
+  width: 36px;
 }
 .lightbox-img-video-close button{
   -webkit-appearance: none;
@@ -122,7 +133,7 @@
   padding-bottom: 8px;
   border-radius: 4px;
   border: none;
-  box-shadow: 0 2px 12px #949494;
+  box-shadow: none;
   position: relative;
   z-index: 200;
 }
@@ -141,9 +152,10 @@
 }
 .lightbox-video-footer .pasa-la-voz{
   background-color: #354184;
-  width: 33.33333333%;
+  /*width: 33.33333333%;*/
 }
 .lightbox-video-footer .hashtag{
+  margin: 0 auto;
   width: 154px;
   height: 52px;
   background-repeat: no-repeat;
@@ -151,48 +163,15 @@
 }
 .lightbox-video-footer .redes{
   background-color: #4553A2;
-  width: 66.66666667%;
+  /*width: 66.66666667%;*/
 }
 .lightbox-video-footer .redes .list-redes{
   width: auto;
   margin-left: 20px;
-  margin-top: 13px;
+  margin-top: 10px;
   float: left;
 }
-.lightbox-video-footer .redes .list-redes .twitter,
-.lightbox-video-footer .redes .list-redes .facebook,
-.lightbox-video-footer .redes .list-redes .pinteres,
-.lightbox-video-footer .redes .list-redes .google{
-  float: left;
-  background-repeat: no-repeat;
-  padding: 0px;
-  margin-right: 20px;
-  cursor: pointer;
-}
-.lightbox-video-footer .redes .list-redes .twitter{
-  background: url(../images/lightbox/twitter.png);
-  height: 30px;
-  width: 33px;
-}
-.lightbox-video-footer .redes .list-redes .facebook{
-  background: url(../images/lightbox/facebook.png);
-  height: 34px;
-  width: 19px;
-  margin-top: -3px;
-}
-.lightbox-video-footer .redes .list-redes .pinteres{
-  background: url(../images/lightbox/pinteres.png);
-  height: 36px;
-  width: 31px;
-  margin-top: -4px;
-}
-.lightbox-video-footer .redes .list-redes .google{
-  background: url(../images/lightbox/google.png);
-  height: 36px;
-  width: 35px;
-  margin-top: -3px;
-}
-/*Heade Video*/
+/*Header Video*/
 .lightbox-video-header,
 .lightbox-img-header{
   padding-left: 30px;
@@ -209,18 +188,18 @@
   font-size: 15px;
   margin-bottom: 5px;
 }
-.lightbox-video-header a{
-  font-size: 14px;
+.lightbox-video-header a,
+.lightbox-img-header a{
+  font-size: 13px;
   color: #3AC6B1;
   text-decoration: none;
 }
-/*Responsive Video*/
 
 /*Infografia*/
 .lightbox-custom-img{
   border-radius: 4px;
   border: none;
-  box-shadow: 0 2px 12px #949494;
+  box-shadow: none;
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -230,13 +209,12 @@
 .lightbox-img-body{
   padding: 0px;
   float: right;
-  width: 55%;
+  overflow: hidden;
 }
 /*Header*/
 .lightbox-img-header{
   float: right;
   overflow: hidden;
-  width: 45%;
   padding: 0px;
 }
 .lightbox-img-header h4{
@@ -258,10 +236,8 @@
   height: 52px;
   background-repeat: no-repeat;
   background: url(../images/lightbox/img-pasa-la-voz.png);
-  margin-left: 10px;
+  margin: 0 auto;
   margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 5px;
 }
 .lightbox-img-header .redes{
     float: left;
@@ -273,54 +249,149 @@
   margin-top: 13px;
   float: left;
 }
-.lightbox-img-header .redes .list-redes .twitter,
-.lightbox-img-header .redes .list-redes .facebook,
-.lightbox-img-header .redes .list-redes .pinteres,
-.lightbox-img-header .redes .list-redes .google{
-  padding: 0px;
-  cursor: pointer;
-  width: 125px;
-  margin-bottom: 7px;
-  font-family: 'ubuntulight';
-  color: #FFFFFF;
-  font-size: 14px;
-  padding-left: 50px;
-  border-bottom: 1px solid  rgba(51, 188, 161, 0.4);
-  height: 40px;
-}
-.lightbox-img-header .redes .list-redes .twitter{
-  background: url(../images/lightbox/twitter.png);
-  background-repeat: no-repeat;
-  padding-top: 5px;
-  padding-bottom: 0px;
-  background-position-x: 5px;
-}
-.lightbox-img-header .redes .list-redes .facebook{
-  background: url(../images/lightbox/facebook.png);
-  background-repeat: no-repeat;
-  padding-top: 10px;
-  padding-bottom: 35px;
-  background-position-x: 10px;
-}
-.lightbox-img-header .redes .list-redes .pinteres{
-  background: url(../images/lightbox/pinteres.png);
-  background-repeat: no-repeat;
-  padding-top: 10px;
-  padding-bottom: 33px;
-  background-position-x: 5px;
-}
-.lightbox-img-header .redes .list-redes .google{
-  background: url(../images/lightbox/google.png);
-  background-repeat: no-repeat;
-  border-bottom: none;
-  padding-top: 7px;
-  padding-bottom: 0px;
-  background-position-x: 5px;
-}
 .lightbox-img-la-voz-pie{
   padding: 6px;
   border-bottom: 4px solid #FFF400;
   background-color: #4553A2;
   clear: both;
 }
-/*Responsive Img*/
+.lightbox-img-header a{
+
+}
+
+/*AddThis Lightbox*/
+.lightbox-img-header .list-redes  .at-share-btn,
+.lightbox-video-footer .list-redes .at-share-btn{
+  background-size: 25px !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  clear: both;
+  width: 100%;
+  float: left;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  cursor: pointer;
+}
+
+.lightbox-img-header .list-redes .at-svc-facebook,
+.lightbox-video-footer .list-redes .at-svc-facebook{
+  background-image: url(../images/lightbox/facebook.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px !important;
+  height: 42px;
+}
+.lightbox-img-header .list-redes .at-svc-facebook:hover{
+    background-position: 5px -40px;
+}
+.lightbox-video-footer .list-redes .at-svc-facebook:hover{
+  background-position: 0px -41px;
+}
+.lightbox-img-header .list-redes .at-svc-twitter,
+.lightbox-video-footer .list-redes .at-svc-twitter{
+  background-image: url(../images/lightbox/twitter.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 30px !important;
+  height: 33px;
+}
+.lightbox-img-header .list-redes .at-svc-twitter:hover{
+  background-position: 0px -35px;
+}
+.lightbox-video-footer .list-redes .at-svc-twitter:hover{
+  background-position: 0px -35px;
+}
+.lightbox-img-header .list-redes .at-svc-google_plusone_share,
+.lightbox-video-footer .list-redes .at-svc-google_plusone_share{
+  background-image: url(../images/lightbox/google.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 30px !important;
+  height: 32px;
+}
+.lightbox-img-header .list-redes .at-svc-google_plusone_share:hover{
+  background-position: 5px -31px;
+}
+.lightbox-video-footer .list-redes .at-svc-google_plusone_share:hover{
+    background-position: 0px -31px;
+}
+.lightbox-img-header .list-redes .at-svc-pinterest_share,
+.lightbox-video-footer .list-redes .at-svc-pinterest_share{
+  background-image: url(../images/lightbox/pinterest.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 30px !important;
+  height: 38px;
+}
+.lightbox-img-header .list-redes .at-svc-pinterest_share:hover{
+  background-position: 0px -36px;
+}
+.lightbox-video-footer .list-redes .at-svc-pinterest_share:hover{
+  background-position: 0px -37px;
+}
+.lightbox-img-header .list-redes .at4-icon{
+  background-image:none !important;
+  width: 125px !important;
+  height: auto !important;
+  text-indent: 0 !important;
+}
+.lightbox-video-footer .list-redes .at4-icon{
+  background-image:none !important; 
+  height: auto !important;
+}
+
+/*Imagen*/
+.lightbox-img-header .list-redes  .at-share-btn{
+  border-bottom: 1px solid rgba(51, 188, 161, 0.3);
+  display: block;
+}
+.lightbox-img-header .list-redes .at-svc-facebook{
+  background-position: 5px 0px;
+}
+.lightbox-img-header .list-redes .at-svc-twitter{
+}
+.lightbox-img-header .list-redes .at-svc-google_plusone_share{
+  background-position: 5px 0;
+}
+.lightbox-img-header .list-redes .at-svc-pinterest_share{
+  border-bottom: none;
+}
+.lightbox-img-header .list-redes .at4-icon{
+  font-family: 'ubuntulight';
+  font-size: 15px;
+  color: #FFF;
+  padding-left: 45px;
+}
+.lightbox-img-header .list-redes .at-share-tbx-element .at-share-btn{
+    margin: 0px 0px 10px 0px !important;
+}
+.lightbox-img-header .list-redes .at4-icon.aticon-facebook{
+    padding-top: 7px;
+}
+.lightbox-img-header .list-redes .at4-icon.aticon-twitter{
+    padding-top: 4px;
+}
+.lightbox-img-header .list-redes .at4-icon.aticon-google_plusone_share{
+    padding-top: 3px;
+}
+.lightbox-img-header .list-redes .at4-icon.aticon-pinterest_share{
+    padding-top: 7px;
+}
+
+/*Video*/
+.lightbox-video-footer .list-redes .at-share-btn{
+  clear: none;
+  margin-right: 20px;
+  margin-left: 0px;
+}
+.lightbox-video-footer .list-redes .at-svc-facebook{
+  width: 20px;
+}
+.lightbox-video-footer .list-redes .at-svc-twitter{
+  width: 30px;
+  margin-top: 5px;
+}
+.lightbox-video-footer .list-redes .at-svc-google_plusone_share{
+  width: 30px;
+  margin-top: 5px;
+}
+.lightbox-video-footer .list-redes .at-svc-pinterest_share{
+  width: 30px;
+  margin-top: 2px;
+}

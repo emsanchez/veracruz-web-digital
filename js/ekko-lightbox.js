@@ -11,14 +11,15 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
   $ = jQuery;
 
   EkkoLightbox = function(element, options) {
-    var content, footer, header,
+    var content, footer, header, headerImg,
       _this = this;
     this.options = $.extend({
-      title: null,
-      footer: null,
-      remote: null,
-      category: null,
-      permalink: null
+    title: null,
+    footer: null,
+    remote: null,
+    category: null,
+    permalink: null,
+    excerpt: null
     }, $.fn.ekkoLightbox.defaults, options || {});
     this.$element = $(element);
     content = '';
@@ -28,7 +29,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     //Maquetado LightBox
     var mainContainer = "";
     mainContainer += '<div id="' + this.modal_id + '" class="ekko-lightbox modal fade custom" tabindex="-1">';
-    mainContainer += '<div class="modal-dialog">';
+    mainContainer += '<div class="modal-dialog lightbox-modal-dialog">';
 
     //Maquetado Infografia and Maquetado Video
     var category = this.options.category;
@@ -36,15 +37,11 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     if( category == 'video'){
 
       header = '<div class="modal-header lightbox-video-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '>';
-      header += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4><a href="'+this.options.permalink+'">http://bit.ly/1Fq190</a></div>';
+      header += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4><a href="'+this.options.excerpt+'">http://"'+this.options.excerpt+'"</a></div>';
       footer = '<div class="modal-footer lightbox-video-footer">';
-      footer += '<div class="pasa-la-voz"><div class="hashtag"></div></div>';
-      footer += '<div class="redes">';
+      footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><div class="hashtag img-responsive"></div></div>';
+      footer += '<div class="redes col-xs-12 col-sm-8 col-md-8">';
       footer += '<div class="list-redes">';
-        footer += '<div class="twitter"></div>';
-        footer += '<div class="facebook"></div>';
-        footer += '<div class="pinteres"></div>';
-        footer += '<div class="google"></div>';
       footer += '</div>';
       footer += '</div></div>';
     
@@ -60,26 +57,22 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     //Maquetado default
     else{
       
-      header = '<div class="modal-header lightbox-img-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '>';
-      header += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4>';
-      header += '<div class="lightbox-img-la-voz-redes">';
-        header += '<div class="hashtag"></div>';
-        header += '<div class="redes">';
-          header += '<div class="list-redes">';
-            header += '<div class="twitter">Tweet</div>';
-            header += '<div class="facebook">Compartir</div>';
-            header += '<div class="pinteres">Pin it</div>';
-            header += '<div class="google">Plus</div>';
-      header += '</div></div></div>';
-      header += '<div class="lightbox-img-la-voz-pie"></div>';
-      header += '</div>';
+      headerImg = '<div class="modal-header lightbox-img-header col-xs-12 col-sm-4 col-md-4"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '>';
+      headerImg += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4>';
+      headerImg += '<div class="lightbox-img-la-voz-redes">';
+      headerImg += '<div class="hashtag img-responsive"></div>';
+      headerImg += '<div class="redes">';
+      headerImg += '<div class="list-redes">';
+      headerImg += '</div></div></div>';
+      headerImg += '<div class="lightbox-img-la-voz-pie"></div>';
+      headerImg += '</div>';
       
       footer = '<div class="modal-footer lightbox-video-footer">';
       footer += '</div>';
 
       mainContainer += '<div class="modal-content lightbox-custom-img">';
-      mainContainer += header;
-      mainContainer += '<div class="modal-body lightbox-img-body">';
+      mainContainer += headerImg;
+      mainContainer += '<div class="modal-body lightbox-img-body col-xs-12 col-sm-8 col-md-8">';
       mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
       mainContainer += '</div>';
       mainContainer += '</div>';
@@ -96,6 +89,8 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     this.modal_body = this.modal.find('.modal-body').first();
     this.lightbox_container = this.modal_body.find('.ekko-lightbox-container').first();
     this.lightbox_body = this.lightbox_container.find('> div:first-child').first();
+
+    this.widthHeader = this.modal.find('.modal-dialog').find('.lightbox-custom-img').find('.lightbox-img-header');
     
     this.showLoading();
     this.modal_arrows = null;
@@ -106,12 +101,14 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       bottom: parseFloat(this.modal_dialog.css('border-bottom-width')) + parseFloat(this.modal_content.css('border-bottom-width')) + parseFloat(this.modal_body.css('border-bottom-width')),
       left: parseFloat(this.modal_dialog.css('border-left-width')) + parseFloat(this.modal_content.css('border-left-width')) + parseFloat(this.modal_body.css('border-left-width'))
     };
+    
     this.padding = {
       top: parseFloat(this.modal_dialog.css('padding-top')) + parseFloat(this.modal_content.css('padding-top')) + parseFloat(this.modal_body.css('padding-top')),
       right: parseFloat(this.modal_dialog.css('padding-right')) + parseFloat(this.modal_content.css('padding-right')) + parseFloat(this.modal_body.css('padding-right')),
       bottom: parseFloat(this.modal_dialog.css('padding-bottom')) + parseFloat(this.modal_content.css('padding-bottom')) + parseFloat(this.modal_body.css('padding-bottom')),
       left: parseFloat(this.modal_dialog.css('padding-left')) + parseFloat(this.modal_content.css('padding-left')) + parseFloat(this.modal_body.css('padding-left'))
     };
+    
     this.modal.on('show.bs.modal', this.options.onShow.bind(this)).on('shown.bs.modal', function() {
       _this.modal_shown();
       return _this.options.onShown.call(_this);
@@ -122,6 +119,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       _this.modal.remove();
       return _this.options.onHidden.call(_this);
     }).modal('show', options);
+
     return this.modal;
   };
 
@@ -147,7 +145,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
             this.modal_dialog.append('<div class="ekko-lightbox-nav-overlay">'+
               '<a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a>'+
               '<a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a>'+
-              '<button type="button" class="close lightbox-img-video-close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+              '<button type="button" class="close lightbox-img-video-close" data-dismiss="modal" aria-hidden="true"></button>'+
               '</div>');
             this.modal_arrows = this.modal_dialog.find('div.ekko-lightbox-nav-overlay').first();
             
@@ -396,7 +394,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           var image;
           image = $('<img />');
           image.attr('src', img.src);
-          image.addClass('img-responsive');
+          image.addClass('img-full');
           _this.lightbox_body.html(image);
           if (_this.modal_arrows) {
             _this.modal_arrows.css('display', 'block');

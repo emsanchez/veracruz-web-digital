@@ -41,6 +41,9 @@
     <script src="<?php bloginfo('template_url'); ?>/js/ekko-lightbox.js"></script>
     <!--End lightbox-->
 
+    <!--Addthis-->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528bc01961578d5f" async="async"></script>
+
 	<?php wp_head(); ?>
 </head>
 
