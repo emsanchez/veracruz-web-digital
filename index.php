@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="clearfix"></div>
-    <div class="container-fluid">
+    <div class="container-fluid" id="noticias">
 		<?php get_template_part('home/home', 'entradas'); ?>
     </div>
     <div class="clearfix"></div>

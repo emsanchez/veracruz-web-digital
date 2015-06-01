@@ -48,7 +48,7 @@ a {
 }
 a:active,
 a:hover {
-  outline: 0;
+  outline: 0 !important;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -117,6 +117,7 @@ textarea {
   margin: 0;
   font: inherit;
   color: inherit;
+  outline: 0 !important;
 }
 button {
   overflow: visible;
@@ -1104,6 +1105,8 @@ h6,
 }
 p {
   margin: 0 0 10px;
+  font-family: 'ubuntulight';
+  font-size: 21px;
 }
 .lead {
   margin-bottom: 20px;
@@ -2775,15 +2778,14 @@ select[multiple].form-group-lg .form-control {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: 0 !important;
 }
 .btn:hover,
 .btn:focus,
 .btn.focus {
   color: #333;
   text-decoration: none;
+  outline: 0 !important;
 }
 .btn:active,
 .btn.active {
@@ -2816,6 +2818,7 @@ fieldset[disabled] .btn {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
+  outline: 0 !important;
 }
 .btn-default:active,
 .btn-default.active,
