@@ -1,46 +1,70 @@
 <style type="text/css">
 	.back-blue-color{
 		background-color: #354184;
+		height: 107px;
 	}
 	.logo_veracruz_footer{
-
+		margin-top: 14px;
+	  margin-left: 10px;
+	  float: right;
+	  margin-right: 14px;
 	}
 	.wrap_foter{
 		float: right;
 	}
 	.back-softblue{
 		background-color: #4553A2;
+		height: 107px;
 	}
 	.wrap_footer{
 		border-top: 8px solid #FFF400;
+		color: #FFF;
 	}
 	.reset-padding-boostrap{
 		padding-left: 0px;
 		padding-right: 0px;
 	}
+	.wrapper-footer{
+		width: 100%;
+		overflow: hidden;
+	}
+	.resaltado_url{
+		color: #FFF400;
+	}
+	.url-web-ver{
+		  font-family: "ubunturegular";
+	}
+	.copyright_font_footer{
+		font-size: 13px;
+		font-family: "ubuntulight";
+	}
 </style>
-    <div class="wrapper-footer">
-    	<div class="container-fluid wrap_footer  hidden-xs reset-padding-boostrap">
-			<div class="col-md-4 col-sm-4 back-blue-color">
-				<img src="<?php blog_info("template_url") ?>/img/logo_ver.jpg" alt="" class="logo_veracruz_footer">
-			</div>
-			<div class="col-md-8 col-sm-8 back-softblue">
-				<div class="wrap_foter">
-					<h2 class="url-web-ver">www.veracruz-digital.com.mx</h2>
-					<h5 class="copyright">Algunos Derechos Reservados &copyright; 2015</h5>
+    <div class="wrapper-footer-ver">
+    	<div class="wrapper-footer wrap_footer  hidden-xs reset-padding-boostrap">
+    		<div class="col-md-4 col-sm-4 back-blue-color">
+					<div class="wrap_logo">
+						<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer" />
+					</div><!--FIN wrap_logo-->
 				</div>
-			</div>
+				<div class="col-md-8 col-sm-8 back-softblue">
+					<div class="wrap_foter ">
+						<h2 class="url-web-ver">www.<span class="resaltado_url">veracruz-digital</span>.com.mx</h2>
+						<h5 class="copyright_font_footer">Algunos Derechos Reservados &#64; 2015</h5>
+					</div>
+				</div>
 		</div>
+
+
 
 		<div class="container-fluid wrap_footer  visible-xs reset-padding-boostrap">
 			<div class="col-xs-12 back-softblue">
-				<div class="wrap_foter">
+				<div class="container wrap_foter">
 					<h2 class="url-web-ver">www.veracruz-digital.com.mx</h2>
-					<h5 class="copyright">Algunos Derechos Reservados &copyright; 2015</h5>
+					<h5 class="copyright_font_footer">Algunos Derechos Reservados &copyright; 2015</h5>
 				</div>
 			</div>
 			<div class="col-xs-12 back-blue-color">
-				<img src="<?php blog_info("template_url") ?>/img/logo_ver.jpg" alt="" class="logo_veracruz_footer">
+				<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer">
 			</div>
 		</div>
     </div><!--.wrapper-footer-->
