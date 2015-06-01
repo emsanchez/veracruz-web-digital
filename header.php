@@ -24,8 +24,8 @@
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
   	
     <!-- Bootstrap -->
-    <link href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" rel="stylesheet">
-    <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
+    <link href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.3.3.4.css" rel="stylesheet">
+    <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.3.3.4.js"></script>
 	<!-- End Bootstrap -->
 
     <!-- Responsive -->

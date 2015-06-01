@@ -85,18 +85,21 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       mainContainer += '</div>';
 
     }
-    //boton para cerrar <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
     mainContainer += '</div></div>';
 
     $(document.body).append(mainContainer);
+  
     this.modal = $('#' + this.modal_id);
     this.modal_dialog = this.modal.find('.modal-dialog').first();
     this.modal_content = this.modal.find('.modal-content').first();
     this.modal_body = this.modal.find('.modal-body').first();
     this.lightbox_container = this.modal_body.find('.ekko-lightbox-container').first();
     this.lightbox_body = this.lightbox_container.find('> div:first-child').first();
+    
     this.showLoading();
     this.modal_arrows = null;
+    
     this.border = {
       top: parseFloat(this.modal_dialog.css('border-top-width')) + parseFloat(this.modal_content.css('border-top-width')) + parseFloat(this.modal_body.css('border-top-width')),
       right: parseFloat(this.modal_dialog.css('border-right-width')) + parseFloat(this.modal_content.css('border-right-width')) + parseFloat(this.modal_body.css('border-right-width')),
@@ -139,17 +142,25 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           this.gallery_index = this.gallery_items.index(this.$element);
           $(document).on('keydown.ekkoLightbox', this.navigate.bind(this));
           if (this.options.directional_arrows && this.gallery_items.length > 1) {
+            
             //Rows
-            this.lightbox_container.append('<div class="ekko-lightbox-nav-overlay"><a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a><a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a></div>');
-            this.modal_arrows = this.lightbox_container.find('div.ekko-lightbox-nav-overlay').first();
-            this.lightbox_container.find('a' + this.strip_spaces(this.options.left_arrow_class)).on('click', function(event) {
+            this.modal_dialog.append('<div class="ekko-lightbox-nav-overlay">'+
+              '<a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a>'+
+              '<a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a>'+
+              '<button type="button" class="close lightbox-img-video-close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+              '</div>');
+            this.modal_arrows = this.modal_dialog.find('div.ekko-lightbox-nav-overlay').first();
+            
+            this.modal_dialog.find('a' + this.strip_spaces(this.options.left_arrow_class)).on('click', function(event) {
               event.preventDefault();
               return _this.navigate_left();
             });
-            this.lightbox_container.find('a' + this.strip_spaces(this.options.right_arrow_class)).on('click', function(event) {
+            
+            this.modal_dialog.find('a' + this.strip_spaces(this.options.right_arrow_class)).on('click', function(event) {
               event.preventDefault();
               return _this.navigate_right();
             });
+
           }
         }
         if (this.options.type) {
@@ -308,7 +319,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     },
     showYoutubeVideo: function(id) {
       var height, width;
-      width = this.checkDimensions(this.$element.data('width') || 560);
+      width = this.checkDimensions(this.$element.data('width') || 700);
       height = width / (560 / 315);
       return this.showVideoIframe('//www.youtube.com/embed/' + id + '?badge=0&autoplay=1&html5=1', width, height);
     },
@@ -450,7 +461,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     directional_arrows: true,
     type: null,
     always_show_close: true,
-    loadingMessage: 'Loading...',
+    loadingMessage: 'Cargando...',
     onShow: function() {},
     onShown: function() {},
     onHide: function() {},

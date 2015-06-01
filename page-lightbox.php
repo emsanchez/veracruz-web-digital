@@ -1,11 +1,13 @@
 <?php get_header(); ?>
+<style type="text/css">
+    html{ overflow-y: initial; }
+</style>
 <div id="main-content">
     <h3>Loop de prueba de categoria multimedia - Ejemplo de lightbox con Post de WP</h3>
     <?php   
     $args = array( 'category_name'=>'noticias', 'posts_per_page'=>6, 'post_type'=>'post', 'order'=>'ASC' ); ?>
     <p>Note: uses modal plugin title option via <code>data-title</code>, and the custom footer tag using <code>data-footer</code></p>
-    <div class="row">
-        <div class="col-sm-offset-4 col-sm-3">
+        <div class="col-sm-offset-2 col-sm-8">
     <?php
         $query = new WP_Query($args);
         while ($query->have_posts()){
@@ -24,7 +26,7 @@
                 $img_data = $large_image_url[0];
                 echo '<a href="'.$img_data.'" data-toggle="lightbox" class="col-sm-4 '.$category.'" data-category="'.$category.'" ';
                 echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp."';
-                echo 'data-permalink="'.get_permalink($post->ID).'" >';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-gallery="gallery-img" >';
                 echo '<img src="'.$img_data.'" class="img-responsive">';
                 echo '</a>';
             }else if( $category == "video"){
@@ -32,16 +34,26 @@
                 $link = get_post_meta($post->ID, 'youtube-link' , true);
                 echo '<a href="http://youtu.be/'.$link.'" data-toggle="lightbox"  class="col-sm-4 '.$category.'" ';
                 echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." ';
-                echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'">';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'" data-gallery="gallery-video">';
                 echo '<img src="//i1.ytimg.com/vi/'.$link.'/mqdefault.jpg" class="img-responsive">';
                 echo '</a>';
+
+                echo '<a href="http://youtu.be/'.$link.'" data-toggle="lightbox"  class="col-sm-4 '.$category.'" ';
+                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." ';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'" data-gallery="gallery-video">';
+                echo '<img src="//i1.ytimg.com/vi/'.$link.'/mqdefault.jpg" class="img-responsive">';
+                echo '</a>';
+
                 /*<div class="iframe-video hidden-more-600">
                     <iframe src="//www.youtube.com/embed/<?php echo $link; ?>?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>*/
             }
     ?>
     <?php }?>
-        </div>
+    <a href="//distilleryimage6.ak.instagram.com/ba70b8e8030011e3a31b22000a1fbb63_7.jpg" data-toggle="lightbox" data-title="A random title" 
+    data-footer="A custom footer text" class="col-sm-4" data-gallery="gallery-img">
+        <img src="//distilleryimage6.ak.instagram.com/ba70b8e8030011e3a31b22000a1fbb63_7.jpg" class="img-responsive">
+    </a>
     </div>
 
 </div><!-- #main-content -->
@@ -53,7 +65,7 @@
             return $(this).ekkoLightbox({
                 onShown: function() {
                     if (window.console) {
-                        console.log('this', this );
+                        //console.log('this', this );
                         return console.log('Checking our the events huh?');
                     }
                 },
@@ -64,30 +76,30 @@
                 },
                 onShow: function (e){
                     if (window.console) {
-                        console.log('e', e);
-                        console.log('onShow');
+                        //console.log('e', e);
+                        //console.log('onShow');
                     }
                 },
                 onHide: function (e){
                     if (window.console) {
-                        console.log('e', e);
-                        console.log('onHide');
+                        //console.log('e', e);
+                        //console.log('onHide');
                     }
                 },
                 onHidden: function (e){
                     if (window.console) {
-                        console.log('onHidden');
+                        //console.log('onHidden');
                     }
                 },
                 onNavigate: function (e){
                     if (window.console) {
-                        console.log('e', e);
-                        console.log('onNavigate');
+                        //console.log('e', e);
+                        //console.log('onNavigate');
                     }
                 },
                 onContentLoaded: function (e){
                     if (window.console) {
-                        console.log('onContentLoaded');
+                        //console.log('onContentLoaded');
                     }
                 }
             });
