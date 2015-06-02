@@ -3,13 +3,14 @@
 		height: 107px;
 	}
 	.logo_veracruz_footer{
-		margin-top: 14px;
-	  margin-left: 10px;
-	  float: right;
-	  margin-right: 14px;
+		  margin-top: 14px;
+		  margin-left: 10px;
+		  float: left;
+		  margin-right: 14px;
 	}
 	.wrap_foter{
-		float: right;
+		  float: right;
+  		margin-right: 222px;
 	}
 	.back-softblue{
 		background-color: #4553A2;
@@ -18,6 +19,7 @@
 	.wrap_footer{
 		border-top: 8px solid #FFF400;
 		color: #FFF;
+
 	}
 	.reset-padding-boostrap{
 		padding-left: 0px;
@@ -29,11 +31,22 @@
 	}
 	.resaltado_url{
 		color: #FFF400;
+		font-family: "ubunturegular";
 	}
 	.url-web-ver{
-		  font-family: "ubunturegular";
+		  font-family: "ubuntulight";
 	}
 	.copyright_font_footer{
 		font-size: 13px;
 		font-family: "ubuntulight";
+	}
+	.texturaFooter{
+		  float: right;
+  		width: 100px;
+	}
+	.wrap_footer_main{
+		width: 100%;
+	}
+	.wrap_textura{
+		float: right;
 	}
