@@ -1,7 +1,6 @@
 /*
 Lightbox for Bootstrap 3 by @ashleydw
 https://github.com/ashleydw/lightbox
-
 License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
 */
 (function() {
@@ -10,7 +9,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
 
   $ = jQuery;
 
-  var Template = function(category, title, excerpt){
+  var Template = function(category, title, excerpt, permalink, media){
     return {
       
       getTemplate: function(){
@@ -19,14 +18,16 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
         //console.log('title, temaplete', title);
         //console.log('excerpt temaplete', excerpt);
 
+        //Maquetado Video
         if( category == 'video'){
-          facebook = '<a class="facebook-lightbox" href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttp%253A%252F%252Fcuartoinforme.veracruz.gob.mx%252Fmeta.php%253Fid%253D%252522%252Bname%252B%252522%2523.VW0hCHZ0c3Q.facebook%26ret%3Dlogin&display=popup" target="_blank"></a>';
-          twitter = '<a class="twitter-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank"></a>';
-          google = '<a class="google-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank"></a>';
-          pinterest = '<a class="pinterest-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank"></a>';
+          
+          facebook = '<a class="facebook-lightbox" href="http://www.facebook.com/sharer.php?u='+permalink+'" target="_blank"></a>';
+          twitter = '<a class="twitter-lightbox" href="https://twitter.com/intent/tweet?text='+title+'" target="_blank"></a>';
+          google = '<a class="google-lightbox" href="https://plus.google.com/share?url='+permalink+'" target="_blank"></a>';
+          pinterest = '<a class="pinterest-lightbox" href="https://www.pinterest.com/pin/create/button/?url='+media+'" target="_blank"></a>';
 
-          header = '<div class="modal-header lightbox-video-header"' + (title ? '' : ' style="display:none"') + '>';
-          header += '<h4 class="modal-title">' + (title || "&nbsp;") + '</h4><a href="'+excerpt+'">http://"'+excerpt+'"</a></div>';
+          header = '<div class="modal-header lightbox-video-header">';
+          header += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') +'>' + title + '</h4><a href="'+excerpt+'" '+ (excerpt ? '' : ' style="display:none"')+' >http://"'+excerpt+'"</a></div>';
           footer = '<div class="modal-footer lightbox-video-footer">';
           footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><div class="hashtag img-responsive"></div></div>';
           footer += '<div class="redes col-xs-12 col-sm-8 col-md-8">';
@@ -52,13 +53,13 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
         //Maquetado default
         else{
           
-          facebook = '<a class="facebook-lightbox" href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttp%253A%252F%252Fcuartoinforme.veracruz.gob.mx%252Fmeta.php%253Fid%253D%252522%252Bname%252B%252522%2523.VW0hCHZ0c3Q.facebook%26ret%3Dlogin&display=popup" target="_blank">Compartir</a>';
-          twitter = '<a class="twitter-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank">Tweet</a>';
-          google = '<a class="google-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank">Plus</a>';
-          pinterest = '<a class="pinterest-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank">Pin it</a>';
+          facebook = '<a class="facebook-lightbox" href="http://www.facebook.com/sharer.php?u='+permalink+'" target="_blank">Compartir</a>';
+          twitter = '<a class="twitter-lightbox" href="https://twitter.com/intent/tweet?text='+title+'" target="_blank">Tweet</a>';
+          google = '<a class="google-lightbox" href="https://plus.google.com/share?url='+permalink+'" target="_blank">Plus</a>';
+          pinterest = '<a class="pinterest-lightbox" href="https://www.pinterest.com/pin/create/button/?url='+media+'" target="_blank">Pin it</a>';
 
-          headerImg = '<div class="modal-header lightbox-img-header col-xs-12 col-sm-4 col-md-4"' + (title ? '' : ' style="display:none"') + '>';
-          headerImg += '<h4 class="modal-title">' + (title || "&nbsp;") + '</h4>';
+          headerImg = '<div class="modal-header lightbox-img-header col-xs-12 col-sm-4 col-md-4">';
+          headerImg += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') + '>' + title + '</h4>';
           headerImg += '<div class="lightbox-img-la-voz-redes">';
           headerImg += '<div class="hashtag img-responsive"></div>';
           headerImg += '<div class="redes">';
@@ -99,7 +100,8 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     remote: null,
     category: null,
     permalink: null,
-    excerpt: null
+    excerpt: null,
+    media: null
     }, $.fn.ekkoLightbox.defaults, options || {});
     this.$element = $(element);
     content = '';
@@ -108,12 +110,14 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     var category = this.options.category;
     var title = this.options.title;
     var excerpt = this.options.excerpt;
+    var permalink = this.options.permalink;
+    var media = this.options.media;
 
     //Maquetado LightBox
     var mainContainer = "";
     mainContainer += '<div id="' + this.modal_id + '" class="ekko-lightbox modal fade custom" tabindex="-1">';
     mainContainer += '<div class="modal-dialog lightbox-modal-dialog">';
-    var template = new Template(category, title, excerpt ).getTemplate();
+    var template = new Template(category, title, excerpt, permalink, media ).getTemplate();
     mainContainer += template;
     mainContainer += '</div></div>';
 
@@ -275,13 +279,15 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       this.updateTitleAndFooter();
 
       src = this.$element.attr('data-remote') || this.$element.attr('href');
-      console.log('src', src);
-      console.log('data type', this.$element.attr('data-type'));
-      console.log('category', this.$element.attr('data-category'));
+      //console.log('src', src);
+      //console.log('data type', this.$element.attr('data-type'));
+      //console.log('category', this.$element.attr('data-category'));
       var category = this.$element.attr('data-category');
       var title =  this.$element.attr('data-title');
       var excerpt =  this.$element.attr('data-excerpt');
-      var template = new Template( category, title, excerpt ).getTemplate();
+      var permalink = this.$element.attr('data-permalink');
+      var media = this.$element.attr('data-media');
+      var template = new Template( category, title, excerpt, permalink, media ).getTemplate();
       //vaciar modal content
       this.modal_content.remove();
       //agregar content a dialog
@@ -296,12 +302,12 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       this.detectRemoteType(src, this.$element.attr('data-type') || false);
 
       if (this.gallery_index + 1 < this.gallery_items.length) {
-        console.log('cambio de slide en galeria');
+        //console.log('cambio de slide en galeria');
         next = $(this.gallery_items.get(this.gallery_index + 1), false);
         src = next.attr('data-remote') || next.attr('href');
-        console.log('next src', src);
+        //console.log('next src', src);
         if (next.attr('data-type') === 'image' || this.isImage(src)) {
-          console.log('se vuelve a ejecutar preloadImage en next');
+          //console.log('se vuelve a ejecutar preloadImage en next');
           return this.preloadImage(src, false);
         }
       
@@ -335,13 +341,13 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     detectRemoteType: function(src, type) {
       var video_id;
       type = type || false;
-      console.log('data type en detectRemoteType ', type);
+      //console.log('data type en detectRemoteType ', type);
       if (type === 'image' || this.isImage(src)) {
-        console.log('type en detectRemoteType es image');
+        //console.log('type en detectRemoteType es image');
         this.options.type = 'image';
         return this.preloadImage(src, true);
       } else if (type === 'youtube' || (video_id = this.getYoutubeId(src))) {
-        console.log('type en detectRemoteType es youtube');
+        //console.log('type en detectRemoteType es youtube');
         this.options.type = 'youtube';
         return this.showYoutubeVideo(video_id);
       } else if (type === 'vimeo' || (video_id = this.getVimeoId(src))) {
@@ -354,7 +360,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
         this.options.type = 'video';
         return this.showVideoIframe(video_id);
       } else {
-        console.log('type false se ejecuta loadRemoteContent');
+        //console.log('type false se ejecuta loadRemoteContent');
         this.options.type = 'url';
         return this.loadRemoteContent(src);
       }
@@ -452,12 +458,12 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       return this;
     },
     preloadImage: function(src, onLoadShowImage) {
-      console.log('se ejecuta preloadImage, onLoadShowImage', onLoadShowImage);
+      //console.log('se ejecuta preloadImage, onLoadShowImage', onLoadShowImage);
       var img,
         _this = this;
       img = new Image();
       if ((onLoadShowImage == null) || onLoadShowImage === true) {
-        console.log('se va agregar imagen');
+        //console.log('se va agregar imagen');
         img.onload = function() {
           var image;
           image = $('<img />');

@@ -153,8 +153,9 @@
   margin: 0 auto;
   width: 154px;
   height: 52px;
+  background: url(../images/lightbox/hashtag.png);
   background-repeat: no-repeat;
-  background: url(../images/lightbox/img-pasa-la-voz.png);
+  background-size: 154px;
 }
 .lightbox-video-footer .redes{
   background-color: #4553A2;
@@ -236,12 +237,13 @@
   padding: 10px;
 }
 .lightbox-img-la-voz-redes .hashtag{
-  width: 154px;
-  height: 52px;
-  background-repeat: no-repeat;
-  background: url(../images/lightbox/img-pasa-la-voz.png);
   margin: 0 auto;
   margin-top: 10px;
+  width: 154px;
+  height: 52px;
+  background: url(../images/lightbox/hashtag.png);
+  background-repeat: no-repeat;
+  background-size: 154px;
 }
 .lightbox-img-header .redes{
     float: left;

@@ -20,14 +20,14 @@
                 $img_data = $large_image_url[0];
                 echo '<a href="'.$img_data.'" data-toggle="lightbox" class="col-sm-4 '.$category.'" data-category="'.$category.'" ';
                 echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp."';
-                echo 'data-permalink="'.get_permalink($post->ID).'" data-gallery="gallery" data-excerpt="http://youtu.be/">';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="'.$img_data.'">';
                 echo '<img src="'.$img_data.'" class="img-responsive">';
                 echo '</a>';
             }else if( $category == "video"){
                 //video
                 $link = get_post_meta($post->ID, 'youtube-link' , true);
                 echo '<a href="http://youtu.be/'.$link.'" data-toggle="lightbox" style="background-color:#000;height:20px;"  class="col-sm-4 '.$category.'" ';
-                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." ';
+                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." data-media="http://youtu.be/'.$link.'" ';
                 echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'" data-gallery="gallery" data-excerpt="http://youtu.be/'.$link.'">';
                 echo '<img src="//i1.ytimg.com/vi/'.$link.'/mqdefault.jpg" class="img-responsive">';
                 echo '</a>';
