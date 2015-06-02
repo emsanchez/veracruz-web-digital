@@ -30,11 +30,6 @@
   transition: opacity 0.5s;
   text-decoration: none;
 }
-.ekko-lightbox-nav-overlay a:empty {}
-
-.ekko-lightbox a:hover {
-  text-decoration: none;
-}
 .ekko-lightbox .glyphicon-chevron-left {
   left: 0;
   float: left;
@@ -47,9 +42,11 @@
   display: block;
   height: 131px;
   width: 52px;
+  text-decoration: none;
 }
 .ekko-lightbox .glyphicon-chevron-left:hover{
   background-position: 0px -137px;
+  text-decoration: none;
 }
 .ekko-lightbox .glyphicon-chevron-right {
   right: 0;
@@ -62,9 +59,11 @@
   display: block;
   height: 131px;
   width: 52px;
+  text-decoration: none;
 }
 .ekko-lightbox .glyphicon-chevron-right:hover{
   background-position: 0px -137px;
+  text-decoration: none;
 }
 .glyphicon-chevron-right:before,
 .glyphicon-chevron-left:before{
@@ -86,13 +85,11 @@
 .lightbox-img-body{
   padding: 0px;
 }
-
 .lightbox-custom-img,
 .lightbox-custom-video{
   width: 50% !important;
   margin: 0 auto !important;
 }
-
 /*Close buton*/
 .lightbox-img-video-close{
   float: right;
@@ -107,6 +104,7 @@
   display: block;
   height: 36px;
   width: 36px;
+  margin-right: -30px;
 }
 .lightbox-img-video-close button{
   -webkit-appearance: none;
@@ -126,10 +124,8 @@
   filter: alpha(opacity=100);
   opacity: 1.0;
 }
-
 /*Video*/
 .lightbox-custom-video{
-  /* box-shadow: none; */
   padding-bottom: 8px;
   border-radius: 4px;
   border: none;
@@ -152,7 +148,6 @@
 }
 .lightbox-video-footer .pasa-la-voz{
   background-color: #354184;
-  /*width: 33.33333333%;*/
 }
 .lightbox-video-footer .hashtag{
   margin: 0 auto;
@@ -163,13 +158,22 @@
 }
 .lightbox-video-footer .redes{
   background-color: #4553A2;
-  /*width: 66.66666667%;*/
 }
 .lightbox-video-footer .redes .list-redes{
-  width: auto;
-  margin-left: 20px;
-  margin-top: 10px;
+  width: 100%;
+  margin-top: 9px;
   float: left;
+}
+.lightbox-video-footer .redes .list-redes ul{
+  list-style: none;
+  margin: 0px;
+  width: 100%;
+  float: left;
+}
+.lightbox-video-footer .redes .list-redes ul li{
+  float: left;
+  margin-right: 13px;
+  margin-left: 13px;
 }
 /*Header Video*/
 .lightbox-video-header,
@@ -244,10 +248,31 @@
     width: 100%;
 }
 .lightbox-img-header .redes .list-redes{
-  width: auto;
-  margin-left: 20px;
+  width: 100%;
   margin-top: 13px;
   float: left;
+}
+.lightbox-img-header .redes .list-redes ul{
+  float: left;
+  list-style: none;
+  margin: 0px;
+  width: 100%;
+}
+.lightbox-img-header .redes .list-redes ul li{
+  margin-bottom: 10px;
+  margin-left: 20px;
+  height: auto;
+}
+.lightbox-img-header .redes .list-redes ul li a,
+.lightbox-video-footer .redes .list-redes ul li a{
+  font-family: 'ubuntulight';
+  font-size: 15px;
+  color: #FFF;
+  text-decoration: none;
+}
+.lightbox-img-header .redes .list-redes ul li a{
+  border-bottom: 1px solid rgba(51, 188, 161, 0.3);
+  width: 70%;
 }
 .lightbox-img-la-voz-pie{
   padding: 6px;
@@ -255,143 +280,89 @@
   background-color: #4553A2;
   clear: both;
 }
-.lightbox-img-header a{
-
-}
-
-/*AddThis Lightbox*/
-.lightbox-img-header .list-redes  .at-share-btn,
-.lightbox-video-footer .list-redes .at-share-btn{
-  background-size: 25px !important;
-  background-color: transparent !important;
-  background-repeat: no-repeat !important;
-  clear: both;
-  width: 100%;
-  float: left;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  cursor: pointer;
-}
-
-.lightbox-img-header .list-redes .at-svc-facebook,
-.lightbox-video-footer .list-redes .at-svc-facebook{
+/*AddThis Lightbox  y Redes sociales*/
+.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox{
   background-image: url(../images/lightbox/facebook.png) !important;
   background-repeat: no-repeat !important;
   background-size: 20px !important;
   height: 42px;
+  display: block;
 }
-.lightbox-img-header .list-redes .at-svc-facebook:hover{
-    background-position: 5px -40px;
+.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox{
+  padding-left: 40px;
+  padding-top: 8px;
 }
-.lightbox-video-footer .list-redes .at-svc-facebook:hover{
-  background-position: 0px -41px;
+.lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox{
+  width: 20px; 
 }
-.lightbox-img-header .list-redes .at-svc-twitter,
-.lightbox-video-footer .list-redes .at-svc-twitter{
+.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox:hover{
+    background-position: 0px -41px;
+}
+.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox{
   background-image: url(../images/lightbox/twitter.png) !important;
   background-repeat: no-repeat !important;
   background-size: 30px !important;
   height: 33px;
+  display: block;
 }
-.lightbox-img-header .list-redes .at-svc-twitter:hover{
+.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox{
+  padding-left: 40px;
+  padding-top: 3px;
+}
+.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox:hover{
   background-position: 0px -35px;
 }
-.lightbox-video-footer .list-redes .at-svc-twitter:hover{
-  background-position: 0px -35px;
-}
-.lightbox-img-header .list-redes .at-svc-google_plusone_share,
-.lightbox-video-footer .list-redes .at-svc-google_plusone_share{
+.lightbox-img-header .redes .list-redes ul li a.google-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox{
   background-image: url(../images/lightbox/google.png) !important;
   background-repeat: no-repeat !important;
   background-size: 30px !important;
   height: 32px;
+  display: block;
 }
-.lightbox-img-header .list-redes .at-svc-google_plusone_share:hover{
-  background-position: 5px -31px;
+.lightbox-img-header .redes .list-redes ul li a.google-lightbox{
+  padding-left: 40px;
+  padding-top: 2px;
+  border-bottom: none;
 }
-.lightbox-video-footer .list-redes .at-svc-google_plusone_share:hover{
-    background-position: 0px -31px;
+.lightbox-img-header .redes .list-redes ul li a.google-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox:hover{
+  background-position: 0px -31px;
 }
-.lightbox-img-header .list-redes .at-svc-pinterest_share,
-.lightbox-video-footer .list-redes .at-svc-pinterest_share{
+.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox{
   background-image: url(../images/lightbox/pinterest.png) !important;
   background-repeat: no-repeat !important;
   background-size: 30px !important;
   height: 38px;
-}
-.lightbox-img-header .list-redes .at-svc-pinterest_share:hover{
-  background-position: 0px -36px;
-}
-.lightbox-video-footer .list-redes .at-svc-pinterest_share:hover{
-  background-position: 0px -37px;
-}
-.lightbox-img-header .list-redes .at4-icon{
-  background-image:none !important;
-  width: 125px !important;
-  height: auto !important;
-  text-indent: 0 !important;
-}
-.lightbox-video-footer .list-redes .at4-icon{
-  background-image:none !important; 
-  height: auto !important;
-}
-
-/*Imagen*/
-.lightbox-img-header .list-redes  .at-share-btn{
-  border-bottom: 1px solid rgba(51, 188, 161, 0.3);
   display: block;
 }
-.lightbox-img-header .list-redes .at-svc-facebook{
-  background-position: 5px 0px;
+.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox{
+  padding-left: 40px;
+  padding-top: 5px;
 }
-.lightbox-img-header .list-redes .at-svc-twitter{
+.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox:hover{
+  background-position: 0px -36px;
 }
-.lightbox-img-header .list-redes .at-svc-google_plusone_share{
-  background-position: 5px 0;
-}
-.lightbox-img-header .list-redes .at-svc-pinterest_share{
-  border-bottom: none;
-}
-.lightbox-img-header .list-redes .at4-icon{
-  font-family: 'ubuntulight';
-  font-size: 15px;
-  color: #FFF;
-  padding-left: 45px;
-}
-.lightbox-img-header .list-redes .at-share-tbx-element .at-share-btn{
-    margin: 0px 0px 10px 0px !important;
-}
-.lightbox-img-header .list-redes .at4-icon.aticon-facebook{
-    padding-top: 7px;
-}
-.lightbox-img-header .list-redes .at4-icon.aticon-twitter{
-    padding-top: 4px;
-}
-.lightbox-img-header .list-redes .at4-icon.aticon-google_plusone_share{
-    padding-top: 3px;
-}
-.lightbox-img-header .list-redes .at4-icon.aticon-pinterest_share{
-    padding-top: 7px;
-}
-
-/*Video*/
-.lightbox-video-footer .list-redes .at-share-btn{
-  clear: none;
-  margin-right: 20px;
-  margin-left: 0px;
-}
-.lightbox-video-footer .list-redes .at-svc-facebook{
-  width: 20px;
-}
-.lightbox-video-footer .list-redes .at-svc-twitter{
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox
+{
   width: 30px;
+}
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox{
   margin-top: 5px;
 }
-.lightbox-video-footer .list-redes .at-svc-google_plusone_share{
-  width: 30px;
-  margin-top: 5px;
-}
-.lightbox-video-footer .list-redes .at-svc-pinterest_share{
-  width: 30px;
-  margin-top: 2px;
+/*Responsive*/
+@media (max-width: 991px){
+  /*.lightbox-custom-img,.lightbox-custom-video{
+    width: 100% !important;
+    margin: 0 auto !important;
+  }*/ 
 }

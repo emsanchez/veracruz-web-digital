@@ -10,9 +10,89 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
 
   $ = jQuery;
 
+  var Template = function(category, title, excerpt){
+    return {
+      
+      getTemplate: function(){
+        var facebook, twitter, google, pinterest, header, footer, mainContainer = "", headerImg ;
+        //console.log('category temaplete', category);
+        //console.log('title, temaplete', title);
+        //console.log('excerpt temaplete', excerpt);
+
+        if( category == 'video'){
+          facebook = '<a class="facebook-lightbox" href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttp%253A%252F%252Fcuartoinforme.veracruz.gob.mx%252Fmeta.php%253Fid%253D%252522%252Bname%252B%252522%2523.VW0hCHZ0c3Q.facebook%26ret%3Dlogin&display=popup" target="_blank"></a>';
+          twitter = '<a class="twitter-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank"></a>';
+          google = '<a class="google-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank"></a>';
+          pinterest = '<a class="pinterest-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank"></a>';
+
+          header = '<div class="modal-header lightbox-video-header"' + (title ? '' : ' style="display:none"') + '>';
+          header += '<h4 class="modal-title">' + (title || "&nbsp;") + '</h4><a href="'+excerpt+'">http://"'+excerpt+'"</a></div>';
+          footer = '<div class="modal-footer lightbox-video-footer">';
+          footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><div class="hashtag img-responsive"></div></div>';
+          footer += '<div class="redes col-xs-12 col-sm-8 col-md-8">';
+          footer += '<div class="list-redes">';
+          footer += '<ul>';
+          footer += '<li>'+twitter+'</li>';
+          footer += '<li>'+facebook+'</li>';
+          footer += '<li>'+pinterest+'</li>';
+          footer += '<li>'+google+'</li>';
+          footer += '</ul>';
+          footer += '</div>';
+          footer += '</div></div>';
+        
+          mainContainer += '<div class="modal-content lightbox-custom-video">';
+          mainContainer += '<div class="modal-body lightbox-video-body">';
+          mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
+          mainContainer += '</div>';
+          mainContainer += header;
+          mainContainer += footer;
+          mainContainer += '</div>';
+
+        }
+        //Maquetado default
+        else{
+          
+          facebook = '<a class="facebook-lightbox" href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttp%253A%252F%252Fcuartoinforme.veracruz.gob.mx%252Fmeta.php%253Fid%253D%252522%252Bname%252B%252522%2523.VW0hCHZ0c3Q.facebook%26ret%3Dlogin&display=popup" target="_blank">Compartir</a>';
+          twitter = '<a class="twitter-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank">Tweet</a>';
+          google = '<a class="google-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank">Plus</a>';
+          pinterest = '<a class="pinterest-lightbox" href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url="+element.social.twitter.urlcard+"&pubid=ra-528bc01961578d5f&ct=1&title="+result+"&pco=tbxnj-1.0" target="_blank">Pin it</a>';
+
+          headerImg = '<div class="modal-header lightbox-img-header col-xs-12 col-sm-4 col-md-4"' + (title ? '' : ' style="display:none"') + '>';
+          headerImg += '<h4 class="modal-title">' + (title || "&nbsp;") + '</h4>';
+          headerImg += '<div class="lightbox-img-la-voz-redes">';
+          headerImg += '<div class="hashtag img-responsive"></div>';
+          headerImg += '<div class="redes">';
+          headerImg += '<div class="list-redes">';
+          headerImg += '<ul>';
+          headerImg += '<li>'+twitter+'</li>';
+          headerImg += '<li>'+facebook+'</li>';
+          headerImg += '<li>'+pinterest+'</li>';
+          headerImg += '<li>'+google+'</li>';
+          headerImg += '</ul>';
+          headerImg += '</div></div></div>';
+          headerImg += '<div class="lightbox-img-la-voz-pie"></div>';
+          headerImg += '</div>';
+          
+          footer = '<div class="modal-footer lightbox-video-footer">';
+          footer += '</div>';
+
+          mainContainer += '<div class="modal-content lightbox-custom-img">';
+          mainContainer += headerImg;
+          mainContainer += '<div class="modal-body lightbox-img-body col-xs-12 col-sm-8 col-md-8">';
+          mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
+          mainContainer += '</div>';
+          mainContainer += '</div>';
+
+        }
+        return mainContainer;
+      }
+
+    }
+  };
+
   EkkoLightbox = function(element, options) {
-    var content, footer, header, headerImg,
-      _this = this;
+    var content, footer, header, headerImg, _this = this;
+    var facebook, twitter, google, pinterest;
     this.options = $.extend({
     title: null,
     footer: null,
@@ -24,61 +104,17 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     this.$element = $(element);
     content = '';
     this.modal_id = this.options.modal_id ? this.options.modal_id : 'ekkoLightbox-' + Math.floor((Math.random() * 1000) + 1);
-    //console.log('category', this.options.category );
     
+    var category = this.options.category;
+    var title = this.options.title;
+    var excerpt = this.options.excerpt;
+
     //Maquetado LightBox
     var mainContainer = "";
     mainContainer += '<div id="' + this.modal_id + '" class="ekko-lightbox modal fade custom" tabindex="-1">';
     mainContainer += '<div class="modal-dialog lightbox-modal-dialog">';
-
-    //Maquetado Infografia and Maquetado Video
-    var category = this.options.category;
-    //Maquetado Video
-    if( category == 'video'){
-
-      header = '<div class="modal-header lightbox-video-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '>';
-      header += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4><a href="'+this.options.excerpt+'">http://"'+this.options.excerpt+'"</a></div>';
-      footer = '<div class="modal-footer lightbox-video-footer">';
-      footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><div class="hashtag img-responsive"></div></div>';
-      footer += '<div class="redes col-xs-12 col-sm-8 col-md-8">';
-      footer += '<div class="list-redes">';
-      footer += '</div>';
-      footer += '</div></div>';
-    
-      mainContainer += '<div class="modal-content lightbox-custom-video">';
-      mainContainer += '<div class="modal-body lightbox-video-body">';
-      mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
-      mainContainer += '</div>';
-      mainContainer += header;
-      mainContainer += footer;
-      mainContainer += '</div>';
-
-    }
-    //Maquetado default
-    else{
-      
-      headerImg = '<div class="modal-header lightbox-img-header col-xs-12 col-sm-4 col-md-4"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '>';
-      headerImg += '<h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4>';
-      headerImg += '<div class="lightbox-img-la-voz-redes">';
-      headerImg += '<div class="hashtag img-responsive"></div>';
-      headerImg += '<div class="redes">';
-      headerImg += '<div class="list-redes">';
-      headerImg += '</div></div></div>';
-      headerImg += '<div class="lightbox-img-la-voz-pie"></div>';
-      headerImg += '</div>';
-      
-      footer = '<div class="modal-footer lightbox-video-footer">';
-      footer += '</div>';
-
-      mainContainer += '<div class="modal-content lightbox-custom-img">';
-      mainContainer += headerImg;
-      mainContainer += '<div class="modal-body lightbox-img-body col-xs-12 col-sm-8 col-md-8">';
-      mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
-      mainContainer += '</div>';
-      mainContainer += '</div>';
-
-    }
-
+    var template = new Template(category, title, excerpt ).getTemplate();
+    mainContainer += template;
     mainContainer += '</div></div>';
 
     $(document.body).append(mainContainer);
@@ -124,6 +160,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
   };
 
   EkkoLightbox.prototype = {
+
     modal_shown: function() {
       var video_id,
         _this = this;
@@ -236,15 +273,40 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       this.gallery_index = index;
       this.$element = $(this.gallery_items.get(this.gallery_index));
       this.updateTitleAndFooter();
+
       src = this.$element.attr('data-remote') || this.$element.attr('href');
+      console.log('src', src);
+      console.log('data type', this.$element.attr('data-type'));
+      console.log('category', this.$element.attr('data-category'));
+      var category = this.$element.attr('data-category');
+      var title =  this.$element.attr('data-title');
+      var excerpt =  this.$element.attr('data-excerpt');
+      var template = new Template( category, title, excerpt ).getTemplate();
+      //vaciar modal content
+      this.modal_content.remove();
+      //agregar content a dialog
+      $(template).appendTo(this.modal_dialog);
+      this.modal = $('#' + this.modal_id);
+      this.modal_dialog = this.modal.find('.modal-dialog').first();
+      this.modal_content = this.modal.find('.modal-content').first();
+      this.modal_body = this.modal.find('.modal-body').first();
+      this.lightbox_container = this.modal_body.find('.ekko-lightbox-container').first();
+      this.lightbox_body = this.lightbox_container.find('> div:first-child').first();
+
       this.detectRemoteType(src, this.$element.attr('data-type') || false);
+
       if (this.gallery_index + 1 < this.gallery_items.length) {
+        console.log('cambio de slide en galeria');
         next = $(this.gallery_items.get(this.gallery_index + 1), false);
         src = next.attr('data-remote') || next.attr('href');
+        console.log('next src', src);
         if (next.attr('data-type') === 'image' || this.isImage(src)) {
+          console.log('se vuelve a ejecutar preloadImage en next');
           return this.preloadImage(src, false);
         }
+      
       }
+
     },
     navigate_left: function() {
       if (this.gallery_items.length === 1) {
@@ -273,10 +335,13 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     detectRemoteType: function(src, type) {
       var video_id;
       type = type || false;
+      console.log('data type en detectRemoteType ', type);
       if (type === 'image' || this.isImage(src)) {
+        console.log('type en detectRemoteType es image');
         this.options.type = 'image';
         return this.preloadImage(src, true);
       } else if (type === 'youtube' || (video_id = this.getYoutubeId(src))) {
+        console.log('type en detectRemoteType es youtube');
         this.options.type = 'youtube';
         return this.showYoutubeVideo(video_id);
       } else if (type === 'vimeo' || (video_id = this.getVimeoId(src))) {
@@ -289,6 +354,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
         this.options.type = 'video';
         return this.showVideoIframe(video_id);
       } else {
+        console.log('type false se ejecuta loadRemoteContent');
         this.options.type = 'url';
         return this.loadRemoteContent(src);
       }
@@ -386,10 +452,12 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       return this;
     },
     preloadImage: function(src, onLoadShowImage) {
+      console.log('se ejecuta preloadImage, onLoadShowImage', onLoadShowImage);
       var img,
         _this = this;
       img = new Image();
       if ((onLoadShowImage == null) || onLoadShowImage === true) {
+        console.log('se va agregar imagen');
         img.onload = function() {
           var image;
           image = $('<img />');
