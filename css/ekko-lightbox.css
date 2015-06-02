@@ -17,6 +17,7 @@
   width: 100%;
   height: 100%;
   display: block !important;
+  margin-top: -30px;
 }
 .ekko-lightbox-nav-overlay a {
   z-index: 100;
@@ -35,7 +36,7 @@
   float: left;
   top: 50%;
   height: auto;
-  background: url(../images/lightbox/atras.png);
+  background: url(../images/lightbox/atras-1.png);
   background-repeat: no-repeat;
   background-size: 52px;
   background-position: top;
@@ -52,7 +53,7 @@
   right: 0;
   float: right;
   top: 50%;
-  background: url(../images/lightbox/adelante.png);
+  background: url(../images/lightbox/adelante-1.png);
   background-repeat: no-repeat;
   background-size: 52px;
   background-position: top;
@@ -75,11 +76,13 @@
 /*Estilo infografia y video*/
 .modal-backdrop{
   background-color: #EBEBEB !important;
+  opacity: 0.9 !important;
+  filter: alpha(opacity=90);
 }
 .lightbox-modal-dialog{
   width: 100% !important;
   max-width: 100% !important;
-  margin: 20px auto !important;
+  margin: 45px auto !important;
 }
 .lightbox-video-body,
 .lightbox-img-body{
@@ -89,6 +92,9 @@
 .lightbox-custom-video{
   width: 50% !important;
   margin: 0 auto !important;
+  -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
 }
 /*Close buton*/
 .lightbox-img-video-close{
@@ -127,9 +133,8 @@
 /*Video*/
 .lightbox-custom-video{
   padding-bottom: 8px;
-  border-radius: 4px;
+  border-radius: 6px;
   border: none;
-  box-shadow: none;
   position: relative;
   z-index: 200;
 }
@@ -185,6 +190,10 @@
   padding-bottom: 15px;
   border-bottom: none;
 }
+.lightbox-video-header{
+  padding-left: 55px;
+  padding-right: 55px;
+}
 .lightbox-video-header h4,
 .lightbox-img-header h4{
   font-family: 'ubuntulight';
@@ -204,7 +213,6 @@
 .lightbox-custom-img{
   border-radius: 4px;
   border: none;
-  box-shadow: none;
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -274,7 +282,7 @@
 }
 .lightbox-img-header .redes .list-redes ul li a{
   border-bottom: 1px solid rgba(51, 188, 161, 0.3);
-  width: 70%;
+  width: 130px;
 }
 .lightbox-img-la-voz-pie{
   padding: 6px;
@@ -287,69 +295,95 @@
 .lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox{
   background-image: url(../images/lightbox/facebook.png) !important;
   background-repeat: no-repeat !important;
-  background-size: 20px !important;
-  height: 42px;
   display: block;
 }
 .lightbox-img-header .redes .list-redes ul li a.facebook-lightbox{
-  padding-left: 40px;
+  background-size: 20px !important;
+  height: 42px;
+  padding-left: 53px;
   padding-top: 8px;
+  background-position: 17px 0px;
 }
 .lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox{
-  width: 20px; 
+  width: 20px;
+  background-size: 18px !important;
+  height: 31px;
 }
-.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox:hover,
+.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox:hover{
+  background-position: 17px -41px;
+}
 .lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox:hover{
-    background-position: 0px -41px;
+    background-position: 0px -36px;
 }
 .lightbox-img-header .redes .list-redes ul li a.twitter-lightbox,
 .lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox{
   background-image: url(../images/lightbox/twitter.png) !important;
   background-repeat: no-repeat !important;
-  background-size: 30px !important;
-  height: 33px;
   display: block;
 }
 .lightbox-img-header .redes .list-redes ul li a.twitter-lightbox{
-  padding-left: 40px;
+  background-size: 30px !important;
+  height: 33px;
+  padding-left: 53px;
   padding-top: 3px;
+  background-position: 13px 0px;
 }
-.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox{
+  background-size: 27px !important;
+  height: 27px;
+}
+.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox:hover{
+  background-position: 13px -35px;
+}
 .lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox:hover{
-  background-position: 0px -35px;
+  background-position: 0px -31px;
 }
 .lightbox-img-header .redes .list-redes ul li a.google-lightbox,
 .lightbox-video-footer .redes .list-redes ul li a.google-lightbox{
   background-image: url(../images/lightbox/google.png) !important;
   background-repeat: no-repeat !important;
-  background-size: 30px !important;
-  height: 32px;
   display: block;
 }
 .lightbox-img-header .redes .list-redes ul li a.google-lightbox{
-  padding-left: 40px;
+  background-size: 30px !important;
+  height: 32px;
+  padding-left: 55px;
   padding-top: 2px;
   border-bottom: none;
+  background-position: 15px 0px;
 }
-.lightbox-img-header .redes .list-redes ul li a.google-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox{
+  background-size: 28px !important;
+  height: 25px;
+}
+.lightbox-img-header .redes .list-redes ul li a.google-lightbox:hover{
+  background-position: 15px -32px;
+}
 .lightbox-video-footer .redes .list-redes ul li a.google-lightbox:hover{
-  background-position: 0px -31px;
+  background-position: 0px -29px;
 }
 .lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox,
 .lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox{
   background-image: url(../images/lightbox/pinterest.png) !important;
   background-repeat: no-repeat !important;
-  background-size: 30px !important;
-  height: 38px;
   display: block;
 }
 .lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox{
-  padding-left: 40px;
+  background-size: 30px !important;
+  height: 38px;
+  padding-left: 55px;
   padding-top: 5px;
+  background-position: 13px 0px;
 }
-.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox{
+  background-size: 27px !important;
+  height: 30px;
+}
+.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox:hover{
+  background-position: 13px -37px;
+}
 .lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox:hover{
-  background-position: 0px -36px;
+  background-position: 0px -32px;
 }
 .lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox,
 .lightbox-video-footer .redes .list-redes ul li a.google-lightbox,

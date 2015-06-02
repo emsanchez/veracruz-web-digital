@@ -39,12 +39,12 @@
                 echo '</a>';*/
             }
     ?>
-    <?php }?>
+    <?php } ?>
     
-    <!--<a href="<?php //bloginfo('template_url')?>/images/img-test-2.png" data-toggle="lightbox" data-title="A random title" 
-    data-footer="A custom footer text" class="col-sm-4" data-gallery="gallery-img">
-        <img src="<?php //bloginfo('template_url')?>/images/img-test-2.png" class="img-responsive">
-    </a>-->
+    <a href="<?php bloginfo('template_url')?>/images/img-test-2.png" data-toggle="lightbox" data-title="A random title" 
+    data-footer="A custom footer text" class="col-sm-4" data-gallery="gallery">
+        <img src="<?php bloginfo('template_url')?>/images/img-test-2.png" class="img-responsive">
+    </a>
     
     </div>
 
