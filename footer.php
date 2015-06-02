@@ -4,13 +4,14 @@
 		height: 107px;
 	}
 	.logo_veracruz_footer{
-		margin-top: 14px;
-	  margin-left: 10px;
-	  float: right;
-	  margin-right: 14px;
+		  margin-top: 14px;
+		  margin-left: 10px;
+		  float: left;
+		  margin-right: 14px;
 	}
 	.wrap_foter{
-		float: right;
+		  float: right;
+  		margin-right: 222px;
 	}
 	.back-softblue{
 		background-color: #4553A2;
@@ -19,6 +20,7 @@
 	.wrap_footer{
 		border-top: 8px solid #FFF400;
 		color: #FFF;
+
 	}
 	.reset-padding-boostrap{
 		padding-left: 0px;
@@ -30,29 +32,50 @@
 	}
 	.resaltado_url{
 		color: #FFF400;
+		font-family: "ubunturegular";
 	}
 	.url-web-ver{
-		  font-family: "ubunturegular";
+		  font-family: "ubuntulight";
 	}
 	.copyright_font_footer{
 		font-size: 13px;
 		font-family: "ubuntulight";
 	}
+	.texturaFooter{
+		  float: right;
+  		width: 100px;
+	}
+	.wrap_footer_main{
+		width: 100%;
+	}
+	.wrap_textura{
+		float: right;
+	}
 </style>
-    <div class="wrapper-footer-ver">
-    	<div class="wrapper-footer wrap_footer  hidden-xs reset-padding-boostrap">
-    		<div class="col-md-4 col-sm-4 back-blue-color">
-					<div class="wrap_logo">
-						<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer" />
-					</div><!--FIN wrap_logo-->
-				</div>
-				<div class="col-md-8 col-sm-8 back-softblue">
-					<div class="wrap_foter ">
-						<h2 class="url-web-ver">www.<span class="resaltado_url">veracruz-digital</span>.com.mx</h2>
-						<h5 class="copyright_font_footer">Algunos Derechos Reservados &#64; 2015</h5>
-					</div>
-				</div>
+
+
+<div class="reset-padding-boostrap wrap_footer_main wrap_footer">
+	<div class="col-md-8 back-softblue reset-padding-boostrap">
+		<div class="wrap_textura">
+			<img src="<?php bloginfo("template_url") ?>/images/textura-footer.png" alt="" class="texturaFooter" />
 		</div>
+		<div class="wrap_foter ">
+			<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.com.mx</h2>
+			<h5 class="copyright_font_footer">Algunos Derechos Reservados &#64; 2015</h5>
+		</div>
+		
+		
+	</div>
+	<div class="col-md-4 back-blue-color reset-padding-boostrap">
+		<div class="wrap_logo">
+			<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer" />
+		</div><!--FIN wrap_logo-->
+	</div>
+</div>
+	
+
+    <div class="wrapper-footer-ver">
+    	
 
 
 

@@ -41,6 +41,9 @@
     <script src="<?php bloginfo('template_url'); ?>/js/ekko-lightbox.js"></script>
     <!--End lightbox-->
 
+    <!--footer-->
+    <link href="<?php bloginfo('template_url'); ?>/css/footer.css" rel="stylesheet">
+    <!--End footer-->
 	<?php wp_head(); ?>
 </head>
 
