@@ -7,7 +7,7 @@
 		    $categoriaNoticias 	= get_category_by_slug('noticias');
 		    $categoriaNoticias 	= $categoriaNoticias->term_id;
 		        
-		    $blog_query 		= new WP_Query('cat=' . $categoriaNoticias . '&post_type=post&posts_per_page=-1&order=ASC');//
+		    $blog_query 		= new WP_Query('cat=' . $categoriaNoticias . '&post_type=post&posts_per_page=-1&order=DESC');//
 		    $contador 			= 0;
 		    
 		    while (	$blog_query	-> have_posts() ):
@@ -25,16 +25,16 @@
 				<div class="divimageshare" id="<?php echo 'imgshare'.$contador; ?>">
 					<?php if($category == "infografia"){ ?>
 						<h3 class="tituloinfo"><span>#</span>PasaLaVoz<br><span> #</span>Comparte</h3>
-						<button class="linkshare twetter" href="#">Tweet</button>
-						<button class="linkshare faceb" href="#">Compartir</button>
-						<button class="linkshare pinte" href="#">Pin</button>
-						<button class="linkshare plus" href="#">Compartir</button>
+						<button class="linkshare twetter" onclick="window.open('https://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');">Tweet</button>
+						<button class="linkshare faceb" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');">Compartir</button>
+						<button class="linkshare pinte" onclick="window.open('https://www.pinterest.com/pin/create/button/?url=<?php echo $imagen_destacada; ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');">Pin</button>
+						<button class="linkshare plus" onclick="window.open('https://plus.google.com/share?url=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');">Compartir</button>
 					<?php }else{ ?>
 						<h3 class="titulover"><span>#</span>PasaLaVoz <span>#</span>Comparte</h3>
-						<button class="share-btn twetter" href="#"></button>
-						<button class="share-btn faceb" href="#"></button>
-						<button class="share-btn pinte" href="#"></button>
-						<button class="share-btn plus" href="#"></button>
+						<button class="share-btn twetter" onclick="window.open('https://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
+						<button class="share-btn faceb" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
+						<button class="share-btn pinte" onclick="window.open('https://www.pinterest.com/pin/create/button/?url=<?php echo $imagen_destacada; ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
+						<button class="share-btn plus" onclick="window.open('https://plus.google.com/share?url=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
 					<?php } ?>
 				</div>
 				<img class="full-img" src="<?php echo $imagen_destacada; ?>" alt="<?php echo the_title(); ?>">

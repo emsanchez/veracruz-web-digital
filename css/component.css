@@ -1,3 +1,13 @@
+body{
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(220,220,220,0.32)));
+	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
+	background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
+	background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType=1 );
+}
 .linkshare{
 	margin: 0 auto;
   	width: 70%;
@@ -222,6 +232,8 @@ section {
 
 .js .grid {
 	background: url(../images/loading.gif) no-repeat 50% 100px;
+	background-position: bottom;
+	margin-bottom: 10px;
 }
 
 .js .grid.loaded {
@@ -404,8 +416,8 @@ section {
 
 .grid li.animate img,
 .grid li.animate h3 {
-	-webkit-animation: showMe 0.5s step-end forwards;
-	animation: showMe 0.5s step-end forwards;
+	-webkit-animation: showMe 0.1s step-end forwards;
+	animation: showMe 0.1s step-end forwards;
 }
 
 @-webkit-keyframes showMe {
