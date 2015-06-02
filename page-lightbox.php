@@ -1,43 +1,51 @@
 <?php get_header(); ?>
+<style type="text/css">
+    html{ overflow-y: initial; }
+</style>
 <div id="main-content">
     <h3>Loop de prueba de categoria multimedia - Ejemplo de lightbox con Post de WP</h3>
     <?php   
     $args = array( 'category_name'=>'noticias', 'posts_per_page'=>6, 'post_type'=>'post', 'order'=>'ASC' ); ?>
     <p>Note: uses modal plugin title option via <code>data-title</code>, and the custom footer tag using <code>data-footer</code></p>
-    <div class="row">
-        <div class="col-sm-offset-4 col-sm-3">
+        <div class="col-sm-offset-2 col-sm-8">
     <?php
         $query = new WP_Query($args);
         while ($query->have_posts()){
             $query->the_post();            
             $category = get_cat_slug_by_id($post->ID);
-            //the_title();
-            //the_content();
-            //the_excerpt();
-            /* Notas:
-            1.- En el caso de la infografía y la nota se debe visualizar la imagen destacada y el extracto
-            2.- En el caso del video debe ser un custom meta en post */
-            //Codigo para custom meta en post
+
             if( $category == "nota" || $category == "infografia" ){
                 //imagen
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
                 $img_data = $large_image_url[0];
-                echo '<a href="'.$img_data.'" data-toggle="lightbox" data-gallery="multiimages" class="col-sm-4 '.$category.'">';
+                echo '<a href="'.$img_data.'" data-toggle="lightbox" class="col-sm-4 '.$category.'" data-category="'.$category.'" ';
+                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp."';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="'.$img_data.'">';
                 echo '<img src="'.$img_data.'" class="img-responsive">';
                 echo '</a>';
             }else if( $category == "video"){
                 //video
                 $link = get_post_meta($post->ID, 'youtube-link' , true);
-                echo '<a href="http://youtu.be/'.$link.'" data-toggle="lightbox" data-gallery="multiimages" class="col-sm-4 '.$category.'">';
+                echo '<a href="http://youtu.be/'.$link.'" data-toggle="lightbox" style="background-color:#000;height:20px;"  class="col-sm-4 '.$category.'" ';
+                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." data-media="http://youtu.be/'.$link.'" ';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'" data-gallery="gallery" data-excerpt="http://youtu.be/'.$link.'">';
                 echo '<img src="//i1.ytimg.com/vi/'.$link.'/mqdefault.jpg" class="img-responsive">';
                 echo '</a>';
-                /*<div class="iframe-video hidden-more-600">
-                    <iframe src="//www.youtube.com/embed/<?php echo $link; ?>?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-                </div>*/
+
+                /*echo '<a href="http://youtu.be/KsE9iXoXB6s" data-toggle="lightbox"  class="col-sm-4 '.$category.'" ';
+                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." ';
+                echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'" data-gallery="gallery-video">';
+                echo '<img src="//i1.ytimg.com/vi/KsE9iXoXB6s/mqdefault.jpg" class="img-responsive">';
+                echo '</a>';*/
             }
     ?>
     <?php }?>
-        </div>
+    
+    <!--<a href="<?php //bloginfo('template_url')?>/images/img-test-2.png" data-toggle="lightbox" data-title="A random title" 
+    data-footer="A custom footer text" class="col-sm-4" data-gallery="gallery-img">
+        <img src="<?php //bloginfo('template_url')?>/images/img-test-2.png" class="img-responsive">
+    </a>-->
+    
     </div>
 
 </div><!-- #main-content -->
@@ -49,41 +57,49 @@
             return $(this).ekkoLightbox({
                 onShown: function() {
                     if (window.console) {
-                        console.log('this', this );
-                        return console.log('Checking our the events huh?');
+                        //console.log('onShown');
                     }
                 },
                 onNavigate: function(direction, itemIndex) {
                     if (window.console) {
-                        return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+                        //console.log('Navigating '+direction+'. Current item: '+itemIndex);
                     }
                 },
                 onShow: function (e){
                     if (window.console) {
-                        console.log('e', e);
-                        console.log('onShow');
+                        //console.log('e', e);
+                        //console.log('onShow');
                     }
                 },
                 onHide: function (e){
                     if (window.console) {
-                        console.log('e', e);
-                        console.log('onHide');
+                        //console.log('e', e);
+                        //console.log('onHide');
                     }
                 },
                 onHidden: function (e){
                     if (window.console) {
-                        console.log('onHidden');
-                    }
-                },
-                onNavigate: function (e){
-                    if (window.console) {
-                        console.log('e', e);
-                        console.log('onNavigate');
+                        //console.log('onHidden');
                     }
                 },
                 onContentLoaded: function (e){
                     if (window.console) {
-                        console.log('onContentLoaded');
+                        //console.log('this', this);
+                        var category = this.options.category;
+                        //console.log('category', category);
+                        var selector;
+                        if( category == 'video'){
+                            selector = ".lightbox-video-footer";
+                        }else{
+                            selector = ".lightbox-img-header";
+                            //Reajustar tamano de dialog
+                            var widthHeader = this.widthHeader.width();
+                            var dialog = $('div.ekko-lightbox .modal-dialog');
+                            var widthDialog = dialog.width();
+                            var widthNew = widthHeader + widthDialog;
+                            dialog.css('max-width', widthNew);
+                        }
+                        //console.log('onContentLoaded');
                     }
                 }
             });

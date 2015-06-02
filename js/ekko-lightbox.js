@@ -1,51 +1,154 @@
 /*
 Lightbox for Bootstrap 3 by @ashleydw
 https://github.com/ashleydw/lightbox
-
 License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
 */
-
-
 (function() {
   "use strict";
   var $, EkkoLightbox;
 
   $ = jQuery;
 
+  var Template = function(category, title, excerpt, permalink, media){
+    return {
+      
+      getTemplate: function(){
+        var facebook, twitter, google, pinterest, header, footer, mainContainer = "", headerImg ;
+        //console.log('category temaplete', category);
+        //console.log('title, temaplete', title);
+        //console.log('excerpt temaplete', excerpt);
+
+        //Maquetado Video
+        if( category == 'video'){
+          
+          facebook = '<a class="facebook-lightbox" href="http://www.facebook.com/sharer.php?u='+permalink+'" target="_blank"></a>';
+          twitter = '<a class="twitter-lightbox" href="https://twitter.com/intent/tweet?text='+title+'" target="_blank"></a>';
+          google = '<a class="google-lightbox" href="https://plus.google.com/share?url='+permalink+'" target="_blank"></a>';
+          pinterest = '<a class="pinterest-lightbox" href="https://www.pinterest.com/pin/create/button/?url='+media+'" target="_blank"></a>';
+
+          header = '<div class="modal-header lightbox-video-header">';
+          header += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') +'>' + title + '</h4><a href="'+excerpt+'" '+ (excerpt ? '' : ' style="display:none"')+' >http://"'+excerpt+'"</a></div>';
+          footer = '<div class="modal-footer lightbox-video-footer">';
+          footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><div class="hashtag img-responsive"></div></div>';
+          footer += '<div class="redes col-xs-12 col-sm-8 col-md-8">';
+          footer += '<div class="list-redes">';
+          footer += '<ul>';
+          footer += '<li>'+twitter+'</li>';
+          footer += '<li>'+facebook+'</li>';
+          footer += '<li>'+pinterest+'</li>';
+          footer += '<li>'+google+'</li>';
+          footer += '</ul>';
+          footer += '</div>';
+          footer += '</div></div>';
+        
+          mainContainer += '<div class="modal-content lightbox-custom-video">';
+          mainContainer += '<div class="modal-body lightbox-video-body">';
+          mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
+          mainContainer += '</div>';
+          mainContainer += header;
+          mainContainer += footer;
+          mainContainer += '</div>';
+
+        }
+        //Maquetado default
+        else{
+          
+          facebook = '<a class="facebook-lightbox" href="http://www.facebook.com/sharer.php?u='+permalink+'" target="_blank">Compartir</a>';
+          twitter = '<a class="twitter-lightbox" href="https://twitter.com/intent/tweet?text='+title+'" target="_blank">Tweet</a>';
+          google = '<a class="google-lightbox" href="https://plus.google.com/share?url='+permalink+'" target="_blank">Plus</a>';
+          pinterest = '<a class="pinterest-lightbox" href="https://www.pinterest.com/pin/create/button/?url='+media+'" target="_blank">Pin it</a>';
+
+          headerImg = '<div class="modal-header lightbox-img-header col-xs-12 col-sm-4 col-md-4">';
+          headerImg += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') + '>' + title + '</h4>';
+          headerImg += '<div class="lightbox-img-la-voz-redes">';
+          headerImg += '<div class="hashtag img-responsive"></div>';
+          headerImg += '<div class="redes">';
+          headerImg += '<div class="list-redes">';
+          headerImg += '<ul>';
+          headerImg += '<li>'+twitter+'</li>';
+          headerImg += '<li>'+facebook+'</li>';
+          headerImg += '<li>'+pinterest+'</li>';
+          headerImg += '<li>'+google+'</li>';
+          headerImg += '</ul>';
+          headerImg += '</div></div></div>';
+          headerImg += '<div class="lightbox-img-la-voz-pie"></div>';
+          headerImg += '</div>';
+          
+          footer = '<div class="modal-footer lightbox-video-footer">';
+          footer += '</div>';
+
+          mainContainer += '<div class="modal-content lightbox-custom-img">';
+          mainContainer += headerImg;
+          mainContainer += '<div class="modal-body lightbox-img-body col-xs-12 col-sm-8 col-md-8">';
+          mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
+          mainContainer += '</div>';
+          mainContainer += '</div>';
+
+        }
+        return mainContainer;
+      }
+
+    }
+  };
+
   EkkoLightbox = function(element, options) {
-    var content, footer, header,
-      _this = this;
+    var content, footer, header, headerImg, _this = this;
+    var facebook, twitter, google, pinterest;
     this.options = $.extend({
-      title: null,
-      footer: null,
-      remote: null
+    title: null,
+    footer: null,
+    remote: null,
+    category: null,
+    permalink: null,
+    excerpt: null,
+    media: null
     }, $.fn.ekkoLightbox.defaults, options || {});
     this.$element = $(element);
     content = '';
     this.modal_id = this.options.modal_id ? this.options.modal_id : 'ekkoLightbox-' + Math.floor((Math.random() * 1000) + 1);
-    header = '<div class="modal-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4></div>';
-    footer = '<div class="modal-footer"' + (this.options.footer ? '' : ' style="display:none"') + '>' + this.options.footer + '</div>';
-    $(document.body).append('<div id="' + this.modal_id + '" class="ekko-lightbox modal fade" tabindex="-1"><div class="modal-dialog"><div class="modal-content">' + header + '<div class="modal-body"><div class="ekko-lightbox-container"><div></div></div></div>' + footer + '</div></div></div>');
+    
+    var category = this.options.category;
+    var title = this.options.title;
+    var excerpt = this.options.excerpt;
+    var permalink = this.options.permalink;
+    var media = this.options.media;
+
+    //Maquetado LightBox
+    var mainContainer = "";
+    mainContainer += '<div id="' + this.modal_id + '" class="ekko-lightbox modal fade custom" tabindex="-1">';
+    mainContainer += '<div class="modal-dialog lightbox-modal-dialog">';
+    var template = new Template(category, title, excerpt, permalink, media ).getTemplate();
+    mainContainer += template;
+    mainContainer += '</div></div>';
+
+    $(document.body).append(mainContainer);
+  
     this.modal = $('#' + this.modal_id);
     this.modal_dialog = this.modal.find('.modal-dialog').first();
     this.modal_content = this.modal.find('.modal-content').first();
     this.modal_body = this.modal.find('.modal-body').first();
     this.lightbox_container = this.modal_body.find('.ekko-lightbox-container').first();
     this.lightbox_body = this.lightbox_container.find('> div:first-child').first();
+
+    this.widthHeader = this.modal.find('.modal-dialog').find('.lightbox-custom-img').find('.lightbox-img-header');
+    
     this.showLoading();
     this.modal_arrows = null;
+    
     this.border = {
       top: parseFloat(this.modal_dialog.css('border-top-width')) + parseFloat(this.modal_content.css('border-top-width')) + parseFloat(this.modal_body.css('border-top-width')),
       right: parseFloat(this.modal_dialog.css('border-right-width')) + parseFloat(this.modal_content.css('border-right-width')) + parseFloat(this.modal_body.css('border-right-width')),
       bottom: parseFloat(this.modal_dialog.css('border-bottom-width')) + parseFloat(this.modal_content.css('border-bottom-width')) + parseFloat(this.modal_body.css('border-bottom-width')),
       left: parseFloat(this.modal_dialog.css('border-left-width')) + parseFloat(this.modal_content.css('border-left-width')) + parseFloat(this.modal_body.css('border-left-width'))
     };
+    
     this.padding = {
       top: parseFloat(this.modal_dialog.css('padding-top')) + parseFloat(this.modal_content.css('padding-top')) + parseFloat(this.modal_body.css('padding-top')),
       right: parseFloat(this.modal_dialog.css('padding-right')) + parseFloat(this.modal_content.css('padding-right')) + parseFloat(this.modal_body.css('padding-right')),
       bottom: parseFloat(this.modal_dialog.css('padding-bottom')) + parseFloat(this.modal_content.css('padding-bottom')) + parseFloat(this.modal_body.css('padding-bottom')),
       left: parseFloat(this.modal_dialog.css('padding-left')) + parseFloat(this.modal_content.css('padding-left')) + parseFloat(this.modal_body.css('padding-left'))
     };
+    
     this.modal.on('show.bs.modal', this.options.onShow.bind(this)).on('shown.bs.modal', function() {
       _this.modal_shown();
       return _this.options.onShown.call(_this);
@@ -56,10 +159,12 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       _this.modal.remove();
       return _this.options.onHidden.call(_this);
     }).modal('show', options);
+
     return this.modal;
   };
 
   EkkoLightbox.prototype = {
+
     modal_shown: function() {
       var video_id,
         _this = this;
@@ -76,16 +181,25 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           this.gallery_index = this.gallery_items.index(this.$element);
           $(document).on('keydown.ekkoLightbox', this.navigate.bind(this));
           if (this.options.directional_arrows && this.gallery_items.length > 1) {
-            this.lightbox_container.append('<div class="ekko-lightbox-nav-overlay"><a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a><a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a></div>');
-            this.modal_arrows = this.lightbox_container.find('div.ekko-lightbox-nav-overlay').first();
-            this.lightbox_container.find('a' + this.strip_spaces(this.options.left_arrow_class)).on('click', function(event) {
+            
+            //Rows
+            this.modal_dialog.append('<div class="ekko-lightbox-nav-overlay">'+
+              '<a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a>'+
+              '<a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a>'+
+              '<button type="button" class="close lightbox-img-video-close" data-dismiss="modal" aria-hidden="true"></button>'+
+              '</div>');
+            this.modal_arrows = this.modal_dialog.find('div.ekko-lightbox-nav-overlay').first();
+            
+            this.modal_dialog.find('a' + this.strip_spaces(this.options.left_arrow_class)).on('click', function(event) {
               event.preventDefault();
               return _this.navigate_left();
             });
-            this.lightbox_container.find('a' + this.strip_spaces(this.options.right_arrow_class)).on('click', function(event) {
+            
+            this.modal_dialog.find('a' + this.strip_spaces(this.options.right_arrow_class)).on('click', function(event) {
               event.preventDefault();
               return _this.navigate_right();
             });
+
           }
         }
         if (this.options.type) {
@@ -163,15 +277,42 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       this.gallery_index = index;
       this.$element = $(this.gallery_items.get(this.gallery_index));
       this.updateTitleAndFooter();
+
       src = this.$element.attr('data-remote') || this.$element.attr('href');
+      //console.log('src', src);
+      //console.log('data type', this.$element.attr('data-type'));
+      //console.log('category', this.$element.attr('data-category'));
+      var category = this.$element.attr('data-category');
+      var title =  this.$element.attr('data-title');
+      var excerpt =  this.$element.attr('data-excerpt');
+      var permalink = this.$element.attr('data-permalink');
+      var media = this.$element.attr('data-media');
+      var template = new Template( category, title, excerpt, permalink, media ).getTemplate();
+      //vaciar modal content
+      this.modal_content.remove();
+      //agregar content a dialog
+      $(template).appendTo(this.modal_dialog);
+      this.modal = $('#' + this.modal_id);
+      this.modal_dialog = this.modal.find('.modal-dialog').first();
+      this.modal_content = this.modal.find('.modal-content').first();
+      this.modal_body = this.modal.find('.modal-body').first();
+      this.lightbox_container = this.modal_body.find('.ekko-lightbox-container').first();
+      this.lightbox_body = this.lightbox_container.find('> div:first-child').first();
+
       this.detectRemoteType(src, this.$element.attr('data-type') || false);
+
       if (this.gallery_index + 1 < this.gallery_items.length) {
+        //console.log('cambio de slide en galeria');
         next = $(this.gallery_items.get(this.gallery_index + 1), false);
         src = next.attr('data-remote') || next.attr('href');
+        //console.log('next src', src);
         if (next.attr('data-type') === 'image' || this.isImage(src)) {
+          //console.log('se vuelve a ejecutar preloadImage en next');
           return this.preloadImage(src, false);
         }
+      
       }
+
     },
     navigate_left: function() {
       if (this.gallery_items.length === 1) {
@@ -200,10 +341,13 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     detectRemoteType: function(src, type) {
       var video_id;
       type = type || false;
+      //console.log('data type en detectRemoteType ', type);
       if (type === 'image' || this.isImage(src)) {
+        //console.log('type en detectRemoteType es image');
         this.options.type = 'image';
         return this.preloadImage(src, true);
       } else if (type === 'youtube' || (video_id = this.getYoutubeId(src))) {
+        //console.log('type en detectRemoteType es youtube');
         this.options.type = 'youtube';
         return this.showYoutubeVideo(video_id);
       } else if (type === 'vimeo' || (video_id = this.getVimeoId(src))) {
@@ -216,6 +360,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
         this.options.type = 'video';
         return this.showVideoIframe(video_id);
       } else {
+        //console.log('type false se ejecuta loadRemoteContent');
         this.options.type = 'url';
         return this.loadRemoteContent(src);
       }
@@ -244,7 +389,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     },
     showYoutubeVideo: function(id) {
       var height, width;
-      width = this.checkDimensions(this.$element.data('width') || 560);
+      width = this.checkDimensions(this.$element.data('width') || 700);
       height = width / (560 / 315);
       return this.showVideoIframe('//www.youtube.com/embed/' + id + '?badge=0&autoplay=1&html5=1', width, height);
     },
@@ -313,15 +458,17 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       return this;
     },
     preloadImage: function(src, onLoadShowImage) {
+      //console.log('se ejecuta preloadImage, onLoadShowImage', onLoadShowImage);
       var img,
         _this = this;
       img = new Image();
       if ((onLoadShowImage == null) || onLoadShowImage === true) {
+        //console.log('se va agregar imagen');
         img.onload = function() {
           var image;
           image = $('<img />');
           image.attr('src', img.src);
-          image.addClass('img-responsive');
+          image.addClass('img-full');
           _this.lightbox_body.html(image);
           if (_this.modal_arrows) {
             _this.modal_arrows.css('display', 'block');
@@ -386,7 +533,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
     directional_arrows: true,
     type: null,
     always_show_close: true,
-    loadingMessage: 'Loading...',
+    loadingMessage: 'Cargando...',
     onShow: function() {},
     onShown: function() {},
     onHide: function() {},
