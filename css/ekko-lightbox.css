@@ -5,10 +5,10 @@
  * License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
  */
 
+/*Navegaciion*/
 .ekko-lightbox-container {
   position: relative;
 }
-
 .ekko-lightbox-nav-overlay {
   position: absolute;
   top: 0;
@@ -16,47 +16,355 @@
   z-index: 100;
   width: 100%;
   height: 100%;
+  display: block !important;
 }
-
 .ekko-lightbox-nav-overlay a {
   z-index: 100;
   display: block;
   width: 49%;
   height: 100%;
-  font-size: 30px;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000;
-  opacity: 0;
   filter: dropshadow(color=#000000, offx=2, offy=2);
   -webkit-transition: opacity 0.5s;
-     -moz-transition: opacity 0.5s;
-       -o-transition: opacity 0.5s;
-          transition: opacity 0.5s;
-}
-
-.ekko-lightbox-nav-overlay a:empty {
-  width: 49%;
-}
-
-.ekko-lightbox a:hover {
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   text-decoration: none;
-  opacity: 1;
 }
-
 .ekko-lightbox .glyphicon-chevron-left {
   left: 0;
   float: left;
-  padding-left: 15px;
-  text-align: left;
+  top: 50%;
+  height: auto;
+  background: url(../images/lightbox/atras.png);
+  background-repeat: no-repeat;
+  background-size: 52px;
+  background-position: top;
+  display: block;
+  height: 131px;
+  width: 52px;
+  text-decoration: none;
 }
-
+.ekko-lightbox .glyphicon-chevron-left:hover{
+  background-position: 0px -137px;
+  text-decoration: none;
+}
 .ekko-lightbox .glyphicon-chevron-right {
   right: 0;
   float: right;
-  padding-right: 15px;
-  text-align: right;
+  top: 50%;
+  background: url(../images/lightbox/adelante.png);
+  background-repeat: no-repeat;
+  background-size: 52px;
+  background-position: top;
+  display: block;
+  height: 131px;
+  width: 52px;
+  text-decoration: none;
 }
-
+.ekko-lightbox .glyphicon-chevron-right:hover{
+  background-position: 0px -137px;
+  text-decoration: none;
+}
+.glyphicon-chevron-right:before,
+.glyphicon-chevron-left:before{
+    content: "" !important;
+}
 .ekko-lightbox .modal-footer {
   text-align: left;
+}
+/*Estilo infografia y video*/
+.modal-backdrop{
+  background-color: #EBEBEB !important;
+}
+.lightbox-modal-dialog{
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 20px auto !important;
+}
+.lightbox-video-body,
+.lightbox-img-body{
+  padding: 0px;
+}
+.lightbox-custom-img,
+.lightbox-custom-video{
+  width: 50% !important;
+  margin: 0 auto !important;
+}
+/*Close buton*/
+.lightbox-img-video-close{
+  float: right;
+  text-shadow: none;
+  opacity: 1.0;
+  top: 0;
+  position: relative;
+  background: url(../images/lightbox/cerrar.png) !important;
+  background-repeat: no-repeat;
+  background-size: 36px !important;
+  background-position: top;
+  display: block;
+  height: 36px;
+  width: 36px;
+  margin-right: -30px;
+}
+.lightbox-img-video-close button{
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  top: 50%;
+  right: 0;
+  margin-right: -100px;
+  height: auto;
+}
+.lightbox-img-video-close:hover{
+  color: #FFE23C;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=100);
+  opacity: 1.0;
+}
+/*Video*/
+.lightbox-custom-video{
+  padding-bottom: 8px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  z-index: 200;
+}
+/*Footer Video*/
+.lightbox-video-footer{
+  border-top: none;
+  padding: 0px;
+  border-bottom: 5px solid #FFF400;
+  display: block !important;
+}
+.lightbox-video-footer .pasa-la-voz,
+.lightbox-video-footer .redes{
+  float: left;
+  height: 72px;
+  padding: 10px;
+}
+.lightbox-video-footer .pasa-la-voz{
+  background-color: #354184;
+}
+.lightbox-video-footer .hashtag{
+  margin: 0 auto;
+  width: 154px;
+  height: 52px;
+  background: url(../images/lightbox/hashtag.png);
+  background-repeat: no-repeat;
+  background-size: 154px;
+}
+.lightbox-video-footer .redes{
+  background-color: #4553A2;
+}
+.lightbox-video-footer .redes .list-redes{
+  width: 100%;
+  margin-top: 9px;
+  float: left;
+}
+.lightbox-video-footer .redes .list-redes ul{
+  list-style: none;
+  margin: 0px;
+  width: 100%;
+  float: left;
+}
+.lightbox-video-footer .redes .list-redes ul li{
+  float: left;
+  margin-right: 13px;
+  margin-left: 13px;
+}
+/*Header Video*/
+.lightbox-video-header,
+.lightbox-img-header{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: none;
+}
+.lightbox-video-header h4,
+.lightbox-img-header h4{
+  font-family: 'ubuntulight';
+  color: #8B8B8B;
+  line-height: 20px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.lightbox-video-header a,
+.lightbox-img-header a{
+  font-size: 13px;
+  color: #3AC6B1;
+  text-decoration: none;
+}
+
+/*Infografia*/
+.lightbox-custom-img{
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 200;
+}
+.lightbox-img-body{
+  padding: 0px;
+  float: right;
+  overflow: hidden;
+}
+/*Header*/
+.lightbox-img-header{
+  float: right;
+  overflow: hidden;
+  padding: 0px;
+}
+.lightbox-img-header h4{
+  margin-top: 20px;
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+}
+.lightbox-img-la-voz-redes{
+  background-color: #354184;
+  width: 100%;
+  float: left;
+  height: 100%;
+  padding: 10px;
+}
+.lightbox-img-la-voz-redes .hashtag{
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 154px;
+  height: 52px;
+  background: url(../images/lightbox/hashtag.png);
+  background-repeat: no-repeat;
+  background-size: 154px;
+}
+.lightbox-img-header .redes{
+    float: left;
+    width: 100%;
+}
+.lightbox-img-header .redes .list-redes{
+  width: 100%;
+  margin-top: 13px;
+  float: left;
+}
+.lightbox-img-header .redes .list-redes ul{
+  float: left;
+  list-style: none;
+  margin: 0px;
+  width: 100%;
+}
+.lightbox-img-header .redes .list-redes ul li{
+  margin-bottom: 10px;
+  margin-left: 20px;
+  height: auto;
+}
+.lightbox-img-header .redes .list-redes ul li a,
+.lightbox-video-footer .redes .list-redes ul li a{
+  font-family: 'ubuntulight';
+  font-size: 15px;
+  color: #FFF;
+  text-decoration: none;
+}
+.lightbox-img-header .redes .list-redes ul li a{
+  border-bottom: 1px solid rgba(51, 188, 161, 0.3);
+  width: 70%;
+}
+.lightbox-img-la-voz-pie{
+  padding: 6px;
+  border-bottom: 4px solid #FFF400;
+  background-color: #4553A2;
+  clear: both;
+}
+/*AddThis Lightbox  y Redes sociales*/
+.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox{
+  background-image: url(../images/lightbox/facebook.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px !important;
+  height: 42px;
+  display: block;
+}
+.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox{
+  padding-left: 40px;
+  padding-top: 8px;
+}
+.lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox{
+  width: 20px; 
+}
+.lightbox-img-header .redes .list-redes ul li a.facebook-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.facebook-lightbox:hover{
+    background-position: 0px -41px;
+}
+.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox{
+  background-image: url(../images/lightbox/twitter.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 30px !important;
+  height: 33px;
+  display: block;
+}
+.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox{
+  padding-left: 40px;
+  padding-top: 3px;
+}
+.lightbox-img-header .redes .list-redes ul li a.twitter-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox:hover{
+  background-position: 0px -35px;
+}
+.lightbox-img-header .redes .list-redes ul li a.google-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox{
+  background-image: url(../images/lightbox/google.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 30px !important;
+  height: 32px;
+  display: block;
+}
+.lightbox-img-header .redes .list-redes ul li a.google-lightbox{
+  padding-left: 40px;
+  padding-top: 2px;
+  border-bottom: none;
+}
+.lightbox-img-header .redes .list-redes ul li a.google-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox:hover{
+  background-position: 0px -31px;
+}
+.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox{
+  background-image: url(../images/lightbox/pinterest.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 30px !important;
+  height: 38px;
+  display: block;
+}
+.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox{
+  padding-left: 40px;
+  padding-top: 5px;
+}
+.lightbox-img-header .redes .list-redes ul li a.pinterest-lightbox:hover,
+.lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox:hover{
+  background-position: 0px -36px;
+}
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.pinterest-lightbox
+{
+  width: 30px;
+}
+.lightbox-video-footer .redes .list-redes ul li a.twitter-lightbox,
+.lightbox-video-footer .redes .list-redes ul li a.google-lightbox{
+  margin-top: 5px;
+}
+/*Responsive*/
+@media (max-width: 991px){
+  /*.lightbox-custom-img,.lightbox-custom-video{
+    width: 100% !important;
+    margin: 0 auto !important;
+  }*/ 
 }
