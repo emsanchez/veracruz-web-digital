@@ -28,11 +28,12 @@
     </div>
     <div class="col-md-3">
     	<p>
-        	Las redes sociales, sin duda, han conseguido enlazar a las personas
+        	<span class="pleka-1"></span>Las redes sociales, sin duda, han conseguido enlazar a las personas
             de una forma novedosa y eficaz, pero existe también una serie de amenazas 
             a las que tenemos que hacer frente para evitar cualquier daño o situación 
-			peligrosa
+			peligrosa<span class="pleka-2"></span>
         </p>
+        <p class="text-right title-name">Karime</p>
     	<div class="nav-pager"></div>
 	</div>
     <div class="clearfix"></div>

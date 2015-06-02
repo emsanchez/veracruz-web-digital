@@ -58,7 +58,7 @@
     <div class="clearfix"></div>
     <div class="bg-yellow">
         <div class="container-fluid">
-            <p>Por un uso responsable de internet y redes sociales</p>
+            <p>Por un uso responsable de <strong>internet y redes sociales</strong></p>
         </div>
     </div>
 </div>
