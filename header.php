@@ -11,6 +11,12 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
+    <!-- METAS COMPARTIR -->
+    <meta property="og:url" content="http://www.veracruzdigital.gob.mx" />
+    <meta property="og:title" content="Veracruz Digital" />
+    <meta property="og:description" content="Gobierno del EStado de Veracruz" />
+    <meta property="og:image" content="<?php bloginfo('template_url')?>/images/logo100X100.png" />
+    
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -40,13 +46,12 @@
     <link href="<?php bloginfo('template_url'); ?>/css/ekko-lightbox.css" rel="stylesheet">
     <script src="<?php bloginfo('template_url'); ?>/js/ekko-lightbox.js"></script>
     <!--End lightbox-->
-
+    
     <!-- METAS COMPARTIR -->
     <meta property="og:url" content="http://www.veracruzdigital.gob.mx" />
     <meta property="og:title" content="Veracruz Digital" />
     <meta property="og:description" content="Gobierno del EStado de Veracruz" />
     <meta property="og:image" content="<?php bloginfo('template_url')?>/images/logo100X100.png" />
-
 
     <!--Addthis-->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528bc01961578d5f" async="async"></script>
