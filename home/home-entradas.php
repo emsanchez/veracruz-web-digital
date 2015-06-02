@@ -2,7 +2,8 @@
 <script src="<?php bloginfo('template_url')?>/js/modernizr.custom.js"></script>
 <section class="grid-wrap">
 	<ul class="grid swipe-right" id="grid">
-		<?php  
+		<?php 
+			wp_reset_query(); 
 		    global $query_string;
 		    $categoriaNoticias 	= get_category_by_slug('noticias');
 		    $categoriaNoticias 	= $categoriaNoticias->term_id;
@@ -25,7 +26,7 @@
 			<?php if( $category == "video" ){ ?>
 			<a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>">
 			<?php }else if( $category == "enlaces-externos" ){ ?>
-			<a target="_blank" href="<?php echo get_the_excerpt(); ?>">
+			<a target="_blank" href="<?php echo get_the_excerpt(); ?>" class="<?php echo $category; ?>">
 			<?php }else{?>
 			<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>">
 			<?php } ?><!-- EMPIEZA EL CONTENIDO INTERNO DE LA NOTICIA -->
@@ -38,10 +39,10 @@
 						<button class="linkshare plus" onclick="window.open('https://plus.google.com/share?url=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');">Compartir</button>
 					<?php }else{ ?>
 						<h3 class="titulover"><span>#</span>PasaLaVoz <span>#</span>Comparte</h3>
-						<button class="share-btn twetter" onclick="window.open('https://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
-						<button class="share-btn faceb" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
-						<button class="share-btn pinte" onclick="window.open('https://www.pinterest.com/pin/create/button/?url=<?php echo $imagen_destacada; ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
-						<button class="share-btn plus" onclick="window.open('https://plus.google.com/share?url=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
+						<button class="share-btn twetter-leer" onclick="window.open('https://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
+						<button class="share-btn faceb-leer" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
+						<button class="share-btn pinte-leer" onclick="window.open('https://www.pinterest.com/pin/create/button/?url=<?php echo $imagen_destacada; ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
+						<button class="share-btn plus-leer" onclick="window.open('https://plus.google.com/share?url=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
 					<?php } ?>
 				</div>
 				<img class="full-img" src="<?php echo $imagen_destacada; ?>" alt="<?php echo the_title(); ?>">
@@ -60,11 +61,11 @@
 			<?php ?>
 			<p class="leer-mas <?php echo $category; ?>">
 				<?php if( $category == "video" ){ ?>
-				<a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>"><?php echo $titulo; ?></a>
+				<a href="<?php echo $link; ?>" data-toggle="lightbox" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>"><?php echo $titulo; ?></a>
 				<?php }else if( $category == "enlaces-externos" ){ ?>
 				<a target="_blank" href="<?php echo get_the_excerpt(); ?>"><?php echo $titulo; ?></a>
 				<?php }else{?>
-				<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>"><?php echo $titulo; ?></a>
+				<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>"><?php echo $titulo; ?></a>
 				<?php } ?>
 			</p>
 			<div class="separador"></div>
@@ -146,9 +147,11 @@
 		if(checkClass==false){
 			$( classe ).addClass( "shareback" );
 			$( classeDiv ).addClass( "changeback" );
+			return false;
 		}else{
 			$( classe ).removeClass( "shareback" );
 			$( classeDiv ).removeClass( "changeback" );
+			return false;
 		}
 	}
 </script>
