@@ -381,14 +381,34 @@ section {
 	height: 33px;
 	padding-top: 3px;
 }
+.leer-mas a{
+	font-family: 'ubunturegular' !important;
+	font-size: 17px;
+	color: white;
+	background: transparent !important;
+}
+.leer-mas a:hover{
+	text-decoration: none !important; 
+	color: white !important;
+	background: transparent !important;
+}
+.infografia:hover{
+	background: #354184 !important;
+}
 .infografia{
 	background: #4553A2;
 }
 .video{
 	background: #ED4100;
 }
+.video:hover{
+	background: #ae1900;
+}
 .enlaces-externos{
 	background: #33BCA1;
+}
+.enlaces-externos:hover{
+	background: #26947e;
 }
 .container-text a{
 	color: #33BCA1;

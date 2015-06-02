@@ -27,7 +27,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           pinterest = '<a class="pinterest-lightbox" href="https://www.pinterest.com/pin/create/button/?url='+media+'" target="_blank"></a>';
 
           header = '<div class="modal-header lightbox-video-header">';
-          header += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') +'>' + title + '</h4><a href="'+excerpt+'" '+ (excerpt ? '' : ' style="display:none"')+' >http://"'+excerpt+'"</a></div>';
+          header += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') +'>' + title + '</h4><a href="'+excerpt+'" '+ (excerpt ? '' : ' style="display:none"')+' >'+excerpt+'</a></div>';
           footer = '<div class="modal-footer lightbox-video-footer">';
           footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><div class="hashtag img-responsive"></div></div>';
           footer += '<div class="redes col-xs-12 col-sm-8 col-md-8">';

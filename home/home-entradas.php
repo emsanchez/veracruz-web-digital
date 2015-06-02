@@ -17,11 +17,18 @@
 		        
 		        $obtiene_destacada = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
 		        $imagen_destacada   = $obtiene_destacada[0];
+		        $link = get_post_meta($post->ID, 'video' , true);
 		        $category = get_the_category(); 
 				$category = $category[0]->cat_name;
 		?>
-		<li>
-			<a href="#">
+		<li><!-- SE COLOCA UN HREF PARA CADA TIPO DE ENTRADA VIDEO, ENLACE EXTERNO Y OTRAS -->
+			<?php if( $category == "video" ){ ?>
+			<a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>">
+			<?php }else if( $category == "enlaces-externos" ){ ?>
+			<a target="_blank" href="<?php echo get_the_excerpt(); ?>">
+			<?php }else{?>
+			<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>">
+			<?php } ?><!-- EMPIEZA EL CONTENIDO INTERNO DE LA NOTICIA -->
 				<div class="divimageshare" id="<?php echo 'imgshare'.$contador; ?>">
 					<?php if($category == "infografia"){ ?>
 						<h3 class="tituloinfo"><span>#</span>PasaLaVoz<br><span> #</span>Comparte</h3>
@@ -50,7 +57,16 @@
 						<p><?php echo get_the_excerpt(); ?></p>
 					<?php } ?>		
 			</div>
-			<p class="leer-mas <?php echo $category; ?>"><?php echo $titulo; ?></p>
+			<?php ?>
+			<p class="leer-mas <?php echo $category; ?>">
+				<?php if( $category == "video" ){ ?>
+				<a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>"><?php echo $titulo; ?></a>
+				<?php }else if( $category == "enlaces-externos" ){ ?>
+				<a target="_blank" href="<?php echo get_the_excerpt(); ?>"><?php echo $titulo; ?></a>
+				<?php }else{?>
+				<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>"><?php echo $titulo; ?></a>
+				<?php } ?>
+			</p>
 			<div class="separador"></div>
 		</li>
 		<?php 
@@ -69,6 +85,59 @@
 		new GridScrollFx( document.getElementById( 'grid' ), {
 			viewportFactor : 0.2
 		});
+		 //delegate calls to data-toggle="lightbox"
+        $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+            event.preventDefault();
+            return $(this).ekkoLightbox({
+                onShown: function() {
+                    if (window.console) {
+                        //console.log('onShown');
+                    }
+                },
+                onNavigate: function(direction, itemIndex) {
+                    if (window.console) {
+                        //console.log('Navigating '+direction+'. Current item: '+itemIndex);
+                    }
+                },
+                onShow: function (e){
+                    if (window.console) {
+                        //console.log('e', e);
+                        //console.log('onShow');
+                    }
+                },
+                onHide: function (e){
+                    if (window.console) {
+                        //console.log('e', e);
+                        //console.log('onHide');
+                    }
+                },
+                onHidden: function (e){
+                    if (window.console) {
+                        //console.log('onHidden');
+                    }
+                },
+                onContentLoaded: function (e){
+                    if (window.console) {
+                        //console.log('this', this);
+                        var category = this.options.category;
+                        //console.log('category', category);
+                        var selector;
+                        if( category == 'video'){
+                            selector = ".lightbox-video-footer";
+                        }else{
+                            selector = ".lightbox-img-header";
+                            //Reajustar tamano de dialog
+                            var widthHeader = this.widthHeader.width();
+                            var dialog = $('div.ekko-lightbox .modal-dialog');
+                            var widthDialog = dialog.width();
+                            var widthNew = widthHeader + widthDialog;
+                            dialog.css('max-width', widthNew);
+                        }
+                        //console.log('onContentLoaded');
+                    }
+                }
+            });
+        });
 	});
 	function mostrarHover(ident,btnident){
 		var classe 		= '#'+ident;
