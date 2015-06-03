@@ -56,13 +56,10 @@
     <!--Addthis-->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528bc01961578d5f" async="async"></script>
 
-    <!--footer-->
-    <link href="<?php bloginfo('template_url'); ?>/css/footer.css" rel="stylesheet">
-    <!--End footer-->
 	<?php wp_head(); ?>
     
     <script type="text/javascript">
-		$(document).ready(function() {
+		jQuery(document).ready(function($) {
         	$('li.search').on('click', function(event){
 				$('.tap-search').slideToggle('slow');
 				event.stopPropagation();
