@@ -609,8 +609,6 @@ hr {
 	background-color: #4553A2;
 }
 
-
-
  /**
  * FRONT PAGE
  * -----------------------------------------------------------------------------
@@ -767,7 +765,22 @@ hr {
 }
 /*---Device less ipad---*/
 @media screen and (max-width: 767px){ /* <= device until 767*/
-
+	.btn-open-nav img{
+		-webkit-transition: -webkit-transform 100ms ease-out;
+		-moz-transition: -moz-transform 100ms ease-out;
+		transition: transform 100ms ease-out;
+	}
+	.rotateMe:hover {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	.btn-open-nav{
+		text-align: center;
+	}
+	.btn-open-nav img{
+		margin: 18px 0;
+	}
 }
 
 /*Style devices between  600px - 767px css*/
@@ -779,6 +792,22 @@ hr {
 @media screen and (max-width: 599px){ /* <= device less 599px*/
 	.hidden-less-600{
 		display:none !important;
+	}
+	.logo img{
+		width:70%;
+		float:left;
+	}
+	.bg-yellow p {
+	  font-size: 12px;
+	}
+	.btn-open-nav{
+		position: absolute;
+		display: block;
+		width: 23%;
+		height: 100%;
+		right: 0;
+		top: 0;
+		background-color: #4553A2;
 	}
 }
 /*Iphone(landscape) and device with less width*/

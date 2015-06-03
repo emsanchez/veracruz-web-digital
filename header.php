@@ -47,9 +47,6 @@
     <script src="<?php bloginfo('template_url'); ?>/js/ekko-lightbox.js"></script>
     <!--End lightbox-->
 
-    <!--Addthis-->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528bc01961578d5f" async="async"></script>
-
     <!-- Footer -->
     <link href="<?php bloginfo('template_url'); ?>/css/footer.css" rel="stylesheet">
 
@@ -103,15 +100,34 @@
                 
             }
         });
+		
+		$(document).on('click', '.btn-open-nav img',function(event){
+			event.preventDefault();
+			$(this).toggleClass('active');
+			if($(this).hasClass('active')){
+				$(this).css({ "-webkit-transform:" : "rotate(180deg)", "-moz-transform": "rotate(180deg)", "transform": "rotate(180deg)" });
+			}else{
+				$(this).css({ "-webkit-transform:" : "rotate(0deg)", "-moz-transform": "rotate(0deg)", "transform": "rotate(0deg)" });	
+			}
+		});
     </script>
 </head>
 
 <body <?php body_class(); ?>>
 <div class="wrapper-header bg-purple">
-	<div class="col-md-4 bg-purple-bold">
-        <a href="#"><img src="<?php bloginfo('template_url')?>/images/logo.png"></a>
+    <div class="col-md-4 bg-purple-bold">
+        <a href="#" class="logo"><img src="<?php bloginfo('template_url')?>/images/logo.png"></a>
+        <div class="btn-open-nav"><img src="<?php bloginfo('template_url'); ?>/images/flecha-nav.png"></div>
+        <div class="content-nav-xs hidden-md hidden-lg hide">
+        	<ul class="nav-social">
+                <li class="twitter"><a href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
+                <li class="facebook"><a href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
+                <li class="search">Buscar</li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="col-md-7 bg-texture-header">
+    <div class="col-md-7 bg-texture-header visible-md visible-lg">
         <ul class="nav-social">
             <li class="twitter"><a href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
             <li class="facebook"><a href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
