@@ -14,10 +14,9 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       
       getTemplate: function(){
         var facebook, twitter, google, pinterest, header, footer, mainContainer = "", headerImg ;
-        console.log('category temaplete', category);
-        console.log('title, temaplete', title);
-        console.log('excerpt temaplete', excerpt);
-
+        //console.log('category temaplete', category);
+        //console.log('title, temaplete', title);
+        //console.log('excerpt temaplete', excerpt);
         //Maquetado Video
         if( category == 'video'){
           
@@ -78,10 +77,10 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           footer += '</div>';
 
           mainContainer += '<div class="modal-content lightbox-custom-img">';
-          mainContainer += headerImg;
           mainContainer += '<div class="modal-body lightbox-img-body col-xs-12 col-sm-8 col-md-8">';
           mainContainer += '<div class="ekko-lightbox-container"><div></div></div>';
           mainContainer += '</div>';
+          mainContainer += headerImg;
           mainContainer += '</div>';
 
         }
