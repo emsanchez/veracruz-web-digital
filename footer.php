@@ -1,37 +1,24 @@
-<style type="text/css">
-	
-</style>
-
-
-<div class="reset-padding-boostrap wrap_footer_main wrap_footer">
-	<div class="col-md-8 back-softblue reset-padding-boostrap">
-		<div class="wrap_textura">
-			<img src="<?php bloginfo("template_url") ?>/images/textura-footer.png" alt="" class="texturaFooter" />
+<div class="wrapper-footer-ver">
+	<div class="reset-padding-boostrap wrap_footer_main wrap_footer hidden-xs">
+		<div class="col-md-8 back-softblue reset-padding-boostrap">
+			<div class="wrap_textura">
+				<img src="<?php bloginfo("template_url") ?>/images/textura-footer.png" alt="" class="texturaFooter" />
+			</div>
+			<div class="wrap_foter ">
+				<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.com.mx</h2>
+				<h5 class="copyright_font_footer">Algunos Derechos Reservados &#64; 2015</h5>
+			</div>
 		</div>
-		<div class="wrap_foter ">
-			<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.com.mx</h2>
-			<h5 class="copyright_font_footer">Algunos Derechos Reservados &#64; 2015</h5>
+		<div class="col-md-4 back-blue-color reset-padding-boostrap">
+			<div class="wrap_logo">
+				<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer" />
+			</div><!--FIN wrap_logo-->
 		</div>
-		
-		
 	</div>
-	<div class="col-md-4 back-blue-color reset-padding-boostrap">
-		<div class="wrap_logo">
-			<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer" />
-		</div><!--FIN wrap_logo-->
-	</div>
-</div>
-	
-
-    <div class="wrapper-footer-ver">
-    	
-
-
-
 		<div class="container-fluid wrap_footer  visible-xs reset-padding-boostrap">
 			<div class="col-xs-12 back-softblue">
 				<div class="container wrap_foter">
-					<h2 class="url-web-ver">www.veracruz-digital.com.mx</h2>
+					<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.com.mx</h2>
 					<h5 class="copyright_font_footer">Algunos Derechos Reservados &copyright; 2015</h5>
 				</div>
 			</div>
