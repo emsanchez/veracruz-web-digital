@@ -1,0 +1,77 @@
+/*404 - Not found*/
+.not-found{
+	overflow: hidden;
+	background-color: #354184;
+	height: 100%;
+	width: 100%;
+	padding: 50px 0;
+}
+.not-found .bloque-izq,
+.not-found .bloque-der{}
+.not-found .bloque-izq{}
+.not-found .bloque-izq img.cuadro-superior,
+.not-found .bloque-izq img.cuadro-inferior
+{
+	position: absolute;
+}
+.not-found .bloque-izq img.cuadro-superior{
+	right: 0;
+	bottom: 0;
+	width: 63px;
+}
+.not-found .bloque-izq img.cuadro-inferior
+{
+	left: 0;
+	top: 0;
+	width: 117px;
+}
+.not-found .bloque-izq .lo-sentimos img.error-404{
+	width: 187px;
+	padding-bottom: 40px;
+}
+.not-found .bloque-izq .lo-sentimos img.sentimos{
+	width: 260px;
+}
+.not-found .bloque-izq .lo-sentimos{
+	clear: both;
+	float: right;
+	width: 300px;
+	font-family: 'ubunturegular';
+	text-align: right;
+	padding: 70px 0;
+}
+.not-found .bloque-izq .lo-sentimos h3{
+	color: #fff;
+	font-size: 20px;
+	line-height: 25px;
+}
+.not-found .bloque-izq .lo-sentimos a{
+	text-decoration: none;
+	color: #fff;
+	text-align: left;
+	font-size: 18px;
+	background: url(../images/404/pagina-principla.png);
+	background-repeat: no-repeat;
+	background-size: 40px;
+	padding-top: 10px;
+	height: 42px;
+	float: right;
+	padding-right: 50px;
+	background-position: right 0px;
+}
+.not-found .bloque-izq .lo-sentimos a:hover{
+	background-position: right -44px;
+}
+.not-found .bloque-der{
+	text-align: center;
+}
+.not-found .bloque-der a.veracruz-digital{
+	text-decoration: none;
+}
+.not-found .bloque-der a.veracruz-digital img{
+	padding-top: 60px;
+	width: 297px; 
+}
+.not-found .bloque-der a.veracruz-digital:hover{
+	text-decoration: none;
+}
