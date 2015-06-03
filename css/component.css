@@ -523,3 +523,46 @@ section {
 .grid li.shown h3 {
 	visibility: visible;
 }
+@media screen and (max-width: 1042px){ /*< = @screen-md*/
+	.grid {
+  		width: 77% !important;
+	}
+}
+@media screen and (max-width: 942px){ /*< = @screen-md*/
+	.grid {
+  		width: 80% !important;
+	}
+}
+@media screen and (max-width: 880px){ /*< = @screen-md*/
+	.grid {
+  		width: 100% !important;
+	}
+}
+@media screen and (max-width: 780px){ /*< = @screen-md*/
+	.grid {
+  		width: 75% !important;
+	}
+}
+@media screen and (max-width: 650px){ /*< = @screen-md*/
+	.grid {
+  		width: 100% !important;
+	}
+	.grid li{
+		width: 100% !important;
+	}
+	.titulover{
+		font-size: 23px !important;
+	}
+	.share-btn{
+		left: 21%;
+	}
+	.linkshare{
+		width: 50%;
+	}
+	.tituloinfo{
+		font-size: 32px !important;
+	}
+	.tituloinfo br{
+		display: none !important;
+	}
+}
