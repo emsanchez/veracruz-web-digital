@@ -11,7 +11,7 @@
 		</div>
 		<div class="col-md-4 back-blue-color reset-padding-boostrap">
 			<div class="wrap_logo">
-				<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer" />
+				<a href="http://www.veracruz.gob.mx/" target="_blank"><img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer" /></a>
 			</div><!--FIN wrap_logo-->
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="col-xs-12 back-blue-color">
-				<img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer">
+				<a href="http://www.veracruz.gob.mx/" target="_blank"><img src="<?php bloginfo("template_url") ?>/images/logo_ver.png" alt="" class="logo_veracruz_footer"></a>
 			</div>
 		</div>
     </div><!--.wrapper-footer-->

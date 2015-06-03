@@ -150,6 +150,15 @@
 	.back-blue-color{
 		text-align: center;
 	}
+	.url-web-ver{
+		  font-size: 20px;
+	}
+	.resaltado_url {
+  	font-size: 22px;
+	}
+	.logo_veracruz_footer{
+		  margin-left: 22px;
+	}
 }
 /*Iphone and device with less width*/
 @media screen and (max-width: 320px){ /* <= device less 320px*/
@@ -172,5 +181,14 @@
 	}
 	.back-blue-color{
 		text-align: center;
+	}
+	.url-web-ver{
+		  font-size: 15px;
+	}
+	.resaltado_url {
+  	font-size: 17px;
+	}
+	.logo_veracruz_footer{
+		  margin-left: 18px;
 	}
 }
