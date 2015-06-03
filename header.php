@@ -63,6 +63,77 @@
 			});    
         });
 	</script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jRespond.min.js"></script>
+    <script type="text/javascript">
+        var jRes = jRespond([
+            {
+                label: 'less_767',
+                enter: 767,
+                exit: 2700
+            }
+        ]);
+        jRes.addFunc({
+            breakpoint: 'less_767',
+            enter: function() {
+                 //delegate calls to data-toggle="lightbox"
+				$(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+					event.preventDefault();
+					return $(this).ekkoLightbox({
+						onShown: function() {
+							if (window.console) {
+								//console.log('onShown');
+							}
+						},
+						onNavigate: function(direction, itemIndex) {
+							if (window.console) {
+								//console.log('Navigating '+direction+'. Current item: '+itemIndex);
+							}
+						},
+						onShow: function (e){
+							if (window.console) {
+								//console.log('e', e);
+								//console.log('onShow');
+							}
+						},
+						onHide: function (e){
+							if (window.console) {
+								//console.log('e', e);
+								//console.log('onHide');
+							}
+						},
+						onHidden: function (e){
+							if (window.console) {
+								//console.log('onHidden');
+							}
+						},
+						onContentLoaded: function (e){
+							if (window.console) {
+								//console.log('this', this);
+								var category = this.options.category;
+								//console.log('category', category);
+								var selector;
+								if( category == 'video'){
+									selector = ".lightbox-video-footer";
+								}else{
+									selector = ".lightbox-img-header";
+									//Reajustar tamano de dialog
+									var widthHeader = this.widthHeader.width();
+									var dialog = $('div.ekko-lightbox .modal-dialog');
+									var widthDialog = dialog.width();
+									var widthNew = widthHeader + widthDialog;
+									dialog.css('max-width', widthNew);
+								}
+								//console.log('onContentLoaded');
+							}
+						}
+					});
+				});
+            },
+            exit: function() {
+                
+            }
+        });
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
