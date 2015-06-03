@@ -14,9 +14,9 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
       
       getTemplate: function(){
         var facebook, twitter, google, pinterest, header, footer, mainContainer = "", headerImg ;
-        //console.log('category temaplete', category);
-        //console.log('title, temaplete', title);
-        //console.log('excerpt temaplete', excerpt);
+        console.log('category temaplete', category);
+        console.log('title, temaplete', title);
+        console.log('excerpt temaplete', excerpt);
 
         //Maquetado Video
         if( category == 'video'){
@@ -324,7 +324,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
         this.gallery_index--;
       }
       this.options.onNavigate.call(this, 'left', this.gallery_index);
-      return this.navigateTo(this.gallery_index);
+      return this.navigateTo(this.gallery_index - 1);
     },
     navigate_right: function() {
       if (this.gallery_items.length === 1) {
@@ -336,7 +336,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
         this.gallery_index++;
       }
       this.options.onNavigate.call(this, 'right', this.gallery_index);
-      return this.navigateTo(this.gallery_index);
+      return this.navigateTo(this.gallery_index + 1 );
     },
     detectRemoteType: function(src, type) {
       var video_id;

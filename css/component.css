@@ -32,17 +32,18 @@ body{
 	background-position: 0px -37px !important;
 }
 .share-btn{
+	margin-right: 7px !important;
 	border: 0;
 	margin: 0;
 	background-color: transparent;
-	width: 34px;
+	width: 30px;
 	margin-bottom: 30px;
   	position: relative;
-  	bottom: 25px;
- 	left: 15px;
+  	bottom: 6px;
+  	left: 20px;
 }
 .share-btn:hover{
-	background-position: 0px -37px !important;
+	background-position: 0px -32px !important;
 }
 .twetter{
 	background: url(../images/tw-share.png);
@@ -51,6 +52,13 @@ body{
 	background-size: 34px 81px;
 	height: 47px;
 }
+.twetter-leer{
+	background: url(../images/tw-leer.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 30px 64px;
+	height: 34px;
+}
 .faceb{
 	background: url(../images/fb-share.png);
 	background-repeat: no-repeat;
@@ -58,12 +66,26 @@ body{
 	background-size: 34px 81px;
 	height: 47px;
 }
+.faceb-leer{
+	background: url(../images/facebook-leer.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 30px 64px;
+	height: 34px;
+}
 .pinte{
-	background: url(../images/pinterest-share.png);
+	background: url(../images/pinterest-leer.png);
 	background-repeat: no-repeat;
 	background-position: 0px 3px;
 	background-size: 34px 81px;
 	height: 47px;
+}
+.pinte-leer{
+	background: url(../images/pinterest-share.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 30px 64px;
+	height: 34px;
 }
 .plus{
 	background: url(../images/gplus-share.png);
@@ -71,6 +93,13 @@ body{
 	background-position: 0px 3px;
 	background-size: 34px 81px;
 	height: 47px;
+}
+.plus-leer{
+	background: url(../images/gplus-leer.png);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	background-size: 30px 65px;
+	height: 34px;
 }
 #noticias{
 	position: relative;
@@ -109,6 +138,7 @@ body{
 	display: block;
 }
 .share{
+	outline: 0 !important;
 	border: 0;
 	background: url(../images/compartir.png);
 	background-repeat: no-repeat;
@@ -120,8 +150,8 @@ body{
 	float: right;
 	position: absolute;
 	z-index: 1;
-	right: 15px;
-	margin-top: -50px;
+	right: 13px;
+  	margin-top: -47px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -130,7 +160,19 @@ body{
 .share:hover{
 	background-color: #26947E;
 }
+.share:hover,
+.share:active,
+.share:visited,
+.share:focus,
+.changeback:hover,
+.changeback:active,
+.changeback:visited,
+.changeback:focus{
+	outline: 0 !important;
+}
+
 .changeback{
+	outline: 0 !important;
 	background: url(../images/compartir-dos.png);
 	border: 0;
 	background-repeat: no-repeat;
@@ -142,8 +184,8 @@ body{
 	float: right;
 	position: absolute;
 	z-index: 1;
-	right: 15px;
-	margin-top: -50px;
+	right: 13px;
+  	margin-top: -47px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -155,10 +197,10 @@ body{
 .separador{
 	margin: 0 auto;
 	text-align: center;
-	border-top: 1px solid #DCDCDC;
+	border-top: 1px solid rgba(220,220,220, .50);
 	width: 95%;
-  	margin-top: 20px;
-  	margin-bottom: 20px;
+  	margin-top: 15px;
+  	margin-bottom: 15px;
 }
 .full-img{
 	width: 100%;
@@ -351,9 +393,8 @@ section {
 	padding: 10px 25px 20px 20px;
 	width: 100%;
 	background: white;
-	border: 1px solid #d2d2d2;
+	border: 1px solid #dadada;
 	text-align: left;
-	letter-spacing: 1px;
 	-webkit-transition: -webkit-transform 0.2s, color 0.2s;
 	transition: transform 0.2s, color 0.2s;
 	margin: 0 auto;
@@ -361,25 +402,30 @@ section {
 	overflow: hidden;
 	width: 96.2%;
 	border-bottom: none;
-	
+	 -webkit-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
 }
 .leer-mas{
 	width: 96.2%;
 	margin: 0 auto;
 	text-align: center;
-	border: 1px solid #d2d2d2;
+	border: 1px solid #dadada;
 	border-top: none;
-	-webkit-border-bottom-right-radius: 20px;
-	-webkit-border-bottom-left-radius: 20px;
-	-moz-border-radius-bottomright: 20px;
-	-moz-border-radius-bottomleft: 20px;
-	border-bottom-right-radius: 20px;
-	border-bottom-left-radius: 20px;
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
 	font-family: 'ubunturegular';
 	font-size: 17px;
 	color: white;
 	height: 33px;
 	padding-top: 3px;
+	 -webkit-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
 }
 .leer-mas a{
 	font-family: 'ubunturegular' !important;
@@ -392,20 +438,29 @@ section {
 	color: white !important;
 	background: transparent !important;
 }
-.infografia:hover{
-	background: #354184 !important;
-}
 .infografia{
 	background: #4553A2;
+}
+.shown:hover .infografia{
+	background: #354184;
+}
+.infografia:hover{
+	background: #354184;
 }
 .video{
 	background: #ED4100;
 }
+.shown:hover .video{
+	background: #AE1900;
+}
 .video:hover{
-	background: #ae1900;
+	background: #AE1900;
 }
 .enlaces-externos{
 	background: #33BCA1;
+}
+.shown:hover .enlaces-externos{
+	background: #26947e;
 }
 .enlaces-externos:hover{
 	background: #26947e;
@@ -414,18 +469,32 @@ section {
 	color: #33BCA1;
 	font-size: 14px;
 }
+.container-text h3{
+	margin-top: 3px !important;
+	line-height: 18px;
+}
 .container-text a:hover{
 	text-decoration: none;
 	}
 .container-text p{
 	color: #33BCA1;
 	font-size: 14px;
+	margin-bottom: 0px !important;
+}
+.video, .infografia, .enlaces-externos{
+	box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
+}
+.grid li a{
+	width: 96%;
+  margin: 0 auto;
+  
 }
 .grid li h3 {
 	color: #797979;
 	font-family: 'ubuntulight';
 	font-size: 13px;
-	
 }
 /* Hide image and title and show at half time */
 .js .container-text,

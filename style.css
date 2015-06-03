@@ -62,11 +62,11 @@ video {
 	max-width: 100%;
 }
 
-html {
+/*html {
 	overflow-y: scroll;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
-}
+}*/
 
 body,
 button,

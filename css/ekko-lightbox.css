@@ -6,6 +6,9 @@
  */
 
 /*Navegaciion*/
+.ekko-lightbox{
+  padding-right: 0px !important;
+}
 .ekko-lightbox-container {
   position: relative;
 }

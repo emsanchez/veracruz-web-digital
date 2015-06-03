@@ -121,10 +121,12 @@ textarea {
 }
 button {
   overflow: visible;
+  outline: 0 !important;
 }
 button,
 select {
   text-transform: none;
+  outline: 0 !important;
 }
 button,
 html input[type="button"],
@@ -132,10 +134,12 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+  outline: 0 !important;
 }
 button[disabled],
 html input[disabled] {
   cursor: default;
+  outline: 0 !important;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -2789,6 +2793,7 @@ select[multiple].form-group-lg .form-control {
 }
 .btn:active,
 .btn.active {
+  outline: 0 !important;
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
@@ -2845,6 +2850,7 @@ fieldset[disabled] .btn-default:active,
 fieldset[disabled] .btn-default.active {
   background-color: #fff;
   border-color: #ccc;
+  outline: 0 !important;
 }
 .btn-default .badge {
   color: #fff;
@@ -2864,6 +2870,7 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #286090;
   border-color: #204d74;
+  outline: 0 !important;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -2890,6 +2897,7 @@ fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
   background-color: #337ab7;
   border-color: #2e6da4;
+  outline: 0 !important;
 }
 .btn-primary .badge {
   color: #337ab7;
@@ -2909,6 +2917,7 @@ fieldset[disabled] .btn-primary.active {
   color: #fff;
   background-color: #449d44;
   border-color: #398439;
+  outline: 0 !important;
 }
 .btn-success:active,
 .btn-success.active,
@@ -2935,6 +2944,7 @@ fieldset[disabled] .btn-success:active,
 fieldset[disabled] .btn-success.active {
   background-color: #5cb85c;
   border-color: #4cae4c;
+  outline: 0 !important;
 }
 .btn-success .badge {
   color: #5cb85c;
@@ -2954,6 +2964,7 @@ fieldset[disabled] .btn-success.active {
   color: #fff;
   background-color: #31b0d5;
   border-color: #269abc;
+  outline: 0 !important;
 }
 .btn-info:active,
 .btn-info.active,
@@ -2980,6 +2991,7 @@ fieldset[disabled] .btn-info:active,
 fieldset[disabled] .btn-info.active {
   background-color: #5bc0de;
   border-color: #46b8da;
+  outline: 0 !important;
 }
 .btn-info .badge {
   color: #5bc0de;
@@ -2999,6 +3011,7 @@ fieldset[disabled] .btn-info.active {
   color: #fff;
   background-color: #ec971f;
   border-color: #d58512;
+  outline: 0 !important;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -3025,6 +3038,7 @@ fieldset[disabled] .btn-warning:active,
 fieldset[disabled] .btn-warning.active {
   background-color: #f0ad4e;
   border-color: #eea236;
+  outline: 0 !important;
 }
 .btn-warning .badge {
   color: #f0ad4e;
@@ -3044,6 +3058,7 @@ fieldset[disabled] .btn-warning.active {
   color: #fff;
   background-color: #c9302c;
   border-color: #ac2925;
+  outline: 0 !important;
 }
 .btn-danger:active,
 .btn-danger.active,
@@ -3070,6 +3085,7 @@ fieldset[disabled] .btn-danger:active,
 fieldset[disabled] .btn-danger.active {
   background-color: #d9534f;
   border-color: #d43f3a;
+  outline: 0 !important;
 }
 .btn-danger .badge {
   color: #d9534f;
@@ -3094,18 +3110,21 @@ fieldset[disabled] .btn-link {
 .btn-link:focus,
 .btn-link:active {
   border-color: transparent;
+  outline: 0 !important;
 }
 .btn-link:hover,
 .btn-link:focus {
   color: #23527c;
   text-decoration: underline;
   background-color: transparent;
+  outline: 0 !important;
 }
 .btn-link[disabled]:hover,
 fieldset[disabled] .btn-link:hover,
 .btn-link[disabled]:focus,
 fieldset[disabled] .btn-link:focus {
   color: #777;
+  outline: 0 !important;
   text-decoration: none;
 }
 .btn-lg,
