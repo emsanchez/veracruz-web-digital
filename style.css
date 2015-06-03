@@ -507,13 +507,24 @@ hr {
     font-style: normal;
 
 } 
+@font-face {
+    font-family: 'lato-light';
+    src: url('fonts/lato-light.eot');
+    src: url('fonts/lato-light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato-light.woff') format('woff'),
+         url('fonts/lato-light.ttf') format('truetype'),
+         url('fonts/lato-light.svg#lato-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+} 
+
 /**
  * 3.0 Header
  * -----------------------------------------------------------------------------
  */
  .wrapper-header{
  	widows: 100%;
- 	overflow: hidden;
  } 
  .bg-purple{
  	background-color: #4553A2; 
@@ -561,6 +572,10 @@ hr {
 	background-repeat: no-repeat;
 	background-position: center left;
 	padding: 6px 0 6px 39px;
+}
+.search{
+	color:#fff;
+	background-image:url(images/buscar.png);
 }
 
  /**
@@ -634,7 +649,62 @@ hr {
 	margin: 0;
 	padding: 0px 20px !important;
 	font-size: 24px !important;
-}		
+}
+.position-relative{
+	position:relative;
+}
+.tap-search{
+	top: 0px;
+	left: 0;
+	background-color: rgba(255,255,255,0.9);
+	position: absolute;
+	width: 100%;
+	display: none;
+	padding: 5px;
+	border: 1px #EBE5E5 solid;
+	border-radius: 0 0 7px 7px;
+}
+.tap-search input[type='text']{
+	background-color:transparent;
+	border:none;
+	box-shadow:none;
+	font-family: 'lato-light';
+	font-size:25px;
+	height:38px !important;
+	color:#4553A2 !important;
+	padding-left: 50px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #4553A2 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #4553A2 !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #4553A2 !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #4553A2 !important;
+}
+.tap-search button{
+	padding: 6px 41px 0px 0;
+	border: none;
+}
+.tap-search button:hover{
+	background-color:#FFF;
+}
+.icon-search{
+	background-image: url(images/lupa_buscador.png);
+	background-repeat: no-repeat;
+	display: block;
+	background-size: contain;
+	width: 28px;
+	height: 38px;
+}	
+		
  /**
  * 4.0 - Sidebar
  * -----------------------------------------------------------------------------

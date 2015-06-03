@@ -57,6 +57,15 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528bc01961578d5f" async="async"></script>
 
 	<?php wp_head(); ?>
+    
+    <script type="text/javascript">
+		$(document).ready(function() {
+        	$('li.search').on('click', function(event){
+				$('.tap-search').slideToggle('slow');
+				event.stopPropagation();
+			});    
+        });
+	</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -68,12 +77,14 @@
         <ul class="nav-social">
             <li class="twitter"><a href="#">@KarimeMacias</a></li>
             <li class="facebook"><a href="#">/KarimeMaciasDeDuarte</a></li>
+            <li class="search">Buscar</li>
         </ul>
     </div>
     <div class="clearfix"></div>
     <div class="bg-yellow">
-        <div class="container-fluid">
+        <div class="container-fluid position-relative">
             <p>Por un uso responsable de <strong>internet y redes sociales</strong></p>
+            <div class="tap-search"><?php get_search_form(); ?></div>
         </div>
     </div>
 </div>
