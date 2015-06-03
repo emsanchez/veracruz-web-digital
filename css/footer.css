@@ -1,23 +1,24 @@
 .back-blue-color{
 		background-color: #354184;
-		height: 107px;
+		height: 92px;
 	}
 	.logo_veracruz_footer{
-		  margin-top: 14px;
-		  margin-left: 10px;
-		  float: left;
-		  margin-right: 14px;
+		  margin-top: 11px;
+  margin-left: 70px;
+  float: left;
+  margin-right: 33px;
+  width: 215px;
 	}
-	.wrap_foter{
-		  float: right;
-  		margin-right: 222px;
+	.wrap_foter{  
+		float: right;
+  margin-right: 220px;
 	}
 	.back-softblue{
 		background-color: #4553A2;
-		height: 107px;
+		height: 92px;
 	}
 	.wrap_footer{
-		border-top: 8px solid #FFF400;
+		border-top: 4px solid #FFF400;
 		color: #FFF;
 
 	}
@@ -30,19 +31,24 @@
 		overflow: hidden;
 	}
 	.resaltado_url{
-		color: #FFF400;
-		font-family: "ubunturegular";
+		  color: #FFF400;
+  font-family: "ubuntubold";
+  font-size: 27px;
 	}
 	.url-web-ver{
-		  font-family: "ubuntulight";
+		  font-family: lato-hairline;
+		  letter-spacing: 2px;
+		  margin-bottom: 2px;
 	}
 	.copyright_font_footer{
-		font-size: 13px;
-		font-family: "ubuntulight";
+		  font-size: 13px;
+  font-family: "ubuntulight";
+  opacity: .8;
+  margin-top: 0px;
 	}
 	.texturaFooter{
 		  float: right;
-  		width: 100px;
+  		width: 85px;
 	}
 	.wrap_footer_main{
 		width: 100%;
@@ -50,3 +56,121 @@
 	.wrap_textura{
 		float: right;
 	}
+
+@media (min-width: 901px) and (max-width: 1150px) { 
+	.wrap_foter {
+	  margin-right: 118px;
+	}
+	
+}
+
+
+@media (min-width: 768px) and (max-width: 900px) { 
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_logo{
+		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+	}
+}
+
+/*Style devices between  600px - 767px css*/
+@media (min-width: 600px) and (max-width: 767px) { /* <= device between 600px and 767px*/
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+}
+/*Less device 600 (iphone, samsung galaxy mini, etc)*/
+@media screen and (max-width: 599px){ /* <= device less 599px*/
+	.hidden-less-600{
+		display:none !important;
+	}
+
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+	
+}
+/*Iphone(landscape) and device with less width*/
+@media screen and (max-width: 480px){ /* <= device less 480px*/
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+}
+/*Iphone and device with less width*/
+@media screen and (max-width: 320px){ /* <= device less 320px*/
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+}
