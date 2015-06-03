@@ -86,7 +86,6 @@
 		new GridScrollFx( document.getElementById( 'grid' ), {
 			viewportFactor : 0.2
 		});
-<<<<<<< HEAD
 		$('.linkshare').click(function() {
 			event.stopPropagation();
 		  	return false;
@@ -148,8 +147,6 @@
                 }
             });
         });
-=======
->>>>>>> d7e3972dcd062ed29ba6bd8ca33c119a3d7d5d55
 	});
 	function mostrarHover(ident,btnident){
 		var classe 		= '#'+ident;
