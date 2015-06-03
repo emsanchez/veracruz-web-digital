@@ -5,7 +5,7 @@
 				<img src="<?php bloginfo("template_url") ?>/images/textura-footer.png" alt="" class="texturaFooter" />
 			</div>
 			<div class="wrap_foter ">
-				<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.com.mx</h2>
+				<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.gob.mx</h2>
 				<h5 class="copyright_font_footer">Algunos Derechos Reservados &#64; 2015</h5>
 			</div>
 		</div>
@@ -15,10 +15,11 @@
 			</div><!--FIN wrap_logo-->
 		</div>
 	</div>
+
 		<div class="container-fluid wrap_footer  visible-xs reset-padding-boostrap">
 			<div class="col-xs-12 back-softblue">
 				<div class="container wrap_foter">
-					<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.com.mx</h2>
+					<h2 class="url-web-ver">www.<span class="resaltado_url">veracruzdigital</span>.gob.mx</h2>
 					<h5 class="copyright_font_footer">Algunos Derechos Reservados &copyright; 2015</h5>
 				</div>
 			</div>
