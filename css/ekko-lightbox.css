@@ -26,7 +26,7 @@
   display: block;
   width: 49%;
   height: 100%;
-  top: 100px;
+  top:50%;
   filter: dropshadow(color=#000000, offx=2, offy=2);
   -webkit-transition: opacity 0.5s;
   -moz-transition: opacity 0.5s;
