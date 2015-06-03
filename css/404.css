@@ -1,10 +1,18 @@
 /*404 - Not found*/
+body.error404{
+	background-color: #354184;
+}
+.bg-purple{
+	display: none;
+}
 .not-found{
 	overflow: hidden;
 	background-color: #354184;
 	height: 100%;
 	width: 100%;
 	padding: 50px 0;
+	max-width: 1044px;
+	margin: 0 auto;
 }
 .not-found .bloque-izq,
 .not-found .bloque-der{}
@@ -41,15 +49,16 @@
 	padding: 70px 0;
 }
 .not-found .bloque-izq .lo-sentimos h3{
-	color: #fff;
+	color: #CAD2FF;
 	font-size: 20px;
 	line-height: 25px;
 }
 .not-found .bloque-izq .lo-sentimos a{
 	text-decoration: none;
+	font-family: 'ubunturegular';
 	color: #fff;
 	text-align: left;
-	font-size: 18px;
+	font-size: 20px;
 	background: url(../images/404/pagina-principla.png);
 	background-repeat: no-repeat;
 	background-size: 40px;
@@ -69,7 +78,7 @@
 	text-decoration: none;
 }
 .not-found .bloque-der a.veracruz-digital img{
-	padding-top: 60px;
+	padding-top: 33px;
 	width: 297px; 
 }
 .not-found .bloque-der a.veracruz-digital:hover{

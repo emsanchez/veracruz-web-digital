@@ -16,7 +16,7 @@ get_header(); ?>
 			<div class="lo-sentimos">
 				<img class="error-404" src="<?php bloginfo('template_url')?>/images/404/404.png">
 				<img class="sentimos" src="<?php bloginfo('template_url')?>/images/404/lo-sentimos.png">
-				<h3>No se encontró la página que buscabas.</h3>
+				<h3>No se encontró la página <br/>que buscabas.</h3>
 				<a href="/">Página principal</a>
 			</div>
 			<img class="cuadro-superior" src="<?php bloginfo('template_url')?>/images/404/cuadro-superior.png">
