@@ -141,11 +141,11 @@
 	<div class="col-md-4 bg-purple-bold">
         <img src="<?php bloginfo('template_url')?>/images/logo.png">
     </div>
-    <div class="col-md-7">
+    <div class="col-md-7 bg-texture-header">
         <ul class="nav-social">
             <li class="twitter"><a href="#">@KarimeMacias</a></li>
             <li class="facebook"><a href="#">/KarimeMaciasDeDuarte</a></li>
-            <li class="search">Buscar</li>
+            <li class="search"><span>Buscar</span></li>
         </ul>
     </div>
     <div class="clearfix"></div>

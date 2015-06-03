@@ -517,7 +517,20 @@ hr {
     font-weight: normal;
     font-style: normal;
 
-} 
+}
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('fonts/Lato-Regular.eot');
+    src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Lato-Regular.woff') format('woff'),
+         url('fonts/Lato-Regular.ttf') format('truetype'),
+         url('fonts/Lato-Regular.svg#lato-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ 
 
 /**
  * 3.0 Header
@@ -530,9 +543,14 @@ hr {
  	background-color: #4553A2; 
  	display: block;
  }
+.bg-texture-header{
+	background-image:url(images/textura-header.png);
+	background-position:left;
+	background-repeat:no-repeat;
+}
 .bg-purple-bold{
 	background-color: #354184;
-	padding: 15px;
+	padding: 7px;
 	text-align: right;
 }
 .bg-yellow{
@@ -548,7 +566,7 @@ hr {
 }
 .nav-social{
 	padding: 0;
-	margin: 30px 0px;
+	margin: 12px 0px;
 	text-align: right;
 }
 .nav-social li{
@@ -560,6 +578,9 @@ hr {
 	color: rgba(255,255,255,76);
 	font-family: 'ubuntulight';
 	font-size: 13px;
+}
+.nav-social li a:hover{
+	text-decoration:none;
 }
 .twitter{
 	background-image: url(images/icon-twitter.png);
@@ -574,9 +595,21 @@ hr {
 	padding: 6px 0 6px 39px;
 }
 .search{
-	color:#fff;
-	background-image:url(images/buscar.png);
+	color: #fff;
+	background-image: url(images/buscador-lupa.png);
+	background-repeat: no-repeat;
+	background-size: 50px;
+	background-position: right 3px;
+	margin-left: 14px !important;
+	padding: 15px 26px 22px 0px;
+	font-family: 'Lato-Regular';
+	font-size:18px;
 }
+.search span{
+	background-color: #4553A2;
+}
+
+
 
  /**
  * FRONT PAGE
@@ -676,18 +709,18 @@ hr {
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #4553A2 !important;
+    color:	rgba(69,83,162, 0.56) !important;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #4553A2 !important;
-   opacity:  1;
+    color:  rgba(69,83,162, 0.56) !important;
+    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #4553A2 !important;
+   color: rgba(69,83,162, 0.56) !important;
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #4553A2 !important;
+   color: rgba(69,83,162, 0.56) !important;
 }
 .tap-search button{
 	padding: 6px 41px 0px 0;
