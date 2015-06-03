@@ -46,15 +46,12 @@
     <link href="<?php bloginfo('template_url'); ?>/css/ekko-lightbox.css" rel="stylesheet">
     <script src="<?php bloginfo('template_url'); ?>/js/ekko-lightbox.js"></script>
     <!--End lightbox-->
-    
-    <!-- METAS COMPARTIR -->
-    <meta property="og:url" content="http://www.veracruzdigital.gob.mx" />
-    <meta property="og:title" content="Veracruz Digital" />
-    <meta property="og:description" content="Gobierno del EStado de Veracruz" />
-    <meta property="og:image" content="<?php bloginfo('template_url')?>/images/logo100X100.png" />
 
     <!--Addthis-->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528bc01961578d5f" async="async"></script>
+
+    <!-- Footer -->
+    <link href="<?php bloginfo('template_url'); ?>/css/footer.css" rel="stylesheet">
 
 	<?php wp_head(); ?>
     

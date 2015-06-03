@@ -25,6 +25,8 @@ body{
   	border-top: 0;
   	padding-left: 50px;
   	margin-bottom: 5px;
+  	position: relative;
+  	z-index: 11111;
 }
 .linkshare:hover{
 	text-decoration: none !important;
@@ -41,6 +43,8 @@ body{
   	position: relative;
   	bottom: 6px;
   	left: 20px;
+  	position: relative;
+  z-index: 11111;
 }
 .share-btn:hover{
 	background-position: 0px -32px !important;

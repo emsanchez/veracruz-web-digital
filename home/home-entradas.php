@@ -26,7 +26,7 @@
 			<?php if( $category == "video" ){ ?>
 			<a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>">
 			<?php }else if( $category == "enlaces-externos" ){ ?>
-			<a target="_blank" href="htt://<?php echo get_the_excerpt(); ?>" class="<?php echo $category; ?>">
+			<a target="_blank" href="http://<?php echo get_the_excerpt(); ?>" class="<?php echo $category; ?>">
 			<?php }else{?>
 			<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>">
 			<?php } ?><!-- EMPIEZA EL CONTENIDO INTERNO DE LA NOTICIA -->
@@ -63,7 +63,7 @@
 				<?php if( $category == "video" ){ ?>
 				<a href="<?php echo $link; ?>" data-toggle="lightbox" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>"><?php echo $titulo; ?></a>
 				<?php }else if( $category == "enlaces-externos" ){ ?>
-				<a target="_blank" href="<?php echo get_the_excerpt(); ?>"><?php echo $titulo; ?></a>
+				<a target="_blank" href="http://<?php echo get_the_excerpt(); ?>"><?php echo $titulo; ?></a>
 				<?php }else{?>
 				<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>"><?php echo $titulo; ?></a>
 				<?php } ?>
@@ -85,6 +85,14 @@
 	$( document ).ready(function() {
 		new GridScrollFx( document.getElementById( 'grid' ), {
 			viewportFactor : 0.2
+		});
+		$('.linkshare').click(function() {
+			event.stopPropagation();
+		  	return false;
+		});
+		$('.share-btn').click(function() {
+			event.stopPropagation();
+		  	return false;
 		});
 		 //delegate calls to data-toggle="lightbox"
         $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
