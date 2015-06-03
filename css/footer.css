@@ -50,3 +50,121 @@
 	.wrap_textura{
 		float: right;
 	}
+
+@media (min-width: 901px) and (max-width: 1150px) { 
+	.wrap_foter {
+	  margin-right: 118px;
+	}
+	
+}
+
+
+@media (min-width: 768px) and (max-width: 900px) { 
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_logo{
+		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+	}
+}
+
+/*Style devices between  600px - 767px css*/
+@media (min-width: 600px) and (max-width: 767px) { /* <= device between 600px and 767px*/
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+}
+/*Less device 600 (iphone, samsung galaxy mini, etc)*/
+@media screen and (max-width: 599px){ /* <= device less 599px*/
+	.hidden-less-600{
+		display:none !important;
+	}
+
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+	
+}
+/*Iphone(landscape) and device with less width*/
+@media screen and (max-width: 480px){ /* <= device less 480px*/
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+}
+/*Iphone and device with less width*/
+@media screen and (max-width: 320px){ /* <= device less 320px*/
+	.wrap_logo{
+		margin: 0 auto !important;
+  		text-align: center;
+	}
+	.logo_veracruz_footer{
+		float: initial;
+  		text-align: center;
+	}
+	.texturaFooter{
+		display: none;
+	}
+	.wrap_foter{
+		  float: initial;
+	  text-align: center;
+	  margin-right: 0px;
+	  padding-top: 5px;
+	}
+	.back-blue-color{
+		text-align: center;
+	}
+}
