@@ -84,3 +84,34 @@ body.error404{
 .not-found .bloque-der a.veracruz-digital:hover{
 	text-decoration: none;
 }
+/*Responsive*/
+@media screen and (max-width: 1024px){ /* <= device between 767px and 1024px*/
+	.not-found{
+		padding: 25px 0;
+	}
+	.not-found .bloque-izq .lo-sentimos{
+		padding-top: 60px;
+		padding-bottom: 80px;
+	}
+	.not-found .bloque-der a.veracruz-digital img{
+		padding-top: 24px;
+	}
+}
+@media screen and (max-width: 767px){}
+@media screen and (max-width: 480px){ /* <= device less 480px*/
+	.not-found .bloque-izq .lo-sentimos{
+		width: auto;
+	}
+}
+@media screen and (max-width: 320px){ /* <= device less 320px*/
+	.not-found .bloque-izq .lo-sentimos img.error-404{
+		width: 160px;
+	}
+	.not-found .bloque-izq .lo-sentimos img.sentimos{
+		width: 230px;
+	}
+	.not-found .bloque-izq .lo-sentimos h3,
+	.not-found .bloque-izq .lo-sentimos a{
+		font-size: 19px;
+	}
+}
