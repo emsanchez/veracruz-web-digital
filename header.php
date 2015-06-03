@@ -79,38 +79,9 @@
 				$(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
 					event.preventDefault();
 					return $(this).ekkoLightbox({
-						onShown: function() {
-							if (window.console) {
-								//console.log('onShown');
-							}
-						},
-						onNavigate: function(direction, itemIndex) {
-							if (window.console) {
-								//console.log('Navigating '+direction+'. Current item: '+itemIndex);
-							}
-						},
-						onShow: function (e){
-							if (window.console) {
-								//console.log('e', e);
-								//console.log('onShow');
-							}
-						},
-						onHide: function (e){
-							if (window.console) {
-								//console.log('e', e);
-								//console.log('onHide');
-							}
-						},
-						onHidden: function (e){
-							if (window.console) {
-								//console.log('onHidden');
-							}
-						},
 						onContentLoaded: function (e){
 							if (window.console) {
-								//console.log('this', this);
 								var category = this.options.category;
-								//console.log('category', category);
 								var selector;
 								if( category == 'video'){
 									selector = ".lightbox-video-footer";
@@ -123,7 +94,6 @@
 									var widthNew = widthHeader + widthDialog;
 									dialog.css('max-width', widthNew);
 								}
-								//console.log('onContentLoaded');
 							}
 						}
 					});
@@ -139,12 +109,12 @@
 <body <?php body_class(); ?>>
 <div class="wrapper-header bg-purple">
 	<div class="col-md-4 bg-purple-bold">
-        <img src="<?php bloginfo('template_url')?>/images/logo.png">
+        <a href="#"><img src="<?php bloginfo('template_url')?>/images/logo.png"></a>
     </div>
     <div class="col-md-7">
         <ul class="nav-social">
-            <li class="twitter"><a href="#">@KarimeMacias</a></li>
-            <li class="facebook"><a href="#">/KarimeMaciasDeDuarte</a></li>
+            <li class="twitter"><a href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
+            <li class="facebook"><a href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
             <li class="search">Buscar</li>
         </ul>
     </div>
