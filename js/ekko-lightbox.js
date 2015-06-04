@@ -23,7 +23,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           header = '<div class="modal-header lightbox-video-header">';
           header += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') +'>' + title + '</h4><a href="'+excerpt+'" '+ (excerpt ? '' : ' style="display:none"')+' >'+excerpt+'</a></div>';
           footer = '<div class="modal-footer lightbox-video-footer">';
-          footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><div class="hashtag img-responsive"></div></div>';
+          footer += '<div class="pasa-la-voz col-xs-12 col-sm-4 col-md-4"><h3 class="tituloinfo"><span>#</span>PasaLaVoz<br><span> #</span>Comparte</h3></div>';
           footer += '<div class="redes col-xs-12 col-sm-8 col-md-8">';
           footer += '<div class="list-redes">';
           footer += '<ul>';
@@ -51,7 +51,7 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
           headerImg = '<div class="modal-header lightbox-img-header col-xs-12 col-sm-4 col-md-4">';
           headerImg += '<h4 class="modal-title" '+ (title ? '' : ' style="display:none"') + '>' + title + '</h4>';
           headerImg += '<div class="lightbox-img-la-voz-redes">';
-          headerImg += '<div class="hashtag img-responsive"></div>';
+          headerImg += '<h3 class="tituloinfo"><span>#</span>PasaLaVoz<br><span> #</span>Comparte</h3>';
           headerImg += '<div class="redes">';
           headerImg += '<div class="list-redes">';
           headerImg += '<ul>';
