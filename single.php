@@ -62,9 +62,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <!--<div class="col-md-4 col-xs-12">-->
             <?php get_sidebar(); ?>
-        </div>
+        <!--</div>-->
     </div>
 </div><!-- #main-content -->
 <?php get_footer(); ?>
