@@ -1,0 +1,31 @@
+/*Sidebar*/
+.sidebar-single{
+	overflow: hidden;
+	height: 100%;
+	padding-bottom: 15px;
+}
+.sidebar-single img.pasa-la-voz{
+	width: 178px;
+	top: 0;
+	padding-bottom: 15px;
+	margin-left: 5px;
+}
+.sidebar-single a.mas-contenido{
+	text-decoration: none;
+	font-family: 'ubunturegular';
+	color: #515670;
+	text-align: left;
+	font-size: 19px;
+	background: url(../images/404/pagina-principla.png);
+	background-repeat: no-repeat;
+	background-size: 40px;
+	padding-top: 8px;
+	height: 42px;
+	float: right;
+	padding-right: 45px;
+	background-position: right 0px;
+	margin-right: 60px;
+}
+.sidebar-single a.mas-contenido:hover{
+	background-position: right -44px;
+}

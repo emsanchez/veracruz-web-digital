@@ -232,11 +232,12 @@
   padding: 0px;
 }
 .lightbox-img-header h4{
-  margin-top: 20px;
-  font-size: 13px;
+  margin-top: 35px;
+  font-size: 16px;
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
+  line-height: 21px;
 }
 .lightbox-img-la-voz-redes{
   background-color: #354184;
@@ -397,6 +398,11 @@
   margin-top: 5px;
 }
 /*Responsive*/
+@media screen and (min-width: 1400px){
+  .lightbox-custom-img, .lightbox-custom-video{
+    width: 30% !important;
+  }
+}
 /*---Devices medium and large---*/
 @media (min-width: 767px) and (max-width: 1024px){ /* <= device between 768px and 1024px*/
   .lightbox-custom-img,.lightbox-custom-video{
