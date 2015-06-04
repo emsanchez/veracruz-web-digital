@@ -10,7 +10,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <!-- METAS COMPARTIR -->
     <meta property="og:url" content="http://www.veracruzdigital.gob.mx" />
     <meta property="og:title" content="Veracruz Digital" />
@@ -54,7 +54,7 @@
     
     <script type="text/javascript">
 		jQuery(document).ready(function($) {
-        	$('li.search').on('click', function(event){
+        	$('li.btn-search').on('click', function(event){
 				$('.tap-search').slideToggle('slow');
 				event.stopPropagation();
 			});    
@@ -100,39 +100,72 @@
                 
             }
         });
-		
-		$(document).on('click', '.btn-open-nav img',function(event){
-			event.preventDefault();
-			$(this).toggleClass('active');
-			if($(this).hasClass('active')){
-				$(this).css({ "-webkit-transform:" : "rotate(180deg)", "-moz-transform": "rotate(180deg)", "transform": "rotate(180deg)" });
-			}else{
-				$(this).css({ "-webkit-transform:" : "rotate(0deg)", "-moz-transform": "rotate(0deg)", "transform": "rotate(0deg)" });	
-			}
+		$(document).ready(function() {
+			$(document).on('click','.btn-open-nav', function(event){
+				$(this).stop().toggleClass('active');
+				$('.content-nav-xs').stop().toggle('show');
+				if($(this).hasClass('active')){
+					$('img',this).css({ "-webkit-transform:" : "rotate(180deg)", "-moz-transform": "rotate(180deg)", transform : "rotate(180deg)" });
+				}else{
+					$('img',this).css({ "-webkit-transform:" : "rotate(0deg)", "-moz-transform": "rotate(0deg)", transform: "rotate(0deg)" });	
+				}
+			});
+			
+			$(document).on('click','.btn-open-filter', function(event){
+				$(this).stop().toggleClass('active');
+				var social_bar = $('.bg-texture-header');
+				var open_filter = $('.open-filter');
+				//$('.content-nav-xs').stop().toggle('show');
+				if($(this).hasClass('active')){
+					social_bar.removeClass('col-md-8');
+					social_bar.addClass('col-md-5');
+					open_filter.addClass('col-md-3');
+				}else{
+					social_bar.removeClass('col-md-5');
+					social_bar.addClass('col-md-8');
+					open_filter.removeClass('col-md-3');
+				}
+			});
 		});
     </script>
 </head>
 
 <body <?php body_class(); ?>>
 <div class="wrapper-header bg-purple">
-    <div class="col-md-4 bg-purple-bold">
-        <a href="#" class="logo"><img src="<?php bloginfo('template_url')?>/images/logo.png"></a>
-        <div class="btn-open-nav"><img src="<?php bloginfo('template_url'); ?>/images/flecha-nav.png"></div>
-        <div class="content-nav-xs hidden-md hidden-lg hide">
-        	<ul class="nav-social">
-                <li class="twitter"><a href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
-                <li class="facebook"><a href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
-                <li class="search">Buscar</li>
-            </ul>
+    <div class="container-fluid">
+        <div class="over-flow">
+            <div class="col-md-4 bg-purple-bold">
+                <a href="#" class="logo"><img src="<?php bloginfo('template_url')?>/images/logo.png"></a>
+                <div class="btn-open-nav hidden-md hidden-lg"><img src="<?php bloginfo('template_url'); ?>/images/flecha-nav.png"></div>
+                <div class="content-nav-xs hidden-md hidden-lg">
+                    <ul class="nav-social">
+                        <span class="bd-purple"></span>
+                        <div class="clearfix"></div>
+                        <li class="twitter"><a href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
+                        <li class="search hidden-xs">Buscar</li>
+                    </ul>
+                    <div class="tap-search-xs"><?php get_search_form(); ?></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-8 bg-texture-header visible-md visible-lg">
+                <span class="btn-open-filter"><a class="lupa"></a></span>
+                <ul class="nav-social">
+                    <li><a class="twitter" href="https://twitter.com/KarimeMacias" target="_blank"></a></li>
+                    <li><a class="facebook" href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank"></a></li>
+                    <li class="btn-search">Buscar</li>
+                </ul>
+            </div>
+            <div class="open-filter">
+            	<ul>
+                	<li>Filtrar por:</li>
+                	<li><a class="icon-infografia" href="?filter=infografia"></a></li>
+                    <li><a class="icon-nota" href="?filter=enlaces-externos"></a></li>
+                    <li><a class="icon-video" href="?filter=video"></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="col-md-7 bg-texture-header visible-md visible-lg">
-        <ul class="nav-social">
-            <li class="twitter"><a href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
-            <li class="facebook"><a href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
-            <li class="search">Buscar</li>
-        </ul>
     </div>
     <div class="clearfix"></div>
     <div class="bg-yellow">

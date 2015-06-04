@@ -3,9 +3,7 @@
     $args = array(
         'category_name'  => 'slider',
         'posts_per_page' => 6,
-        'post_type'      => 'post',
-        'orderby'        => 'menu_order',
-        'order'          => 'ASC'
+        'post_type'      => 'post'
     );
 ?>
 <div class="content-slider">
