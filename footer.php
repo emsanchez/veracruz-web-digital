@@ -1,3 +1,14 @@
+<?php  
+if ( is_404() ) { ?>
+<style>
+.wrapper-footer-ver{
+	position: fixed !important;
+  	bottom: 0 !important;
+  	width: 100% !important;
+}
+</style>
+<?php } ?>
+
 <div class="wrapper-footer-ver">
 	<div class="reset-padding-boostrap wrap_footer_main wrap_footer hidden-xs">
 		<div class="col-md-8 back-softblue reset-padding-boostrap">
