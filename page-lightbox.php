@@ -3,16 +3,16 @@
     html{ overflow-y: initial; }
 </style>
 <div id="main-content">
-    <h3>Loop de prueba de categoria multimedia - Ejemplo de lightbox con Post de WP</h3>
+    <!--<h3>Loop de prueba de categoria multimedia - Ejemplo de lightbox con Post de WP</h3>
     <?php   
-    $args = array( 'category_name'=>'noticias', 'posts_per_page'=>6, 'post_type'=>'post', 'order'=>'ASC' ); ?>
+    //$args = array( 'category_name'=>'noticias', 'posts_per_page'=>6, 'post_type'=>'post', 'order'=>'ASC' ); ?>
     <p>Note: uses modal plugin title option via <code>data-title</code>, and the custom footer tag using <code>data-footer</code></p>
-        <div class="col-sm-offset-2 col-sm-8">
+        <div class="col-sm-offset-2 col-sm-8">-->
     <?php
         $query = new WP_Query($args);
         while ($query->have_posts()){
             $query->the_post();            
-            $category = get_cat_slug_by_id($post->ID);
+            /*$category = get_cat_slug_by_id($post->ID);
 
             if( $category == "nota" || $category == "infografia" ){
                 //imagen
@@ -31,57 +31,19 @@
                 echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'" data-gallery="gallery" data-excerpt="http://youtu.be/'.$link.'">';
                 echo '<img src="//i1.ytimg.com/vi/'.$link.'/mqdefault.jpg" class="img-responsive">';
                 echo '</a>';
-
-                /*echo '<a href="http://youtu.be/KsE9iXoXB6s" data-toggle="lightbox"  class="col-sm-4 '.$category.'" ';
-                echo 'data-title="Es importante que tomemos en cuenta las siguientes recomendaciones para el uso de WhatsApp." ';
-                echo 'data-permalink="'.get_permalink($post->ID).'" data-category="'.$category.'" data-gallery="gallery-video">';
-                echo '<img src="//i1.ytimg.com/vi/KsE9iXoXB6s/mqdefault.jpg" class="img-responsive">';
-                echo '</a>';*/
-            }
+            }*/
     ?>
     <?php } ?>
     
-    <a href="<?php bloginfo('template_url')?>/images/img-test-2.png" data-toggle="lightbox" data-title="A random title" 
-    data-footer="A custom footer text" class="col-sm-4" data-gallery="gallery">
-        <img src="<?php bloginfo('template_url')?>/images/img-test-2.png" class="img-responsive">
-    </a>
-    
-    </div>
+    <!--</div>-->
 
 </div><!-- #main-content -->
 <script type="text/javascript">
-    $(document).ready(function ($){
+    /*$(document).ready(function ($){
         //delegate calls to data-toggle="lightbox"
         $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
             event.preventDefault();
             return $(this).ekkoLightbox({
-                onShown: function() {
-                    if (window.console) {
-                        //console.log('onShown');
-                    }
-                },
-                onNavigate: function(direction, itemIndex) {
-                    if (window.console) {
-                        //console.log('Navigating '+direction+'. Current item: '+itemIndex);
-                    }
-                },
-                onShow: function (e){
-                    if (window.console) {
-                        //console.log('e', e);
-                        //console.log('onShow');
-                    }
-                },
-                onHide: function (e){
-                    if (window.console) {
-                        //console.log('e', e);
-                        //console.log('onHide');
-                    }
-                },
-                onHidden: function (e){
-                    if (window.console) {
-                        //console.log('onHidden');
-                    }
-                },
                 onContentLoaded: function (e){
                     if (window.console) {
                         //console.log('this', this);
@@ -104,6 +66,7 @@
                 }
             });
         });
-    });
+    });*/
 </script>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
