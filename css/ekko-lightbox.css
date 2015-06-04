@@ -7,6 +7,8 @@
 /*Navegaciion*/
 .ekko-lightbox{
   padding-right: 0px !important;
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
 }
 .ekko-lightbox-container {
   position: relative;
@@ -96,6 +98,25 @@
   -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
   -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
   box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+}
+.lightbox-img-la-voz-redes .tituloinfo,
+.lightbox-video-footer .pasa-la-voz .tituloinfo{
+  color: #FBFBFB;
+  font-family: 'ubuntumedium';
+  text-align: center;
+  margin: 10px auto;
+  line-height: 22px;
+}
+.lightbox-img-la-voz-redes .tituloinfo{
+  font-size: 25px !important;
+}
+.lightbox-video-footer .pasa-la-voz .tituloinfo{
+  font-size: 24px !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.tituloinfo span{
+  color: #02E18B !important;
 }
 /*Close buton*/
 .lightbox-img-video-close{
@@ -399,7 +420,7 @@
 }
 /*Responsive*/
 @media screen and (min-width: 1400px){
-  .lightbox-custom-img, .lightbox-custom-video{
+  .lightbox-custom-img{
     width: 30% !important;
   }
 }

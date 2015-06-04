@@ -8,6 +8,10 @@ body{
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType=1 );
 }
+.curosr{
+	cursor: -webkit-zoom-in !important;
+  	cursor: -moz-zoom-in !important;
+}
 #back-top{
 	padding: 0;
   	margin: 0;
