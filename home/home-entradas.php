@@ -1,14 +1,26 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/component.css" />
 <script src="<?php bloginfo('template_url')?>/js/modernizr.custom.js"></script>
+<?php
+
+	$variablephp = $_GET['filter'];
+	if($variablephp==""){
+		$variablephp = "noticias";
+	}
+?>
 <section class="grid-wrap">
 	<ul class="grid swipe-right" id="grid">
 		<?php 
 			wp_reset_query(); 
 		    global $query_string;
-		    $categoriaNoticias 	= get_category_by_slug('noticias');
-		    $categoriaNoticias 	= $categoriaNoticias->term_id;
+		    //$categoriaNoticias 	= get_category_by_slug( "'".$variablephp."'" );
+		    //$categoriaNoticias 	= $categoriaNoticias->term_id;
 		        
-		    $blog_query 		= new WP_Query('cat=' . $categoriaNoticias . '&post_type=post&posts_per_page=-1&order=DESC');//
+		    $args = array(
+		    	"category_name" => 	$variablephp,
+		    	"posts_per_page" => -1,
+		    	"post_type" => "post"
+		    );
+		    $blog_query 		= new WP_Query($args);
 		    $contador 			= 0;
 		    
 		    while (	$blog_query	-> have_posts() ):
