@@ -598,31 +598,20 @@ hr {
 }
 .nav-social li a:hover{
 	text-decoration:none;
+	opacity:0.7;
 }
 .twitter{
 	background-image: url(images/icon-twitter.png);
 	background-repeat: no-repeat;
-	background-position: 0 -7px;
+	background-position: center left;
 	padding: 6px 0 6px 39px;
-	background-size: 36px;
-	width: 29px;
-	height: 25px;
-}
-.twitter:hover{
-	background-position: 0 -43px;
 }
 .facebook{
 	background-image: url(images/icon-facebook.png);
 	background-repeat: no-repeat;
+	background-position: center left;
 	padding: 14px 0 9px 32px;
-	background-size: 38px;
-	width: 29px;
-	height: 30px;
 }
-.facebook:hover{
-	background-position: 0 -38.1px;
-}
-
 .btn-search{
 	color: #fff;
 	background-image: url(images/buscador-lupa.png);
@@ -658,10 +647,6 @@ hr {
 .btn-open-filter{
 	float:right;
 }
-
-.active .lupa{
-	background-image: url(images/filtro-mostrar.png) !important;
-}
 .lupa{
 	background-image: url(images/filtro-ocultar.png);
 	background-size: 31px;
@@ -670,9 +655,6 @@ hr {
 	display: block;
 	margin-top: 26px;
 	margin-left: 7px;
-}
-.lupa:hover, .active .lupa:hover{
-	background-position: 0 -31px;
 }
 .over-flow{
 	overflow:hidden;
@@ -688,7 +670,7 @@ hr {
 	list-style: none;
 	display: inline-table;
 	vertical-align: middle;
-	font-family: 'lato-light';
+	font-family: 'ubuntulight';
 	font-size: 19px;
 	color:#FFF;
 	margin: 0 4px;
@@ -886,6 +868,11 @@ li a.icon-video:hover{
 		-moz-transition: -moz-transform 100ms ease-out;
 		transition: transform 100ms ease-out;
 	}
+	.rotateMe:hover {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
 	
 	/*menu*/
 	.btn-open-nav{
@@ -895,12 +882,12 @@ li a.icon-video:hover{
 		margin: 18px 0;
 	}
 	.twitter {
-		background-position: right -7px;
-		padding: 3px 50px 6px 0px;
+	  background-position: center right;
+	  padding: 6px 50px 6px 0px;
 	}
 	.facebook {
-		background-position: right -7px;
-		padding: 6px 50px 6px 0px;
+	  background-position: center right;
+	  padding: 6px 50px 6px 0px;
 	}
 	
 	.tap-search-xs{
@@ -944,7 +931,6 @@ li a.icon-video:hover{
 	
 	.nav-social li{
 		margin: 10px 20px 17px;
-		display: inline-table;
 	}
 	.bd-purple{
 		border-top: 2px solid #354184;
@@ -953,15 +939,7 @@ li a.icon-video:hover{
 		display:block;
 		float: right;
 	}
-	.over-flow{
-		overflow:inherit;
-		overflow:none;
-		height:auto;
-	}
-	.sin-paddgin-sm{
-		padding-left:0 !important;
-		padding-right:0 !important;
-	}
+
 }
 
 /*Style devices between  600px - 767px css*/

@@ -47,7 +47,7 @@
             <p class="text-right title-name">Karime</p>
             <div class="nav-pager"></div>
         </div>	
-        <div class="cycle-slideshow col-xs-12" data-cycle-timeout="5000" data-cycle-pager=".nav-pager" data-cycle-slides="> div">
+        <div class="cycle-slideshow col-xs-12" data-cycle-timeout="5000" data-cycle-slides="> div">
             <?php
             $query = new WP_Query($args);
             while ($query->have_posts()){ 

@@ -132,17 +132,19 @@
 
 <body <?php body_class(); ?>>
 <div class="wrapper-header bg-purple">
-    <div class="container-fluid">
+    <div class="container-fluid sin-paddgin-sm">
         <div class="over-flow">
             <div class="col-md-4 bg-purple-bold">
-                <a href="#" class="logo"><img src="<?php bloginfo('template_url')?>/images/logo.png"></a>
+                <a href="#" class="logo">
+                	<img src="<?php bloginfo('template_url')?>/images/logo_hd.png" class="img-full">
+                </a>
                 <div class="btn-open-nav hidden-md hidden-lg"><img src="<?php bloginfo('template_url'); ?>/images/flecha-nav.png"></div>
                 <div class="content-nav-xs hidden-md hidden-lg">
                     <ul class="nav-social">
                         <span class="bd-purple"></span>
                         <div class="clearfix"></div>
-                        <li class="twitter"><a href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
-                        <li class="facebook"><a href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
+                        <li><a class="twitter" href="https://twitter.com/KarimeMacias" target="_blank">@KarimeMacias</a></li>
+                        <li><a class="facebook" href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank">/KarimeMaciasDeDuarte</a></li>
                         <li class="search hidden-xs">Buscar</li>
                     </ul>
                     <div class="tap-search-xs"><?php get_search_form(); ?></div>
@@ -154,10 +156,10 @@
                 <ul class="nav-social">
                     <li><a class="twitter" href="https://twitter.com/KarimeMacias" target="_blank"></a></li>
                     <li><a class="facebook" href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank"></a></li>
-                    <li class="btn-search">Buscar</li>
+                    <li class="btn-search"><span>Buscar</span></li>
                 </ul>
             </div>
-            <div class="open-filter">
+            <div class="open-filter visible-md visible-lg">
             	<ul>
                 	<li>Filtrar por:</li>
                 	<li><a class="icon-infografia" href="?filter=infografia"></a></li>
