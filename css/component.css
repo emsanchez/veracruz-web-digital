@@ -470,6 +470,9 @@ section {
 .infografia{
 	background: #4553A2;
 }
+.animate:hover .infografia{
+	background: #354184;
+}
 .shown:hover .infografia{
 	background: #354184;
 }
@@ -482,6 +485,9 @@ section {
 .shown:hover .video{
 	background: #AE1900;
 }
+.animate:hover .video{
+	background: #AE1900;
+}
 .video:hover{
 	background: #AE1900;
 }
@@ -489,6 +495,9 @@ section {
 	background: #33BCA1;
 }
 .shown:hover .enlaces-externos{
+	background: #26947e;
+}
+.animate:hover .enlaces-externos{
 	background: #26947e;
 }
 .enlaces-externos:hover{
