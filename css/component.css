@@ -8,6 +8,27 @@ body{
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType=1 );
 }
+#back-top{
+	padding: 0;
+  	margin: 0;
+  	position: fixed;
+  	z-index: 1111;
+  	top: 75% !important;
+  	right: 5%;
+ 	bottom: 0;
+}
+#back-top span {
+    width: 62px;
+    height: 62px;
+    display: block;
+    background: url(../images/UP.png) no-repeat;
+    background-color: transparent;
+    background-size: 62px 124px;
+    background-position: 0px 0px;
+}
+#back-top a:hover span {
+   	background-position: 0px -62px;
+}
 .linkshare{
 	margin: 0 auto;
   	width: 70%;

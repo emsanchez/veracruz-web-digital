@@ -76,6 +76,9 @@
 		?>
 	</ul>
 </section>
+<p id="back-top" style="display: block;">
+	<a href="#top"><span></span></a>
+</p>
 <script src="<?php bloginfo('template_url')?>/js/masonry.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/imagesloaded.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/classie.js"></script>
@@ -94,6 +97,30 @@
 			event.stopPropagation();
 		  	return false;
 		});
+		var popup = $('#back-top');
+		popup.css({ 
+		    'top': '-'+ ($(window).height() * 2 - $(popup).height() / 2) + 'px'
+		});
+		 // hide #back-top first
+	    $("#back-top").hide();
+	    // fade in #back-top
+	    $(function () {
+	        $(window).scroll(function () {
+	            if ($(this).scrollTop() > 100) {
+	                $('#back-top').fadeIn();
+	            } else {
+	                $('#back-top').fadeOut();
+	            }
+	        });
+	 
+	        // scroll body to 0px on click
+	        $('#back-top a').click(function () {
+	            $('body,html').animate({
+	                scrollTop: 0
+	            }, 800);
+	            return false;
+	        });
+	    });
 	});
 	function mostrarHover(ident,btnident){
 		var classe 		= '#'+ident;
