@@ -11,7 +11,7 @@
 	}
 	.wrap_foter{  
 		float: right;
-  margin-right: 220px;
+  margin-right: 24%;
 	}
 	.back-softblue{
 		background-color: #4553A2;
@@ -57,6 +57,110 @@
 		float: right;
 	}
 
+
+/*******single*******/
+.img_destacada_single{
+	width: 100%;
+}
+.redes_sociales_single{
+	 list-style: none;
+  margin-left: 0px;
+}
+.redes_sociales_single li{
+	  border-bottom: 1px solid rgba(69,83,162,.2);
+  clear: both;
+}
+.redes_sociales_single li:first-child{
+	border-bottom: none;
+}
+.tweet_single{
+	  background-image: url(../images/twitter.png);
+  width: 42px;
+  height: 52px;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: left;
+    margin-top: 6px;
+}
+.tweet_single:hover{
+	background-position: 0px -47px;
+}
+.face_single{
+	background-image: url(../images/facebook.png);
+ 	width: 42px;
+  height: 52px;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: left;
+    margin-top: 6px;
+}
+.face_single:hover{
+	background-position: 0px -47px;
+}
+.pinte_single{
+	background-image: url(../images/pinterest.png);
+ 	width: 42px;
+  height: 52px;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: left;
+    margin-top: 6px;
+}
+.pinte_single:hover{
+	background-position: 0px -47px;
+}
+.plus_single{
+	  background-image: url(../images/googleplus.png);
+	width: 42px;
+  height: 52px;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: left;
+    margin-top: 6px;
+}
+.plus_single:hover{
+	background-position: 0px -47px;
+}
+.titulo_red{
+	  font-size: 15px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 22px;
+  color: #ccc;
+  font-family: 'lato-hairline';
+}
+.content_text{
+	margin-top: 40px;
+}
+.ajuste_margenes{
+	  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.wrap_content_single{
+	text-align: justify;
+  line-height: 1.7;
+  font-family: "ubuntulight";
+  color: #797979;
+  font-size: 16px;
+  padding-right: 20px;
+  padding-left: 40px;
+}
+.reset_paddings_single{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.titulo_single{
+	color: #555;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
 @media (min-width: 901px) and (max-width: 1150px) { 
 	.wrap_foter {
 	  margin-right: 118px;
@@ -99,6 +203,22 @@
 	.back-blue-color{
 		text-align: center;
 	}
+
+	/***single***/
+	.wrap_content_single{
+		padding-left:0px;
+		line-height: 1.3;
+		padding-right: 0px;
+	}
+	.titulo_single{
+		  font-size: 22px;
+	}
+	.img_destacada_single {
+	  margin-top: 20px;
+	}
+	.sidebar-single a.mas-contenido{
+		margin-right: 0px !important;
+	}
 }
 /*Less device 600 (iphone, samsung galaxy mini, etc)*/
 @media screen and (max-width: 599px){ /* <= device less 599px*/
@@ -126,7 +246,31 @@
 	.back-blue-color{
 		text-align: center;
 	}
-	
+
+	/***single***/
+	.wrap_content_single{
+		padding-left:0px;
+		line-height: 1.3;
+		padding-right: 0px;
+	}
+	.titulo_single{
+		  font-size: 22px;
+	}
+	.img_destacada_single {
+	  margin-top: 20px;
+	}
+	.ajuste_sidebar_single{
+	  margin-top: 20px;
+	  border-top: 3px solid #E4E6F1;
+	  padding-top: 20px;
+	}
+	.margin-bottom-single{
+		  border-bottom: 3px solid #E4E6F1;
+  		margin-bottom: 20px;
+	}
+	.sidebar-single a.mas-contenido{
+		margin-right: 0px !important;
+	}
 }
 /*Iphone(landscape) and device with less width*/
 @media screen and (max-width: 480px){ /* <= device less 480px*/
@@ -158,6 +302,30 @@
 	}
 	.logo_veracruz_footer{
 		  margin-left: 22px;
+	}
+	/***single***/
+	.wrap_content_single{
+		padding-left:0px;
+		line-height: 1.3;
+		padding-right: 0px;
+	}
+	.titulo_single{
+		  font-size: 22px;
+	}
+	.img_destacada_single {
+	  margin-top: 20px;
+	}
+	.ajuste_sidebar_single{
+	  margin-top: 20px;
+	  border-top: 3px solid #E4E6F1;
+	  padding-top: 20px;
+	}
+	.margin-bottom-single{
+		  border-bottom: 3px solid #E4E6F1;
+  		margin-bottom: 20px;
+	}
+	.sidebar-single a.mas-contenido{
+		margin-right: 0px !important;
 	}
 }
 /*Iphone and device with less width*/
@@ -191,4 +359,30 @@
 	.logo_veracruz_footer{
 		  margin-left: 18px;
 	}
+
+	/***single***/
+	.wrap_content_single{
+		padding-left:0px !;
+		line-height: 1.3;
+		padding-right: 0px;
+	}
+	.titulo_single{
+		  font-size: 22px;
+	}
+	.img_destacada_single {
+	  margin-top: 20px;
+	}
+	.ajuste_sidebar_single{
+	  margin-top: 20px;
+	  border-top: 3px solid #E4E6F1;
+	  padding-top: 20px;
+	}
+	.margin-bottom-single{
+		  border-bottom: 3px solid #E4E6F1;
+  		margin-bottom: 20px;
+	}
+	.sidebar-single a.mas-contenido{
+		margin-right: 0px !important;
+	}
 }
+
