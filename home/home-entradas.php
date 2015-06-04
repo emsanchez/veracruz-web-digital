@@ -1,14 +1,37 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/component.css" />
 <script src="<?php bloginfo('template_url')?>/js/modernizr.custom.js"></script>
+<?php
+	function string2url($cadena) {
+		$cadena = trim($cadena);
+		$cadena = strtr($cadena,
+	"ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ",
+	"aaaaaaaaaaaaooooooooooooeeeeeeeecciiiiiiiiuuuuuuuuynn");
+		$cadena = strtr($cadena,"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz");
+		$cadena = preg_replace('#([^.a-z0-9]+)#i', '-', $cadena);
+	        $cadena = preg_replace('#-{2,}#','-',$cadena);
+	        $cadena = preg_replace('#-$#','',$cadena);
+	        $cadena = preg_replace('#^-#','',$cadena);
+		return $cadena;
+	}
+	$variablephp = string2url($_GET['filter']);
+	if($variablephp==""){
+		$variablephp = "noticias";
+	}
+?>
 <section class="grid-wrap">
 	<ul class="grid swipe-right" id="grid">
 		<?php 
 			wp_reset_query(); 
 		    global $query_string;
-		    $categoriaNoticias 	= get_category_by_slug('noticias');
-		    $categoriaNoticias 	= $categoriaNoticias->term_id;
+		    //$categoriaNoticias 	= get_category_by_slug( "'".$variablephp."'" );
+		    //$categoriaNoticias 	= $categoriaNoticias->term_id;
 		        
-		    $blog_query 		= new WP_Query('cat=' . $categoriaNoticias . '&post_type=post&posts_per_page=-1&order=DESC');//
+		    $args = array(
+		    	"category_name" => 	$variablephp,
+		    	"posts_per_page" => -1,
+		    	"post_type" => "post"
+		    );
+		    $blog_query 		= new WP_Query($args);
 		    $contador 			= 0;
 		    
 		    while (	$blog_query	-> have_posts() ):
@@ -74,6 +97,9 @@
 		    endwhile;  //Terminar while de post dentro de BLOG
 		    wp_reset_query();
 		?>
+		<p id="back-top" style="display: block;">
+			<a href="#top"><span></span></a>
+		</p>
 	</ul>
 </section>
 <script src="<?php bloginfo('template_url')?>/js/masonry.pkgd.min.js"></script>
@@ -94,6 +120,30 @@
 			event.stopPropagation();
 		  	return false;
 		});
+		var popup = $('#back-top');
+		popup.css({ 
+		    'top': '-'+ ($(window).height() * 2 - $(popup).height() / 2) + 'px'
+		});
+		 // hide #back-top first
+	    $("#back-top").hide();
+	    // fade in #back-top
+	    $(function () {
+	        $(window).scroll(function () {
+	            if ($(this).scrollTop() > 100) {
+	                $('#back-top').fadeIn();
+	            } else {
+	                $('#back-top').fadeOut();
+	            }
+	        });
+	 
+	        // scroll body to 0px on click
+	        $('#back-top a').click(function () {
+	            $('body,html').animate({
+	                scrollTop: 0
+	            }, 800);
+	            return false;
+	        });
+	    });
 	});
 	function mostrarHover(ident,btnident){
 		var classe 		= '#'+ident;

@@ -4,7 +4,6 @@
  *
  * License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
  */
-
 /*Navegaciion*/
 .ekko-lightbox{
   padding-right: 0px !important;
@@ -27,6 +26,7 @@
   display: block;
   width: 49%;
   height: 100%;
+  top:50%;
   filter: dropshadow(color=#000000, offx=2, offy=2);
   -webkit-transition: opacity 0.5s;
   -moz-transition: opacity 0.5s;
@@ -37,7 +37,6 @@
 .ekko-lightbox .glyphicon-chevron-left {
   left: 0;
   float: left;
-  top: 50%;
   height: auto;
   background: url(../images/lightbox/atras-1.png);
   background-repeat: no-repeat;
@@ -55,7 +54,6 @@
 .ekko-lightbox .glyphicon-chevron-right {
   right: 0;
   float: right;
-  top: 50%;
   background: url(../images/lightbox/adelante-1.png);
   background-repeat: no-repeat;
   background-size: 52px;
@@ -234,11 +232,12 @@
   padding: 0px;
 }
 .lightbox-img-header h4{
-  margin-top: 20px;
-  font-size: 13px;
+  margin-top: 35px;
+  font-size: 16px;
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
+  line-height: 21px;
 }
 .lightbox-img-la-voz-redes{
   background-color: #354184;
@@ -399,14 +398,18 @@
   margin-top: 5px;
 }
 /*Responsive*/
+@media screen and (min-width: 1400px){
+  .lightbox-custom-img, .lightbox-custom-video{
+    width: 30% !important;
+  }
+}
 /*---Devices medium and large---*/
-@media (min-width: 767px) and (max-width: 1024px){ /* <= device between 768px and 991px*/
+@media (min-width: 767px) and (max-width: 1024px){ /* <= device between 768px and 1024px*/
   .lightbox-custom-img,.lightbox-custom-video{
     width: 80% !important;
     margin: 0 auto !important;
   }
 }
-/*Style devices between  600px - 767px css*/
 @media screen and (max-width: 767px){
   .lightbox-modal-dialog{
       margin: 55px auto !important;
@@ -481,6 +484,7 @@
     font-size: 12px;
   }
 }
+/*Style devices between  600px - 767px css*/
 @media (min-width: 600px) and (max-width: 767px) { /* <= device between 600px and 767px*/
   .lightbox-custom-img, .lightbox-custom-video{
     width: 80% !important;

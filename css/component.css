@@ -8,6 +8,27 @@ body{
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType=1 );
 }
+#back-top{
+	padding: 0;
+  	margin: 0;
+  	position: fixed;
+  	z-index: 50;
+  	top: 75% !important;
+  	left: 86%; */
+ 	bottom: 0;
+}
+#back-top span {
+    width: 62px;
+    height: 62px;
+    display: block;
+    background: url(../images/UP.png) no-repeat;
+    background-color: transparent;
+    background-size: 62px 124px;
+    background-position: 0px 0px;
+}
+#back-top a:hover span {
+   	background-position: 0px -62px;
+}
 .linkshare{
 	margin: 0 auto;
   	width: 70%;
@@ -437,13 +458,20 @@ section {
 	color: white;
 	background: transparent !important;
 }
+.leer-mas a:active,
+.leer-mas a:visited,
+.leer-mas a:focus,
 .leer-mas a:hover{
 	text-decoration: none !important; 
 	color: white !important;
 	background: transparent !important;
+	outline: 0 !important;
 }
 .infografia{
 	background: #4553A2;
+}
+.animate:hover .infografia{
+	background: #354184;
 }
 .shown:hover .infografia{
 	background: #354184;
@@ -457,6 +485,9 @@ section {
 .shown:hover .video{
 	background: #AE1900;
 }
+.animate:hover .video{
+	background: #AE1900;
+}
 .video:hover{
 	background: #AE1900;
 }
@@ -464,6 +495,9 @@ section {
 	background: #33BCA1;
 }
 .shown:hover .enlaces-externos{
+	background: #26947e;
+}
+.animate:hover .enlaces-externos{
 	background: #26947e;
 }
 .enlaces-externos:hover{
