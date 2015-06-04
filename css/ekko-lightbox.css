@@ -7,6 +7,8 @@
 /*Navegaciion*/
 .ekko-lightbox{
   padding-right: 0px !important;
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
 }
 .ekko-lightbox-container {
   position: relative;
