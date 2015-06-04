@@ -12,6 +12,29 @@ body{
 	cursor: -webkit-zoom-in !important;
   	cursor: -moz-zoom-in !important;
 }
+.bg-yellow{
+	border-top: 5px solid #fff400;
+}
+.bg-yellow p{
+	font-size: 19px;
+	font-family: 'ubunturegular' !important;
+}
+.lupa{
+	width: 28px;
+	cursor: pointer;
+}
+.open-filter ul li{
+	font-size: 17px;
+  	color: #dee3ff;
+  	cursor: default;
+}
+li a.icon-video{
+	margin-left: 5px;
+}
+.tap-search{
+	margin-top: -5px;
+	background-color: rgba(255,255,255,1);
+}
 #back-top{
 	padding: 0;
   	margin: 0;
