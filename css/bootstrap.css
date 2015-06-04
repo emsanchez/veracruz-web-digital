@@ -46,9 +46,12 @@ template {
 a {
   background-color: transparent;
 }
+a:focus,
+a:visited,
 a:active,
 a:hover {
   outline: 0 !important;
+  text-decoration: none !important;
 }
 abbr[title] {
   border-bottom: 1px dotted;

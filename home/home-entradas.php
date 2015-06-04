@@ -74,11 +74,11 @@
 		    endwhile;  //Terminar while de post dentro de BLOG
 		    wp_reset_query();
 		?>
+		<p id="back-top" style="display: block;">
+			<a href="#top"><span></span></a>
+		</p>
 	</ul>
 </section>
-<p id="back-top" style="display: block;">
-	<a href="#top"><span></span></a>
-</p>
 <script src="<?php bloginfo('template_url')?>/js/masonry.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/imagesloaded.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/classie.js"></script>

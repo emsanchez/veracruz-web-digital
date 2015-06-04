@@ -14,7 +14,7 @@ body{
   	position: fixed;
   	z-index: 1111;
   	top: 75% !important;
-  	right: 5%;
+  	left: 86%; */
  	bottom: 0;
 }
 #back-top span {
@@ -458,10 +458,14 @@ section {
 	color: white;
 	background: transparent !important;
 }
+.leer-mas a:active,
+.leer-mas a:visited,
+.leer-mas a:focus,
 .leer-mas a:hover{
 	text-decoration: none !important; 
 	color: white !important;
 	background: transparent !important;
+	outline: 0 !important;
 }
 .infografia{
 	background: #4553A2;
