@@ -68,7 +68,7 @@
 						<button class="share-btn plus-leer" onclick="window.open('https://plus.google.com/share?url=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
 					<?php } ?>
 				</div>
-				<img class="full-img" src="<?php echo $imagen_destacada; ?>" alt="<?php echo the_title(); ?>">
+				<img class="full-img <?php if($category=="infografia"){ echo "curosr"; } ?>" src="<?php echo $imagen_destacada; ?>" alt="<?php echo the_title(); ?>">
 			</a>
 			<button class="share" id="<?php echo "share".$contador; ?>" onClick="mostrarHover('<?php echo "imgshare".$contador; ?>','<?php echo "share".$contador; ?>')"></button>
 			<div class="container-text">
