@@ -29,3 +29,55 @@
 .sidebar-single a.mas-contenido:hover{
 	background-position: right -44px;
 }
+/*Responsive*/
+@media screen and (max-width: 1042px){
+	.grid {
+		width: 100% !important;
+	}
+	.grid li{
+		width: 220px;
+	}
+	.sidebar-single a.mas-contenido{
+		margin-right: 0px;
+	}
+	.sidebar-single img.pasa-la-voz{
+		padding-bottom: 10px;
+		width: 170px;
+	}
+	.sidebar-single img.pasa-la-voz{
+		margin-left: 0px;
+	}
+}
+@media screen and (max-width: 767px){
+	.grid {
+  		width: 75% !important;
+	}
+	.container-text p{
+		font-size: 13px;
+	}
+	.sidebar-single a.mas-contenido{
+		font-size: 20px;
+	}
+	.sidebar-single img.pasa-la-voz {
+		padding-bottom: 10px;
+  		width: 190px;
+  		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 736px){
+	.sidebar-single{
+		text-align: center;
+	}
+}
+@media screen and (max-width: 650px){
+	.grid {
+  		width: 100% !important;
+	}	
+}
+@media screen and (max-width: 320px){ /* <= device less 320px*/
+	.sidebar-single img.pasa-la-voz{
+		padding-bottom: 10px;
+  		width: 160px;
+  		margin: 0 auto;
+	}
+}

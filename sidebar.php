@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/component.css" />
 <link href="<?php bloginfo('template_url'); ?>/css/sidebar.css" rel="stylesheet">
 <script src="<?php bloginfo('template_url')?>/js/modernizr.custom.js"></script>
-<div class="sidebar-single col-xs-12 col-sm-3 col-md-3">
+<div class="sidebar-single col-xs-12 col-sm-4 col-md-3">
 	<img class="pasa-la-voz" src="<?php bloginfo('template_url')?>/images/sidebar/pasa-la-voz.png" alt="Pasa la voz" />
 	<section class="grid-wrap">
 		<ul class="grid swipe-right" id="grid" style="margin-bottom:0px;">
@@ -62,10 +62,10 @@
 		   
 		    $blog_query 		= new WP_Query('cat=' . $categoriaVideo . '&post_type=post&posts_per_page=1&order=DESC');//
 		    
-		    $contador 			= 0;
+		    $contadorx 			= $contador;
 		    
 		    while (	$blog_query	-> have_posts() ):
-		        $contador 	= 	$contador + 1;
+		        $contadorx 	= 	$contadorx + 1;
 		        $blog_query	->	the_post();
 		        $wp_query 	->	in_the_loop = true;
 		        
@@ -78,7 +78,7 @@
 		<li><!-- SE COLOCA UN HREF PARA CADA TIPO DE ENTRADA VIDEO, ENLACE EXTERNO Y OTRAS -->
 			<a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>">
 			<!-- EMPIEZA EL CONTENIDO INTERNO DE LA NOTICIA -->
-				<div class="divimageshare" id="<?php echo 'imgshare'.$contador; ?>">
+				<div class="divimageshare" id="<?php echo 'imgshare'.$contadorx; ?>">
 					<h3 class="titulover"><span>#</span>PasaLaVoz <span>#</span>Comparte</h3>
 					<button class="share-btn twetter-leer" onclick="window.open('https://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
 					<button class="share-btn faceb-leer" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>','Comparir Veracruz Digital', 'toolbar=0, status=0, width=650, height=450');"></button>
@@ -87,7 +87,7 @@
 				</div>
 				<img class="full-img" src="<?php echo $imagen_destacada; ?>" alt="<?php echo the_title(); ?>">
 			</a>
-			<button class="share" id="<?php echo "share".$contador; ?>" onClick="mostrarHover('<?php echo "imgshare".$contador; ?>','<?php echo "share".$contador; ?>')"></button>
+			<button class="share" id="<?php echo "share".$contadorx; ?>" onClick="mostrarHover('<?php echo "imgshare".$contadorx; ?>','<?php echo "share".$contadorx; ?>')"></button>
 			<div class="container-text">
 				<h3><?php echo the_title(); ?></h3>
 				<?php $titulo="Ver video"; ?>
@@ -156,18 +156,18 @@ $(document).ready(function() {
 	    });
 	});
 });
-	function mostrarHover(ident,btnident){
-		var classe 		= '#'+ident;
-		var classeDiv 	= '#'+btnident;
-		var checkClass 	= $( classe ).hasClass( "shareback" );
-		if(checkClass==false){
-			$( classe ).addClass( "shareback" );
-			$( classeDiv ).addClass( "changeback" );
-			return false;
-		}else{
-			$( classe ).removeClass( "shareback" );
-			$( classeDiv ).removeClass( "changeback" );
-			return false;
-		}
+function mostrarHover(ident,btnident){
+	var classe 		= '#'+ident;
+	var classeDiv 	= '#'+btnident;
+	var checkClass 	= $( classe ).hasClass( "shareback" );
+	if(checkClass==false){
+		$( classe ).addClass( "shareback" );
+		$( classeDiv ).addClass( "changeback" );
+		return false;
+	}else{
+		$( classe ).removeClass( "shareback" );
+		$( classeDiv ).removeClass( "changeback" );
+		return false;
 	}
+}
 </script>
