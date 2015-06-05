@@ -581,10 +581,11 @@ hr {
 }
 .bg-yellow{
  	background-color: #FFE23C;
+ 	border-top: 5px solid #fff400;
 }
 .bg-yellow p{
-	font-family: 'ubuntulight';
-	font-size:21px;
+	font-size: 19px;
+	font-family: 'ubunturegular';
 	margin: 6px 0;
 	color: #4553A2;
 }
@@ -599,7 +600,7 @@ hr {
 .nav-social li{
 	list-style: none;
 	display: inline-block;
-	margin: 0px 12px 0px;
+	margin: 0px 5px 0px;
 }
 .nav-social li a{
 	color: rgba(255,255,255,0.76);
@@ -675,7 +676,8 @@ hr {
 .lupa{
 	background-image: url(images/filtro-ocultar.png);
 	background-size: 31px;
-	width: 25px;
+	width: 28px;
+	cursor: pointer;
 	height: 31px;
 	display: block;
 	margin-top: 26px;
@@ -699,8 +701,9 @@ hr {
 	display: inline-table;
 	vertical-align: middle;
 	font-family: 'lato-light';
-	font-size: 19px;
-	color:#FFF;
+	font-size: 17px;
+  	color: #dee3ff;
+  	cursor: default;
 	margin: 0 4px;
 }
 li a.icon-infografia{
@@ -725,6 +728,7 @@ li a.icon-nota:hover{
 	background-position: -4px -35px;
 }
 li a.icon-video{
+	margin-left: 5px;
 	width:21px;
 	height:32px;
 	display:block;
@@ -813,7 +817,8 @@ li a.icon-video:hover{
 .tap-search{
 	top: 0px;
 	left: 0;
-	background-color: rgba(255,255,255,0.9);
+	margin-top: -5px;
+	background-color: rgba(255,255,255,1);
 	position: absolute;
 	width: 100%;
 	display: none;
