@@ -866,7 +866,25 @@ li a.icon-video:hover{
 	width: 28px;
 	height: 38px;
 }	
-		
+.icon-nav{
+	background-image: url(images/flecha-nav.png);
+	background-position: 0 -35px;
+	background-size: cover;
+	width: 30px;
+	height: 25px;
+	display: block;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.active .icon-nav{
+	background-position: 0 -1px;
+}
+
+
  /**
  * 4.0 - Sidebar
  * -----------------------------------------------------------------------------
@@ -903,6 +921,22 @@ li a.icon-video:hover{
 	}
 	
 	/*menu*/
+	.content-nav-xs{
+		background-repeat: no-repeat;
+		background-image: url(images/logo_movil.png);
+		background-size: 77px;
+		background-position: 23px 23px;
+	}
+	.btn-open-nav{
+		position: absolute;
+		display: block;
+		width: 23%;
+		height: 100%;
+		right: 0;
+		top: 0;
+		z-index: 3;
+		background-color: #4553A2;
+	}
 	.btn-open-nav{
 		text-align: center;
 	}
@@ -1004,18 +1038,8 @@ li a.icon-video:hover{
 	.bg-yellow p {
 	    font-size: 12px !important;
 	}
-	.btn-open-nav{
-		position: absolute;
-		display: block;
-		width: 23%;
-		height: 100%;
-		right: 0;
-		top: 0;
-		z-index: 3;
-		background-color: #4553A2;
-	}
 	.content-nav-xs{
-		padding-top: 55px;
+		padding-top: 18%;
 		width: 97.2%;
 		position: absolute;
 		background-color: #4553A2;
@@ -1070,7 +1094,12 @@ li a.icon-video:hover{
 	}
 }
 
-@media screen and (orientation:portrait) {
-	
+@media screen and (orientation:landscape) {
+	.content-nav-xs {
+		padding-top: 11%;
+	}
+	.bd-purple {
+		padding: 7px 0;
+	}
 }
 /*fin utilities*/

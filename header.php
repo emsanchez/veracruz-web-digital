@@ -95,7 +95,7 @@
                             //Evento Click
                             $('.ekko-lightbox-nav-overlay').click(function (e){
                                 if(e.target!= this) return;
-                               $('.close').trigger('click');
+                                $('.close').trigger('click');
                             });
 						}
 					});
@@ -106,14 +106,9 @@
             }
         });
 		$(document).ready(function() {
-			$(document).on('click','.btn-open-nav', function(event){
+			$(document).on('click touchstart','.btn-open-nav', function(event){
 				$(this).stop().toggleClass('active');
 				$('.content-nav-xs').stop().toggle('show');
-				if($(this).hasClass('active')){
-					$('img',this).css({ "-webkit-transform:" : "rotate(180deg)", "-moz-transform": "rotate(180deg)", transform : "rotate(180deg)" });
-				}else{
-					$('img',this).css({ "-webkit-transform:" : "rotate(0deg)", "-moz-transform": "rotate(0deg)", transform: "rotate(0deg)" });	
-				}
 			});
 			
 			$(document).on('click','.btn-open-filter', function(event){
@@ -143,7 +138,9 @@
                 <a href="/" class="logo">
                 	<img src="<?php bloginfo('template_url')?>/images/logo_hd.png" class="img-full">
                 </a>
-                <div class="btn-open-nav hidden-sm hidden-md hidden-lg"><img src="<?php bloginfo('template_url'); ?>/images/flecha-nav.png"></div>
+                <div class="btn-open-nav hidden-sm hidden-md hidden-lg">
+                	<span class="icon-nav"></span>
+                </div>
                 <div class="content-nav-xs hidden-sm hidden-md hidden-lg">
                     <ul class="nav-social">
                         <span class="bd-purple"></span>
