@@ -1019,6 +1019,22 @@ li a.icon-video:hover{
 		padding-left:0 !important;
 		padding-right:0 !important;
 	}
+	
+	.content-nav-xs{
+		padding-top: 18%;
+		width: 97.2%;
+		position: absolute;
+		background-color: #4553A2;
+		z-index: 2;
+		right: 0;
+		top: 0;
+		display:none;
+	}
+	
+	.logo img{
+		width:45%;
+		float:left;
+	}
 }
 
 /*Style devices between  600px - 767px css*/
@@ -1031,22 +1047,9 @@ li a.icon-video:hover{
 	.hidden-less-600{
 		display:none !important;
 	}
-	.logo img{
-		width:45%;
-		float:left;
-	}
+	
 	.bg-yellow p {
 	    font-size: 12px !important;
-	}
-	.content-nav-xs{
-		padding-top: 18%;
-		width: 97.2%;
-		position: absolute;
-		background-color: #4553A2;
-		z-index: 2;
-		right: 0;
-		top: 0;
-		display:none;
 	}
 	.sin-paddgin-xs{
 		padding-left:0 !important;
