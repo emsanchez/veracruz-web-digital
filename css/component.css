@@ -8,6 +8,10 @@ body{
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType=1 );
 }
+.sin-padding{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
 .curosr{
 	cursor: -webkit-zoom-in !important;
   	cursor: -moz-zoom-in !important;
@@ -34,6 +38,9 @@ li a.icon-video{
 .tap-search{
 	margin-top: -5px;
 	background-color: rgba(255,255,255,1);
+}
+.nav-social li{
+	margin: 0px 5px 0px;
 }
 #back-top{
 	padding: 0;

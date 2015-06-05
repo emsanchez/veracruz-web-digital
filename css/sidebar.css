@@ -1,8 +1,10 @@
 /*Sidebar*/
 .sidebar-single{
+	padding-top: 30px;
 	overflow: hidden;
 	height: 100%;
 	padding-bottom: 15px;
+	  padding-left: 0px !important;
 }
 .sidebar-single img.pasa-la-voz{
 	width: 178px;
@@ -15,17 +17,49 @@
 	font-family: 'ubunturegular';
 	color: #515670;
 	text-align: left;
-	font-size: 19px;
+	font-size: 18px;
 	background: url(../images/404/pagina-principla.png);
 	background-repeat: no-repeat;
 	background-size: 40px;
 	padding-top: 8px;
 	height: 42px;
 	float: right;
-	padding-right: 45px;
+	padding-right: 51px;
 	background-position: right 0px;
-	margin-right: 60px;
 }
 .sidebar-single a.mas-contenido:hover{
 	background-position: right -44px;
+}
+.colorchange{
+	color: #4553a2 !important;
+  	line-height: 22px;
+}
+.quitarborder{
+	margin-top: 0px !important;
+  	margin-bottom: 0px !important;
+  	text-align: left;
+  	padding-left: 7px;
+}
+.otrosBorders{
+	margin-top: 0px !important;
+  	margin-bottom: 17px !important;
+  	text-align: left;
+  	padding-left: 27px;
+}
+.separador-redes{
+	width: 73%;
+	height: 1px;
+	background-color: rgba(69,83,162,.22);
+}
+.border-bottom{
+	  margin-bottom: 70px;
+	  padding-right: 30px !important;
+}
+.new-separado{
+	margin: 0 auto;
+  text-align: center;
+  width: 95%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+	border-top: 3px solid rgba(220,220,220, .50);
 }

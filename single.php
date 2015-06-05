@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="main-content">
-    <div class="container">
-        <div class="col-md-8 col-xs-12">
+    <div class="container-fluid sin-padding">
+        <div class="col-md-9 col-xs-12 border-bottom">
             <h2 class="titulo_single hidden-xs">
                 <?php the_title(); ?>
             </h2>
@@ -26,7 +26,7 @@
                 <?php the_title(); ?>
             </h2>
             <div class="content_text">
-                <div class="col-md-2 hidden-xs ajuste_margenes">
+                <div class="col-md-3 hidden-xs ajuste_margenes">
                     <ul class="redes_sociales_single">
                         <li>
                             <a href="#">
@@ -40,21 +40,24 @@
                                 <span class="titulo_red">Compartir</span>
                             </a>
                         </li>
+                        <div class="separador-redes"></div>
                         <li>
                             <a href="#">
                                 <span class="pinte_single"></span>
                                 <span class="titulo_red">Pin it</span>
                             </a>
                         </li>
+                        <div class="separador-redes"></div>
                         <li>
                             <a href="#">
                                 <span class="plus_single"></span>
                                 <span class="titulo_red">Compartir</span>
                             </a>
                         </li>
+                        <div class="separador-redes"></div>
                     </ul><!--FIN redes_sociales_single-->
                 </div>
-                <div class="col-md-10 col-xs-12 wrap_content_single">
+                <div class="col-md-9 col-xs-12 wrap_content_single">
                 <?php 
                         the_content();
                     endwhile;

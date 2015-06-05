@@ -45,7 +45,7 @@
                 peligrosa<span class="pleka-2"></span>
             </p>
             <p class="text-right title-name">Karime</p>
-            <div class="nav-pager"></div>
+            <div class="nav-pager hidden-xs"></div>
         </div>	
         <div class="cycle-slideshow col-xs-12" data-cycle-timeout="5000" data-cycle-slides="> div">
             <?php

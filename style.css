@@ -754,7 +754,7 @@ li a.icon-video:hover{
   z-index: 100;
   left: 0;
   right: 0;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 .nav-pager span{
   text-indent: -999999px;
@@ -892,15 +892,23 @@ li a.icon-video:hover{
 		text-align: center;
 	}
 	.btn-open-nav img{
-		margin: 18px 0;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
 	}
-	.twitter {
+	.content-nav-xs .twitter {
 		background-position: right -7px;
 		padding: 3px 50px 6px 0px;
 	}
-	.facebook {
-		background-position: right -7px;
+	.content-nav-xs .facebook {
+		background-position: right -5px;
 		padding: 6px 50px 6px 0px;
+	}
+	.content-nav-xs .twitter:hover{
+		background-position: right -43px;
+	}
+	.content-nav-xs .facebook:hover {
+		  background-position: right -42px;
 	}
 	
 	.tap-search-xs{
@@ -975,11 +983,11 @@ li a.icon-video:hover{
 		display:none !important;
 	}
 	.logo img{
-		width:70%;
+		width:45%;
 		float:left;
 	}
 	.bg-yellow p {
-	  font-size: 12px;
+	    font-size: 12px !important;
 	}
 	.btn-open-nav{
 		position: absolute;
@@ -1001,9 +1009,30 @@ li a.icon-video:hover{
 		top: 0;
 		display:none;
 	}
+	.sin-paddgin-xs{
+		padding-left:0 !important;
+		padding-right:0 !important;
+	}
+	.content-slider{
+		margin-top:11px;
+	}
+	
+	/*slider*/
+	.content-slider p {
+	  padding: 20px 10px 7px;
+	  font-size: 13px;
+	}
+	.title-name {
+		margin-bottom:15px;
+	}
+	
 }
 /*Iphone(landscape) and device with less width*/
 @media screen and (max-width: 480px){ /* <= device less 480px*/
+	.logo img{
+		width:70%;
+		float:left;
+	}
 	
 }
 /*Iphone and device with less width*/

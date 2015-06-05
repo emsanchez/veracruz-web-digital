@@ -1,8 +1,9 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/component.css" />
 <link href="<?php bloginfo('template_url'); ?>/css/sidebar.css" rel="stylesheet">
 <script src="<?php bloginfo('template_url')?>/js/modernizr.custom.js"></script>
-<div class="sidebar-single col-xs-12 col-sm-3 col-md-3">
-	<img class="pasa-la-voz" src="<?php bloginfo('template_url')?>/images/sidebar/pasa-la-voz.png" alt="Pasa la voz" />
+<div class="sidebar-single col-md-3 col-xs-12">
+	<h3 class="tituloinfo colorchange quitarborder"><span>#</span>PasaLaVoz<span></h3>
+	<h3 class="tituloinfo colorchange otrosBorders"><span>#</span>Comparte</h3>
 	<section class="grid-wrap">
 		<ul class="grid swipe-right" id="grid" style="margin-bottom:0px;">
 		<?php 
@@ -48,7 +49,7 @@
 			<p class="leer-mas <?php echo $category; ?>">
 				<a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>"><?php echo $titulo; ?></a>
 			</p>
-			<div class="separador" style="border:none;"></div>
+			<div class="new-separado" style="border:none;"></div>
 		</li>
 		<?php 
 		    endwhile;  //Terminar while de post dentro de BLOG
@@ -97,7 +98,7 @@
 			<p class="leer-mas <?php echo $category; ?>">
 				<a href="<?php echo $link; ?>" data-toggle="lightbox" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>"><?php echo $titulo; ?></a>
 			</p>
-			<div class="separador"></div>
+			<div class="new-separado"></div>
 		</li>
 		<?php 
 		    endwhile;  //Terminar while de post dentro de BLOG
