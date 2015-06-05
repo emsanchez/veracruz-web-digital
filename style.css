@@ -530,8 +530,6 @@ hr {
 
 }
 
- 
-
 @font-face {
     font-family: 'lato-hairline';
     src: url('fonts/lato-hairline.eot');
@@ -544,6 +542,18 @@ hr {
 
 } 
 
+@font-face {
+    font-family: 'bellotabold';
+    src: url('fonts/bellota-bold.eot');
+    src: url('fonts/bellota-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bellota-bold.woff2') format('woff2'),
+         url('fonts/bellota-bold.woff') format('woff'),
+         url('fonts/bellota-bold.ttf') format('truetype'),
+         url('fonts/bellota-bold.svg#bellotabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 /**
  * 3.0 Header
  * -----------------------------------------------------------------------------
@@ -1053,5 +1063,9 @@ li a.icon-video:hover{
 	.hidden-more-600{
 		display:none !important;
 	}
+}
+
+@media screen and (orientation:portrait) {
+	
 }
 /*fin utilities*/
