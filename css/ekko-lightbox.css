@@ -85,7 +85,9 @@
 .lightbox-modal-dialog{
   width: 100% !important;
   max-width: 100% !important;
-  margin: 45px auto !important;
+  margin: 0 auto !important;
+  padding-top: 45px;
+  padding-bottom: 45px;
 }
 .lightbox-video-body,
 .lightbox-img-body{
@@ -133,6 +135,7 @@
   height: 36px;
   width: 36px;
   margin-right: -30px;
+  margin-top: 50px;
 }
 .lightbox-img-video-close button{
   -webkit-appearance: none;
@@ -419,9 +422,14 @@
   margin-top: 5px;
 }
 /*Responsive*/
-@media screen and (min-width: 1400px){
+@media screen and (min-width: 2000px){
   .lightbox-custom-img{
     width: 30% !important;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1999px){
+  .lightbox-custom-img{
+    width: 45% !important;
   }
 }
 /*---Devices medium and large---*/
@@ -433,7 +441,10 @@
 }
 @media screen and (max-width: 767px){
   .lightbox-modal-dialog{
-      margin: 55px auto !important;
+      /*margin: 55px auto !important;*/
+      margin: 0 auto !important;
+      padding-top: 55px;
+      padding-bottom: 55px;
   }
   .ekko-lightbox-nav-overlay{
     margin-top: -40px;

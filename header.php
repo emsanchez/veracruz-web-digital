@@ -92,6 +92,11 @@
 									dialog.css('max-width', widthNew);
 								}
 							}
+                            //Evento Click
+                            $('.ekko-lightbox-nav-overlay').click(function (e){
+                                if(e.target!= this) return;
+                               $('.close').trigger('click');
+                            });
 						}
 					});
 				});
