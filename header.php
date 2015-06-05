@@ -117,13 +117,13 @@
 				var open_filter = $('.open-filter');
 				//$('.content-nav-xs').stop().toggle('show');
 				if($(this).hasClass('active')){
-					social_bar.removeClass('col-md-8');
-					social_bar.addClass('col-md-5');
-					open_filter.addClass('col-md-3');
+					social_bar.removeClass('col-sm-8 col-md-8');
+					social_bar.addClass('col-md-5 col-sm-5');
+					open_filter.addClass('col-md-3 col-sm-3');
 				}else{
-					social_bar.removeClass('col-md-5');
-					social_bar.addClass('col-md-8');
-					open_filter.removeClass('col-md-3');
+					social_bar.removeClass('col-md-5 col-sm-5');
+					social_bar.addClass('col-md-8 col-sm-8');
+					open_filter.removeClass('col-md-3 col-sm-3');
 				}
 			});
 		});
@@ -134,12 +134,12 @@
 <div class="wrapper-header bg-purple">
     <div class="container-fluid sin-paddgin-sm">
         <div class="over-flow">
-            <div class="col-md-4 bg-purple-bold">
-                <a href="#" class="logo">
+            <div class="col-sm-4 col-md-4 bg-purple-bold">
+                <a href="/" class="logo">
                 	<img src="<?php bloginfo('template_url')?>/images/logo_hd.png" class="img-full">
                 </a>
-                <div class="btn-open-nav hidden-md hidden-lg"><img src="<?php bloginfo('template_url'); ?>/images/flecha-nav.png"></div>
-                <div class="content-nav-xs hidden-md hidden-lg">
+                <div class="btn-open-nav hidden-sm hidden-md hidden-lg"><img src="<?php bloginfo('template_url'); ?>/images/flecha-nav.png"></div>
+                <div class="content-nav-xs hidden-sm hidden-md hidden-lg">
                     <ul class="nav-social">
                         <span class="bd-purple"></span>
                         <div class="clearfix"></div>
@@ -151,8 +151,8 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="col-md-8 bg-texture-header visible-md visible-lg">
-                <span class="btn-open-filter"><a class="lupa"></a></span>
+            <div class="col-sm-8 col-md-8 bg-texture-header visible-sm visible-md visible-lg">
+                <span class="btn-open-filter hidden-sm"><a class="lupa"></a></span>
                 <ul class="nav-social">
                     <li><a class="twitter" href="https://twitter.com/KarimeMacias" target="_blank"></a></li>
                     <li><a class="facebook" href="https://www.facebook.com/KarimeMaciasDeDuarte" target="_blank"></a></li>

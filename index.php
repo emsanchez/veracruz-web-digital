@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="main-content">
     <div class="wrapper-slider">
-    	<div class="container-fluid">
+    	<div class="container-fluid sin-paddgin-xs">
         	<?php get_template_part('home/home', 'slider'); ?>
         </div>
     </div>
