@@ -14,7 +14,7 @@
     <!-- METAS COMPARTIR -->
     <meta property="og:url" content="http://www.veracruzdigital.gob.mx" />
     <meta property="og:title" content="Veracruz Digital" />
-    <meta property="og:description" content="Gobierno del EStado de Veracruz" />
+    <meta property="og:description" content="Gobierno del Estado de Veracruz" />
     <meta property="og:image" content="<?php bloginfo('template_url')?>/images/logo100X100.png" />
     
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
