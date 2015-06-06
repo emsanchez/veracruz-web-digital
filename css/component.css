@@ -187,6 +187,7 @@ body{
 	position: absolute;
 	z-index: 1;
 	right: 13px;
+	top: 55px;
   	margin-top: -47px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
