@@ -156,8 +156,8 @@ body{
 	font-size: 18px !important;
 	font-family: 'ubuntumedium' !important;
 	text-align: center;
-	margin: 30px auto;
-	margin-bottom: 30px;
+	margin: 42px auto;
+  	margin-bottom: 20px;
 }
 .titulover span{
 	color: #02E18B !important;
@@ -210,26 +210,25 @@ body{
 
 .changeback{
 	outline: 0 !important;
-	background: url(../images/compartir-dos.png);
+	background: url(../images/cerrar-noticias.png);
 	border: 0;
 	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 27px 16.5px;
-	width: 40px;
-	height: 40px;
-	background-color: #33BCA1;
+	background-size: 32px 68px;
+	width: 32px;
+	height: 32px;
 	float: right;
 	position: absolute;
 	z-index: 1;
 	right: 13px;
   	margin-top: -47px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	border: 1px solid #26947E;
+  	background-position: 0px 0px;
 }
 .changeback:hover{
-	background-color: #26947E;
+	background-position: 0px -36px;
+	background-color: transparent !important;
+}
+.share:hover .changeback{
+	background-color: transparent; !important;
 }
 .separador{
 	margin: 0 auto;
