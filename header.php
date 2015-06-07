@@ -126,6 +126,9 @@
 					open_filter.removeClass('col-md-3 col-sm-3');
 				}
 			});
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
 		});
     </script>
 </head>
@@ -164,9 +167,9 @@
             <div class="open-filter visible-md visible-lg">
             	<ul>
                 	<li>Filtrar por:</li>
-                	<li><a class="icon-infografia" href="?filter=infografia"></a></li>
-                    <li><a class="icon-nota" href="?filter=enlaces-externos"></a></li>
-                    <li><a class="icon-video" href="?filter=video"></a></li>
+                	<li><a class="icon-infografia" href="?filter=infografia" data-toggle="tooltip" title="Infografías"></a></li>
+                    <li><a class="icon-nota" href="?filter=enlaces-externos" data-toggle="tooltip" title="Artículos"></a></li>
+                    <li><a class="icon-video" href="?filter=video" data-toggle="tooltip" title="Video"></a></li>
                 </ul>
             </div>
         </div>
