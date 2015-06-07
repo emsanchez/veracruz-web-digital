@@ -883,7 +883,12 @@ li a.icon-video:hover{
 .active .icon-nav{
 	background-position: 0 -1px;
 }
-
+.tooltip > .tooltip-inner{
+	background-color:#1D2864 !important;
+}
+.tooltip > .tooltip-arrow {
+  border-top-color: #1D2864 !important;
+}
 
  /**
  * 4.0 - Sidebar
