@@ -633,7 +633,26 @@ hr {
 .facebook:hover{
 	background-position: 0 -38.1px;
 }
-
+.titulosearch{
+	font-family: 'ubuntulight';
+	color: #354184;
+	font-size: 22px;
+	text-align: right;
+	margin-top: 35px;
+}
+.titulosearch span{
+	font-family: 'ubuntubold';
+}
+.separador-titulo{
+	background: rgba(69,83,162, .14);
+	height: 3px;
+	width: 100%;
+	margin-bottom: 18px;
+}
+.ubuntu-ita{
+	font-family: 'ubuntubold';
+	font-style: italic;
+}
 .btn-search{
 	color: #fff;
 	background-image: url(images/buscador-lupa.png);
@@ -766,9 +785,12 @@ li a.icon-video:hover{
 .nav-pager{
   text-align: center;
   z-index: 100;
-  left: 0;
   right: 0;
   padding-top: 30px;
+  left: 0px;
+  position: absolute;
+  z-index: 111;
+  bottom: 15px;
 }
 .nav-pager span{
   text-indent: -999999px;

@@ -33,8 +33,8 @@
                 peligrosa<span class="pleka-2"></span>
             </p>
             <p class="text-right title-name">Karime</p>
-            <div class="nav-pager"></div>
         </div>
+         <div class="nav-pager"></div>
     </div>
     <div class="slider-xs hidden-md hidden-lg">
     	<div class="col-xs-12">
