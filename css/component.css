@@ -426,7 +426,7 @@ section {
 	bottom: 0;
 	left: 0;
 	margin: 0;
-	padding: 10px 25px 20px 20px;
+	padding: 10px 25px 15px 20px;
 	width: 100%;
 	background: white;
 	border: 1px solid #dadada;
@@ -521,6 +521,7 @@ section {
 .container-text h3{
 	margin-top: 3px !important;
 	line-height: 18px;
+	margin-bottom: 0px !important;
 }
 .container-text a:hover{
 	text-decoration: none;
