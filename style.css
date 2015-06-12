@@ -794,13 +794,16 @@ li a.icon-video:hover{
 }
 .nav-pager span{
   text-indent: -999999px;
-  width: 12px;
+  width: 15px;
   border: 1px solid #fff;
-  height: 12px;
+  height: 15px;
   border-radius: 2px;
   margin: 0 6px;
   display: inline-block;
   cursor: pointer;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.40);
+	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.40);
+	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.40);
 }
 
 .content-slider p{
