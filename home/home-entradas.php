@@ -75,9 +75,8 @@
 				<h3><?php echo the_title(); ?></h3>
 				<?php
 					if($category=="infografia"){ $titulo="Ver infografía"; }else if($category=="video"){ $titulo="Ver video";}else{ $titulo="Leer más";}
-					if($category!="infografia"){ ?>
-						<a target="_blank" href="http://<?php echo get_the_excerpt(); ?>"><?php echo the_excerpt(); ?></a>
-					<?php }else{ ?>
+					if($category=="infografia"){ ?>
+						
 						<p><?php echo get_the_excerpt(); ?></p>
 					<?php } ?>		
 			</div>
