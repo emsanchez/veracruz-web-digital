@@ -155,4 +155,13 @@
 		}
 	</script>
 </div>
-<?php get_footer(); ?>
+<?php 
+if($total_results==0 || $total_results==""){ ?>		
+<style>
+.wrapper-footer-ver{
+	position: fixed !important;
+  	bottom: 0 !important;
+  	width: 100% !important;
+}
+</style>
+<?php } get_footer(); ?>
