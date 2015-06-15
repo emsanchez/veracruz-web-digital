@@ -9,12 +9,12 @@
             while ( have_posts() ) : the_post();
            
                 $imagen_destacada = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'full' );
-                            $img = $imagen_destacada[0];
+                $img = $imagen_destacada[0];
             ?>
             <?php 
                 if (empty($img)):
             ?>
-                 <img src="<?php bloginfo('template_url'); ?>/images/imagen_single.png" alt="" class="img_destacada_single">
+                 <!--<img src="<?php bloginfo('template_url'); ?>/images/imagen_single.png" alt="" class="img_destacada_single">-->
             <?php 
                 else:
             ?>

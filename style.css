@@ -805,7 +805,6 @@ li a.icon-video:hover{
 	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.40);
 	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.40);
 }
-
 .content-slider p{
 	padding: 30px 20px 12px;
 	font-size: 14px;
@@ -832,9 +831,20 @@ li a.icon-video:hover{
 	padding-right: 56px;
 }
 .title-name{
-	margin: 0;
-	padding: 0px 20px !important;
-	font-size: 24px !important;
+	text-align: center;
+	margin: 0 auto;
+	padding: 4px 20px !important;
+	font-family: 'ubunturegular';
+	font-size: 19px;
+	width: 71%;
+	color: #FFF;
+	border: 1px solid #fff;
+	display: block;
+	border-radius: 5px;
+}
+.title-name:hover, .title-name:active, .title-name:focus {
+	text-decoration:none;
+	color: #FFF;
 }
 .position-relative{
 	position:relative;
