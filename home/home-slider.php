@@ -38,7 +38,7 @@
             $query->the_post(); ?>
                 <!--<span class="pleka-1"></span>-->
               	<?php the_content(); ?>
-                <a class="title-name" href="<?php the_permalink(); ?>">Leer más</a> 
+                <!-- <a class="title-name" href="<?php the_permalink(); ?>">Leer más</a> -->
             <?php } wp_reset_query(); ?>
         </div>
         <div class="nav-pager"></div>
@@ -51,7 +51,7 @@
             while ($query->have_posts()){ 
             $query->the_post(); ?>
                 <?php the_content(); ?>
-                <a class="title-name" href="<?php the_permalink(); ?>">Leer más</a>   
+                <!-- <a class="title-name" href="<?php the_permalink(); ?>">Leer más</a> -->  
             <?php } wp_reset_query(); ?>
             <div class="nav-pager hidden-xs"></div>
         </div>	

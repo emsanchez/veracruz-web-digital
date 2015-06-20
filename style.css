@@ -812,6 +812,9 @@ li a.icon-video:hover{
 	font-family: 'ubuntulight';
 	color: #FFF;
 }
+.hidden{
+	display: none;
+}
 .pleka-1{
 	background-image: url(images/pleka1.png);
 	width: 21px;
