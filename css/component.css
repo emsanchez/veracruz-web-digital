@@ -298,6 +298,7 @@ section {
 	margin: 0 auto;
 	padding: 0;
 	max-width: 100%;
+	min-height: 500px;
 	/*margin-left: -6px;*/
 }
 
