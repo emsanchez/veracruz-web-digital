@@ -8,6 +8,11 @@ body{
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(220,220,220,0.32) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType=1 );
 }
+.ias-spinner,
+.ias-trigger{
+	position: relative;
+  top: 99.4%;
+}
 .sin-padding{
 	padding-left: 0px !important;
 	padding-right: 0px !important;

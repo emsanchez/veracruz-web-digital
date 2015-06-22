@@ -1,26 +1,13 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/component.css" />
 <script src="<?php bloginfo('template_url')?>/js/modernizr.custom.js"></script>
-<?php
-	function string2url($cadena) {
-		$cadena = trim($cadena);
-		$cadena = strtr($cadena,
-	"ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ",
-	"aaaaaaaaaaaaooooooooooooeeeeeeeecciiiiiiiiuuuuuuuuynn");
-		$cadena = strtr($cadena,"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz");
-		$cadena = preg_replace('#([^.a-z0-9]+)#i', '-', $cadena);
-	        $cadena = preg_replace('#-{2,}#','-',$cadena);
-	        $cadena = preg_replace('#-$#','',$cadena);
-	        $cadena = preg_replace('#^-#','',$cadena);
-		return $cadena;
-	}
-	$variablephp = string2url($_GET['filter']);
-	if($variablephp==""){
-		$variablephp = "noticias";
-	}
-?>
+
 <section class="grid-wrap">
 	<ul class="grid swipe-right" id="grid">
 		<?php 
+			$variablephp = string2url($_GET['filter']);
+			if($variablephp==""){
+				$variablephp = "noticias";
+			}
 			wp_reset_query(); 
 		    global $query_string;
 		    //$categoriaNoticias 	= get_category_by_slug( "'".$variablephp."'" );
@@ -37,15 +24,18 @@
 		    while (	$blog_query	-> have_posts() ):
 		        $contador 	= 	$contador + 1;
 		        $blog_query	->	the_post();
-		        $wp_query 	->	in_the_loop = true;
+		        //$wp_query 	->	in_the_loop = true;
 		        
 		        $obtiene_destacada = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
-		        $imagen_destacada   = $obtiene_destacada[0];
+		        $imagen_destacada_bk   = $obtiene_destacada[0];
+ 
+                $imagen_destacada = get_bloginfo('template_url')."/timthumb.php?&q=100&src=".$imagen_destacada_bk."&w=244";
+
 		        $link = get_post_meta($post->ID, 'video' , true);
 		        $category = get_the_category(); 
 				$category = $category[0]->cat_name;
 		?>
-		<li><!-- SE COLOCA UN HREF PARA CADA TIPO DE ENTRADA VIDEO, ENLACE EXTERNO Y OTRAS -->
+		<li class="post"><!-- SE COLOCA UN HREF PARA CADA TIPO DE ENTRADA VIDEO, ENLACE EXTERNO Y OTRAS -->
 			<?php if( $category == "video" ){ ?>
 			<a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>">
 			<?php }else if( $category == "enlaces-externos" ){ ?>
@@ -100,6 +90,16 @@
 			<a href="#top"><span></span></a>
 		</p>
 	</ul>
+	<div class="navigation" style="display:none">
+		<div class="alignleft">
+			<?php previous_post('&laquo; &laquo; %',
+			 'Toward The Past: ', 'yes'); ?>
+		</div>
+		<div class="alignright">
+			<?php next_post('% &raquo; &raquo; ',
+			 'Toward The Future: ', 'yes'); ?>
+		</div>
+	</div> <!-- end navigation -->
 </section>
 <script src="<?php bloginfo('template_url')?>/js/masonry.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/imagesloaded.pkgd.min.js"></script>
@@ -107,7 +107,7 @@
 <script src="<?php bloginfo('template_url')?>/js/colorfinder-1.1.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/gridScrollFx.js"></script>
 <script>
-	$( document ).ready(function() {
+	$( window ).load(function() {
 		new GridScrollFx( document.getElementById( 'grid' ), {
 			viewportFactor : 0.2
 		});
