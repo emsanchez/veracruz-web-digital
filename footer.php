@@ -1,4 +1,7 @@
 <?php  
+global $themename; 
+$general_settings = get_option($themename . "_general_setting");
+
 if ( is_404() ) { ?>
 <style>
 .wrapper-footer-ver{
