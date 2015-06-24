@@ -20,7 +20,15 @@
 	add_theme_support( 'html5', array(
 		'search-form'
 	) );
-
+/*
+function modify_query($query) {
+	if($query->is_main_query() && !is_search()) {
+		$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+		$query->set('paged',$paged);
+	}
+}
+add_action('pre_get_posts', 'modify_query');
+*/
 function theme_widgets_init() {
 
 	register_sidebar( array(
@@ -71,3 +79,4 @@ function get_cat_slug_by_id($id) {
   		$count++; 
  	}
 }
+

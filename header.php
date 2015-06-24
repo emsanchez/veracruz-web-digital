@@ -49,7 +49,13 @@
 
     <!-- Footer -->
     <link href="<?php bloginfo('template_url'); ?>/css/footer.css" rel="stylesheet">
-
+	
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jRespond.min.js"></script>
+	
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/component.css" />
+	<script src="http://static.tumblr.com/iwtk77u/Yhym2yygt/jquery.imagesloaded.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
+    
 	<?php wp_head(); ?>
     
     <script type="text/javascript">
@@ -60,51 +66,88 @@
 			});    
         });
 	</script>
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jRespond.min.js"></script>
+    
     <script type="text/javascript">
-        var jRes = jRespond([
-            {
-                label: 'less_767',
-                enter: 767,
-                exit: 2700
-            }
-        ]);
-        jRes.addFunc({
-            breakpoint: 'less_767',
-            enter: function() {
-                 //delegate calls to data-toggle="lightbox"
-				$(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
-					event.preventDefault();
-					return $(this).ekkoLightbox({
-						onContentLoaded: function (e){
-							if (window.console) {
-								var category = this.options.category;
-								var selector;
-								if( category == 'video'){
-									selector = ".lightbox-video-footer";
-								}else{
-									selector = ".lightbox-img-header";
-									//Reajustar tamano de dialog
-									var widthHeader = this.widthHeader.width();
-									var dialog = $('div.ekko-lightbox .modal-dialog');
-									var widthDialog = dialog.width();
-									var widthNew = widthHeader + widthDialog;
-									dialog.css('max-width', widthNew);
+        jQuery(document).ready(function($) {
+			var jRes = jRespond([
+				{
+					label: 'more_767',
+					enter: 768,
+					exit: 2700
+				},{
+					label: 'phone',
+					enter: 767,
+					exit: 0
+				}
+			]);
+			
+			jRes.addFunc({
+				breakpoint: 'more_767',
+				enter: function() {
+					 //delegate calls to data-toggle="lightbox"
+					$(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+						event.preventDefault();
+						return $(this).ekkoLightbox({
+							onContentLoaded: function (e){
+								if (window.console) {
+									var category = this.options.category;
+									var selector;
+									if( category == 'video'){
+										selector = ".lightbox-video-footer";
+									}else{
+										selector = ".lightbox-img-header";
+										//Reajustar tamano de dialog
+										var widthHeader = this.widthHeader.width();
+										var dialog = $('div.ekko-lightbox .modal-dialog');
+										var widthDialog = dialog.width();
+										var widthNew = widthHeader + widthDialog;
+										dialog.css('max-width', widthNew);
+									}
 								}
+								//Evento Click
+								$('.ekko-lightbox-nav-overlay').click(function (e){
+									if(e.target!= this) return;
+									$('.close').trigger('click');
+								});
 							}
-                            //Evento Click
-                            $('.ekko-lightbox-nav-overlay').click(function (e){
-                                if(e.target!= this) return;
-                                $('.close').trigger('click');
-                            });
-						}
+						});
 					});
-				});
-            },
-            exit: function() {
-                
-            }
-        });
+					
+					/*load more*/
+					var get_width_container = $(".container-fluid").width();
+					get_width_container =  get_width_container / 4; 
+					console.log(get_width_container);
+					//$( '.grid' ).imagesLoaded(function() {
+					$('.grid').isotope({
+							  // set itemSelector so .grid-sizer is not used in layout
+							  itemSelector: '.grid-item',
+							  percentPosition: true,
+							  masonry: {
+								// use element for option
+								columnWidth: get_width_container
+							  }
+					});
+					$('.grid').imagesLoaded().progress( function() {
+					  $('.grid').isotope('layout');
+					});
+					
+				},
+				exit: function() {
+					
+				}
+			});
+			
+			jRes.addFunc({
+				breakpoint: 'phone',
+				enter: function() {
+					console.log('>>> run this for the DESKTOP breakpoint <<<');
+				},
+				exit: function() {
+					console.log('adios');
+				}
+			});
+		});
+		
 		$(document).ready(function() {
 			$(document).on('click touchstart','.btn-open-nav', function(event){
 				$(this).stop().toggleClass('active');

@@ -240,6 +240,7 @@ body{
 }
 .full-img{
 	width: 100%;
+	height: auto;
 }
 section {
 	padding: 1em;
@@ -437,14 +438,14 @@ section {
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	width: 96.2%;
+	width: 100%;
 	border-bottom: none;
 	 -webkit-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
   -moz-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
   box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
 }
 .leer-mas{
-	width: 96.2%;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	border: 1px solid #dadada;
@@ -542,7 +543,7 @@ section {
   margin: 0 auto;
   
 }
-.grid li h3 {
+.content-grid h3 {
 	color: #797979;
 	font-family: 'ubuntulight';
 	font-size: 13px;
@@ -560,6 +561,24 @@ section {
 	animation: showMe 0.1s step-end forwards;
 }
 
+#content-nota:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.content-grid{
+	padding: 5px;
+	position: relative;
+}
+.grid-item{
+	width:25%;
+}
+
+.content-grid > a{
+	position: relative;
+	display: block;
+}
+
 @-webkit-keyframes showMe {
 	from { visibility: hidden; }
 	60%, 100% { visibility: visible; }
@@ -574,25 +593,24 @@ section {
 .grid li.shown h3 {
 	visibility: visible;
 }
-@media screen and (max-width: 1042px){ /*< = @screen-md*/
+/*
+@media screen and (max-width: 1042px){ 
 	.grid {
   		width: 77% !important;
 	}
 }
-@media screen and (max-width: 942px){ /*< = @screen-md*/
+@media screen and (max-width: 942px){ 
 	.grid {
   		width: 80% !important;
 	}
 }
+*/
 @media screen and (max-width: 880px){ /*< = @screen-md*/
 	.grid {
   		width: 100% !important;
 	}
 }
 @media screen and (max-width: 780px){ /*< = @screen-md*/
-	.grid {
-  		width: 75% !important;
-	}
 }
 @media screen and (max-width: 650px){ /*< = @screen-md*/
 	.grid {
