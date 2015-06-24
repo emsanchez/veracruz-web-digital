@@ -314,13 +314,13 @@ section {
 	padding: 0;
 	list-style: none;
 }
-
+/*
 .js .grid {
 	background: url(../images/loading.gif) no-repeat 50% 100px;
 	background-position: bottom;
 	margin-bottom: 10px;
 }
-
+*/
 .js .grid.loaded {
 	background: none;
 }
