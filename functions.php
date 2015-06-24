@@ -20,15 +20,7 @@
 	add_theme_support( 'html5', array(
 		'search-form'
 	) );
-/*
-function modify_query($query) {
-	if($query->is_main_query() && !is_search()) {
-		$paged = (get_query_var('page')) ? get_query_var('page') : 1;
-		$query->set('paged',$paged);
-	}
-}
-add_action('pre_get_posts', 'modify_query');
-*/
+	
 function theme_widgets_init() {
 
 	register_sidebar( array(
@@ -78,5 +70,18 @@ function get_cat_slug_by_id($id) {
   	}
   		$count++; 
  	}
+}
+
+function string2url($cadena) {
+	$cadena = trim($cadena);
+	$cadena = strtr($cadena,
+"ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ",
+"aaaaaaaaaaaaooooooooooooeeeeeeeecciiiiiiiiuuuuuuuuynn");
+	$cadena = strtr($cadena,"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz");
+	$cadena = preg_replace('#([^.a-z0-9]+)#i', '-', $cadena);
+		$cadena = preg_replace('#-{2,}#','-',$cadena);
+		$cadena = preg_replace('#-$#','',$cadena);
+		$cadena = preg_replace('#^-#','',$cadena);
+	return $cadena;
 }
 
