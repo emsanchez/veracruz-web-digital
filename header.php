@@ -73,19 +73,6 @@
 		$(window).on('load', function(){
 			var loading = false;
 					function setPagination( paramsHolder ) {
-						/*
-						var get_width_container = $(".container-fluid").width();
-						get_width_container =  get_width_container / 4; 
-						//var $grid;
-						$grid = $('.grid').isotope({
-							itemSelector: '.grid-item',
-							percentPosition: true,
-							masonry: {
-								// use element for option
-								columnWidth: get_width_container
-							}
-						});
-						*/
 						var max             = paramsHolder.data( 'page-max' ),
 						pageNum         = paramsHolder.data( 'page-start' ) + 1,
 						nextLink        = paramsHolder.data( 'page-next' ),
@@ -99,7 +86,22 @@
 									opacity : 1
 								});
 								if ( pageNum <= max ) {
-									$.get( nextLink, function( data ) {
+									//each
+									var ids_series = "";
+									var selector = $("#content-nota div.content-grid  > a");
+									var lengthItems = selector.length;
+									var countI = 1;
+									selector.each(function(index, value){
+										var postId = $(this).attr('data-postId');
+										if( countI == lengthItems ){
+											ids_series += postId;	
+										}
+										else{
+											ids_series += postId+","; 
+										}
+										countI++;
+									});
+									$.post( nextLink, { postIds: ids_series }, function( data ) {
 										loader.animate({
 											opacity : 0
 										});
@@ -118,18 +120,6 @@
 										}
 										paramsHolder.attr( 'data-page-start', pageNum );
 										paramsHolder.attr( 'data-page-next', nextLink );
-										/*
-										var arre = [];
-										var $itemgrid;
-										var item_nota = $(data).find( '#content-nota' );
-										$( item_nota ).each(function( index, row ) {
-											$itemgrid = $(this).find('.grid-item');
-										});
-										
-										$grid.imagesLoaded(function() {
-											$grid.isotope('insert', $itemgrid );
-										});
-										*/
 										$( data ).find( item ).appendTo( paramsHolder );
 										loading = false;
 										if ( pageNum >= max ) {
@@ -137,7 +127,8 @@
 										}
 									});
 								} else {
-								$( window ).unbind( 'scroll' );
+									$( window ).unbind( 'scroll' );
+									loader.remove();
 								}
 							}
 							return false;

@@ -1,16 +1,37 @@
 <?php 
 	wp_reset_query();
+	$ids_series_post = $_POST['postIds'];
+	$pila = array();
+	if( !$ids_series_post == "" ){
+		$ids = explode(",",$ids_series_post);
+		foreach($ids as $item) {
+			$pila[] = $item;
+		}
+	}
 	$variablephp = string2url($_GET['filter']);
 	if($variablephp==""){
 		$variablephp = "noticias";
 	}
-	$paged          = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-	$args = array(
+	$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+	
+	if( $ids_series_post == "" ){
+		$args = array(
 		'category_name'    => $variablephp,
-		'posts_per_page'   => 12, 
-		'paged'            => $paged
-	); 
-	$my_query = new WP_Query($args); 
+		'posts_per_page'   => 12, //
+		'orderby'		   => 'rand'
+		); 
+	}
+	else{
+		$args = array(
+		'category_name'    => $variablephp,
+		'posts_per_page'   => 12, //
+		'orderby'		   => 'rand',
+		'post__not_in' 	   => $pila
+		); 
+	}
+	$array_ids = array();
+	$my_query = new WP_Query($args);
+	$count = $my_query->post_count;
 ?>
 
 <div id="content-nota" class="grid pagination-params" data-page-max="<?php echo $my_query->max_num_pages; ?>" data-page-start="<?php echo ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1; ?>" data-page-next="<?php echo next_posts( $my_query->max_num_pages, false ); ?>" data-page-item=".grid-item">
@@ -33,11 +54,11 @@
 	<div class="grid-item">
     	<div class="content-grid">
 			<?php if( $category == "video" ){ ?>
-            <a href="<?php echo $link; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>">
+            <a href="<?php echo $link; ?>" data-postId="<?php echo $post->ID; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-media="<?php echo $link; ?>" data-permalink="<?php echo get_permalink(); ?>" data-category="<?php echo $category; ?>" data-gallery="gallery" data-excerpt="<?php echo $link; ?>">
             <?php }else if( $category == "enlaces-externos" ){ ?>
-            <a target="_blank" href="http://<?php echo get_the_excerpt(); ?>" class="<?php echo $category; ?>">
+            <a data-postId="<?php echo $post->ID; ?>" target="_blank" href="http://<?php echo get_the_excerpt(); ?>" class="<?php echo $category; ?>">
             <?php }else{?>
-            <a href="<?php echo $imagen_destacada_bk; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada_bk; ?>">
+            <a href="<?php echo $imagen_destacada_bk; ?>" data-postId="<?php echo $post->ID; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada_bk; ?>">
             <?php } ?><!-- EMPIEZA EL CONTENIDO INTERNO DE LA NOTICIA -->
                 <div class="divimageshare" id="<?php echo 'imgshare'.$contador; ?>">
                     <?php if($category == "infografia"){ ?>
