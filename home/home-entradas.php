@@ -4,18 +4,20 @@
 	if($variablephp==""){
 		$variablephp = "noticias";
 	}
+	$paged          = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 	$args = array(
 		'category_name'    => $variablephp,
-		'posts_per_page'   => -1, 
+		'posts_per_page'   => 12, 
+		'paged'            => $paged
 	); 
-	$query = new WP_Query($args); 
+	$my_query = new WP_Query($args); 
 ?>
 
-<div id="content-nota" class="grid">
+<div id="content-nota" class="grid pagination-params" data-page-max="<?php echo $my_query->max_num_pages; ?>" data-page-start="<?php echo ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1; ?>" data-page-next="<?php echo next_posts( $my_query->max_num_pages, false ); ?>" data-page-item=".grid-item">
 	<?php
 	$contador = 0;
-	while (	$query->have_posts() ){
-		        $query->the_post();
+	while (	$my_query->have_posts() ){
+		        $my_query->the_post();
 		        $contador++;
 		        $obtiene_destacada = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
 		        $imagen_destacada_bk   = $obtiene_destacada[0];
@@ -35,7 +37,7 @@
             <?php }else if( $category == "enlaces-externos" ){ ?>
             <a target="_blank" href="http://<?php echo get_the_excerpt(); ?>" class="<?php echo $category; ?>">
             <?php }else{?>
-            <a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>">
+            <a href="<?php echo $imagen_destacada_bk; ?>" data-toggle="lightbox" class="<?php echo $category; ?>" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada_bk; ?>">
             <?php } ?><!-- EMPIEZA EL CONTENIDO INTERNO DE LA NOTICIA -->
                 <div class="divimageshare" id="<?php echo 'imgshare'.$contador; ?>">
                     <?php if($category == "infografia"){ ?>
@@ -54,7 +56,8 @@
                 </div>
                 <img class="full-img <?php if($category=="infografia"){ echo "curosr"; } ?>" src="<?php echo $imagen_destacada; ?>" alt="<?php echo the_title(); ?>">
             </a>
-            <button class="share" id="<?php echo "share".$contador; ?>" onClick="mostrarHover('<?php echo "imgshare".$contador; ?>','<?php echo "share".$contador; ?>')"></button>
+            <!--<button class="share" id="<?php echo "share".$contador; ?>" onClick="mostrarHover('<?php echo "imgshare".$contador; ?>','<?php echo "share".$contador; ?>')"></button>-->
+            <button class="share"></button>
             <div class="container-text">
                 <h3><?php echo the_title(); ?></h3>
                 <?php
@@ -71,7 +74,7 @@
                 <?php }else if( $category == "enlaces-externos" ){ ?>
                 <a target="_blank" href="http://<?php echo get_the_excerpt(); ?>"><?php echo $titulo; ?></a>
                 <?php }else{?>
-                <a href="<?php echo $imagen_destacada; ?>" data-toggle="lightbox" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada; ?>"><?php echo $titulo; ?></a>
+                <a href="<?php echo $imagen_destacada_bk; ?>" data-toggle="lightbox" data-category="<?php echo $category; ?>" data-title="<?php echo get_the_title(); ?>" data-permalink="<?php echo get_permalink(); ?>" data-gallery="gallery" data-excerpt="http://youtu.be/" data-media="<?php echo $imagen_destacada_bk; ?>"><?php echo $titulo; ?></a>
                 <?php } ?>
             </p>
             <div class="separador"></div>
@@ -80,6 +83,9 @@
     <?php 
 		}  //Terminar while de post dentro de BLOG
 	?>
+</div>
+<div class="posts-loader">
+    <img src="<?php bloginfo( 'template_url' ); ?>/images/loading.gif" />
 </div>
 <p id="back-top" style="display: block;">
 	<a href="#top"><span></span></a>
@@ -118,19 +124,30 @@
 	            return false;
 	        });
 	    });
+		
+		
+			/*
+			var classe 		= '#'+ident;
+			var classeDiv 	= '#'+btnident;
+			*/
 	});
-	function mostrarHover(ident,btnident){
-		var classe 		= '#'+ident;
-		var classeDiv 	= '#'+btnident;
-		var checkClass 	= $( classe ).hasClass( "shareback" );
-		if(checkClass==false){
-			$( classe ).addClass( "shareback" );
-			$( classeDiv ).addClass( "changeback" );
-			return false;
-		}else{
-			$( classe ).removeClass( "shareback" );
-			$( classeDiv ).removeClass( "changeback" );
-			return false;
-		}
-	}
+	
+	$( document ).on('ready', function() {
+		$('#content-nota').on( 'click' , '.share', function() {
+			var checkClass 	= $( this ).hasClass( "shareback" );
+			if(checkClass==false){
+				$( this ).addClass( "changeback" );
+				$( this).addClass( "shareback" );
+				$( this ).parent().find('.divimageshare').addClass( "shareback" );
+				return false;
+			}else{
+				
+				$( this ).parent().find('.divimageshare').removeClass( "shareback" );
+				$( this ).removeClass( "shareback" );
+				$( this ).removeClass( "changeback" );
+				return false;
+			}
+		});
+	});
+	
 </script>

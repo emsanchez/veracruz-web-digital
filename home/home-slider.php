@@ -1,7 +1,7 @@
 <?php 
     $args = array(
         'category_name'  => 'slider',
-        'posts_per_page' => 6,
+        'posts_per_page' => 7,
         'post_type'      => 'post'
     );
 	$args2 = array(

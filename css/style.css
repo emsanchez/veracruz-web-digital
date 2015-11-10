@@ -930,10 +930,6 @@ li a.icon-video:hover{
   border-top-color: #1D2864 !important;
 }
 
-.posts-loader{
-	padding: 0px 0 45px;
-	text-align: center;
-}
  /**
  * 4.0 - Sidebar
  * -----------------------------------------------------------------------------
@@ -964,7 +960,7 @@ li a.icon-video:hover{
 		width: 75% !important;
 	}
 }
-@media screen and (min-width: 768px){
+@media screen and (min-width: 767px){
 	.linkshare:hover{
 		text-decoration: none !important;
 		color: #33BCA1;
@@ -976,32 +972,6 @@ li a.icon-video:hover{
 	}
 	.share:hover{
 		background-color: #26947E;
-	}
-	.content-grid{
-		padding: 5px;
-		position: relative; 
-	}
-	
-	
-	.grid {
-	  -moz-column-count: 4;
-	  -moz-column-gap: 5px;
-	  -webkit-column-count: 4;
-	  -webkit-column-gap: 5px;
-	  column-count: 4;
-	  column-gap: 5px;
-	}
-	
-	.grid-item {
-	  	width: 100% !important;
-	    display: inline-block;
-	}
-	
-	.share-btn{
-		margin-right: 7px !important;
-	}
-	.share-btn:hover{
-		background-position: 0px -32px !important;
 	}
 
 }
@@ -1128,6 +1098,73 @@ li a.icon-video:hover{
 		width:45%;
 		float:left;
 	}
+	
+	/*two column*/
+	#noticias{
+		padding:0 5px !important;
+	}
+	.grid {
+	  -moz-column-count: 2;
+	  -moz-column-gap: 5px;
+	  -webkit-column-count: 2;
+	  -webkit-column-gap: 5px;
+	  column-count: 3;
+	  column-gap: 5px;
+	}
+	
+	.grid-item {
+	  	width: 100% !important;
+	    display: inline-block;
+	}
+	.container-text {
+		padding: 10px 10px 15px 10px !important;
+	}
+	.content-grid h3 {
+		font-size: 11px !important;
+		line-height: 15px !important;
+	}
+	.share {	
+		background-size: 23px !important;
+		width: 30px !important;
+		height: 30px !important;
+		right: 9px !important;
+	}
+	.linkshare{
+		font-size: 11px !important;
+		padding: 6px 0px 7px 33px !important;
+		width: 69% !important;
+		margin-bottom: 1px !important;
+	}
+	.twetter, .twetter:hover{
+		background-size: 24px !important;
+		height: 35px !important;
+		background-position: 0px 4px !important;
+	}
+	.faceb {
+		background-size: 24px !important;
+		height: 34px !important;
+	}
+	.pinte {
+	  background-position: 0px 4px !important;
+	  background-size: 27px !important;
+	  height: 34px !important;
+	}
+	.plus {
+	  background-position: 0px 3px !important;
+	  background-size: 25px !important;
+	  height: 35px !important;
+	}
+	.changeback {
+		width: 22px !important;
+		height: 25px !important;
+	}
+	.container-text p {
+	  font-size: 11px !important;
+	  margin-top: 3px !important;
+	}
+	.container-text, .leer-mas{
+		box-shadow:none !important; 
+	}
 }
 
 /*Style devices between  600px - 767px css*/
@@ -1171,120 +1208,6 @@ li a.icon-video:hover{
 	}
 	
 }
-/*Iphone plus and xs*/
-@media (min-width: 414px) and (max-width: 767px){
-	/*two column*/
-	#noticias{
-		padding:0 5px !important;
-	}
-	.grid {
-	  -moz-column-count: 2;
-	  -moz-column-gap: 5px;
-	  -webkit-column-count: 2;
-	  -webkit-column-gap: 5px;
-	  column-count: 2;
-	  column-gap: 5px;
-	}
-	
-	.grid-item {
-	  	width: 100% !important;
-	    display: inline-block;
-	}
-	.container-text {
-		padding: 10px 10px 15px 10px !important;
-	}
-	.content-grid h3 {
-		font-size: 11px !important;
-		line-height: 15px !important;
-	}
-	.share {	
-		background-size: 23px !important;
-		width: 30px !important;
-		height: 30px !important;
-		right: 6px !important;
-  		top: 52px !important;
-	}
-	.linkshare{
-		font-size: 11px !important;
-		padding: 6px 0px 7px 33px !important;
-		width: 69% !important;
-		margin-bottom: 1px !important;
-	}
-	.twetter, .twetter:hover{
-		background-size: 24px !important;
-		height: 35px !important;
-		background-position: 0px 4px !important;
-	}
-	.faceb {
-		background-size: 24px !important;
-		height: 34px !important;
-	}
-	.pinte {
-	  background-position: 0px 4px !important;
-	  background-size: 27px !important;
-	  height: 34px !important;
-	}
-	.plus {
-	  background-position: 0px 3px !important;
-	  background-size: 25px !important;
-	  height: 35px !important;
-	}
-	.changeback {
-		width: 22px !important;
-		height: 25px !important;
-	}
-	.container-text p {
-	  font-size: 11px !important;
-	  margin-top: 3px !important;
-	}
-	.container-text, .leer-mas{
-		box-shadow:none !important; 
-	}
-	.content-grid{
-		padding:1px;
-		position: relative;
-	}
-	
-	.divimageshare{
-		text-align:center;
-	}
-	.titulover {
-		text-align: center !important;
-		margin: 29px auto 1px !important;
-	}
-	.plus-leer {
-		background-size: 26px !important;
-		height: 30px !important;
-	}
-	.twetter-leer {
-		background-size: 26px !important;
-		height: 29px !important;
-	}
-	.faceb-leer {
-		background-size: 27px !important;
-		height: 30px !important;
-	}
-	.pinte-leer {
-		background-size: 24px !important;
-		height: 31px !important;
-	}
-	.share-btn {
-		margin: 0px !important;
-		margin-right: 0px !important;
-		position: relative !important;
-		bottom:initial  !important;
-		left:initial !important;
-		display:inline-block !important;
-	}	
-}
-
-@media (max-width: 413px) {
-	.grid-item{
-		width:100% !important;
-		position:relative;
-	}
-}
-
 /*Iphone and device with less width*/
 @media screen and (max-width: 320px){ /* <= device less 320px*/
 	

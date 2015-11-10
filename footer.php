@@ -11,7 +11,7 @@ if ( is_404() ) { ?>
 }
 </style>
 <?php } ?>
-<div class="clearfix"></div>
+
 <div class="wrapper-footer-ver">
 	<div class="reset-padding-boostrap wrap_footer_main wrap_footer hidden-xs">
 		<div class="col-md-8 back-softblue reset-padding-boostrap">

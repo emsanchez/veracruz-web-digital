@@ -56,6 +56,8 @@
 	<script src="http://static.tumblr.com/iwtk77u/Yhym2yygt/jquery.imagesloaded.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
     
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    
 	<?php wp_head(); ?>
     
     <script type="text/javascript">
@@ -68,6 +70,82 @@
 	</script>
     
     <script type="text/javascript">
+		$(window).on('load', function(){
+			var loading = false;
+					function setPagination( paramsHolder ) {
+						/*
+						var get_width_container = $(".container-fluid").width();
+						get_width_container =  get_width_container / 4; 
+						//var $grid;
+						$grid = $('.grid').isotope({
+							itemSelector: '.grid-item',
+							percentPosition: true,
+							masonry: {
+								// use element for option
+								columnWidth: get_width_container
+							}
+						});
+						*/
+						var max             = paramsHolder.data( 'page-max' ),
+						pageNum         = paramsHolder.data( 'page-start' ) + 1,
+						nextLink        = paramsHolder.data( 'page-next' ),
+						item            = paramsHolder.data( 'page-item' );
+						loader          = $( '.posts-loader' );
+						$( window ).on('scroll', function() {
+							// Have we reached the bottom of the active element?
+							if ( ( ( $( this ).scrollTop() + $( this ).height() ) >= ( paramsHolder.height() + paramsHolder.offset().top ) ) && !loading ) {
+								loading = true;
+								loader.animate({
+									opacity : 1
+								});
+								if ( pageNum <= max ) {
+									$.get( nextLink, function( data ) {
+										loader.animate({
+											opacity : 0
+										});
+										pageNum++;
+										if($(location).attr('search') != ''){
+											var pathname = $(location).attr('pathname'); 
+											var search   = $(location).attr('search');
+											var hostname = $(location).attr('hostname');
+											var link_next = hostname+pathname;
+											nextLink = 'http://'+link_next + 'page/'+ pageNum+'/'+search;
+											console.log(nextLink);
+										}else{
+											var link_next = $(location).attr('href');
+											nextLink = link_next + 'page/'+ pageNum;
+											console.log(nextLink);
+										}
+										paramsHolder.attr( 'data-page-start', pageNum );
+										paramsHolder.attr( 'data-page-next', nextLink );
+										/*
+										var arre = [];
+										var $itemgrid;
+										var item_nota = $(data).find( '#content-nota' );
+										$( item_nota ).each(function( index, row ) {
+											$itemgrid = $(this).find('.grid-item');
+										});
+										
+										$grid.imagesLoaded(function() {
+											$grid.isotope('insert', $itemgrid );
+										});
+										*/
+										$( data ).find( item ).appendTo( paramsHolder );
+										loading = false;
+										if ( pageNum >= max ) {
+											loader.remove();
+										}
+									});
+								} else {
+								$( window ).unbind( 'scroll' );
+								}
+							}
+							return false;
+						});
+					}
+					setPagination( $( '#content-nota' ) );
+		});
+		
         jQuery(document).ready(function($) {
 			var jRes = jRespond([
 				{
@@ -80,7 +158,6 @@
 					exit: 0
 				}
 			]);
-			
 			jRes.addFunc({
 				breakpoint: 'more_767',
 				enter: function() {
@@ -113,37 +190,10 @@
 						});
 					});
 					
-					/*load more*/
-					var get_width_container = $(".container-fluid").width();
-					get_width_container =  get_width_container / 4; 
-					console.log(get_width_container);
-					//$( '.grid' ).imagesLoaded(function() {
-					$('.grid').isotope({
-							  // set itemSelector so .grid-sizer is not used in layout
-							  itemSelector: '.grid-item',
-							  percentPosition: true,
-							  masonry: {
-								// use element for option
-								columnWidth: get_width_container
-							  }
-					});
-					$('.grid').imagesLoaded().progress( function() {
-					  $('.grid').isotope('layout');
-					});
-					
+					/*load more ajax*/
 				},
 				exit: function() {
-					
-				}
-			});
-			
-			jRes.addFunc({
-				breakpoint: 'phone',
-				enter: function() {
-					console.log('>>> run this for the DESKTOP breakpoint <<<');
-				},
-				exit: function() {
-					console.log('adios');
+					console.log('hola');
 				}
 			});
 		});

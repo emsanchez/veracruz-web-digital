@@ -65,8 +65,13 @@ body{
   	position: relative;
   	z-index: 11111;
 }
-
+.linkshare:hover{
+	text-decoration: none !important;
+	color: #33BCA1;
+	background-position: 0px -37px !important;
+}
 .share-btn{
+	margin-right: 7px !important;
 	border: 0;
 	margin: 0;
 	background-color: transparent;
@@ -78,7 +83,9 @@ body{
   	position: relative;
   z-index: 11111;
 }
-
+.share-btn:hover{
+	background-position: 0px -32px !important;
+}
 .twetter{
 	background: url(../images/tw-share.png);
 	background-repeat: no-repeat;
@@ -192,10 +199,9 @@ body{
 	border-radius: 5px;
 	border: 1px solid #26947E;
 }
-/*
 .share:hover{
 	background-color: #26947E;
-}*/
+}
 .share:hover,
 .share:active,
 .share:visited,
@@ -222,12 +228,10 @@ body{
   	margin-top: -47px;
   	background-position: 0px 0px;
 }
-/*
 .changeback:hover{
 	background-position: 0px -36px;
 	background-color: transparent !important;
 }
-*/
 .share:hover .changeback{
 	background-color: transparent; !important;
 }
@@ -241,7 +245,6 @@ body{
 }
 .full-img{
 	width: 100%;
-	height: auto;
 }
 section {
 	padding: 1em;
@@ -310,13 +313,13 @@ section {
 	padding: 0;
 	list-style: none;
 }
-/*
+
 .js .grid {
 	background: url(../images/loading.gif) no-repeat 50% 100px;
 	background-position: bottom;
 	margin-bottom: 10px;
 }
-*/
+
 .js .grid.loaded {
 	background: none;
 }
@@ -439,14 +442,14 @@ section {
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	width: 100%;
+	width: 96.2%;
 	border-bottom: none;
 	 -webkit-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
   -moz-box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
   box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.1);
 }
 .leer-mas{
-	width: 100%;
+	width: 96.2%;
 	margin: 0 auto;
 	text-align: center;
 	border: 1px solid #dadada;
@@ -544,7 +547,7 @@ section {
   margin: 0 auto;
   
 }
-.content-grid h3 {
+.grid li h3 {
 	color: #797979;
 	font-family: 'ubuntulight';
 	font-size: 13px;
@@ -562,20 +565,6 @@ section {
 	animation: showMe 0.1s step-end forwards;
 }
 
-#content-nota:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-.grid-item{
-	width:25%;
-}
-
-.content-grid > a{
-	position: relative;
-	display: block;
-}
-
 @-webkit-keyframes showMe {
 	from { visibility: hidden; }
 	60%, 100% { visibility: visible; }
@@ -590,24 +579,25 @@ section {
 .grid li.shown h3 {
 	visibility: visible;
 }
-/*
-@media screen and (max-width: 1042px){ 
+@media screen and (max-width: 1042px){ /*< = @screen-md*/
 	.grid {
   		width: 77% !important;
 	}
 }
-@media screen and (max-width: 942px){ 
+@media screen and (max-width: 942px){ /*< = @screen-md*/
 	.grid {
   		width: 80% !important;
 	}
 }
-*/
 @media screen and (max-width: 880px){ /*< = @screen-md*/
 	.grid {
   		width: 100% !important;
 	}
 }
 @media screen and (max-width: 780px){ /*< = @screen-md*/
+	.grid {
+  		width: 75% !important;
+	}
 }
 @media screen and (max-width: 650px){ /*< = @screen-md*/
 	.grid {
